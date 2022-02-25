@@ -35,18 +35,21 @@ extension UIImageView {
         guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { data, _, _ in
+            
+            guard let data = data, let downloadedImage = UIImage(data: data) else { return }
+            
+            imageCache.setObject(downloadedImage, forKey: NSString(string: urlString))
+            
             DispatchQueue.main.async { [weak self] in
-                if let data = data, let downloadedImage = UIImage(data: data) {
-                    imageCache.setObject(downloadedImage, forKey: NSString(string: urlString))
-                    self?.alpha = 0
-                    self?.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-                    self?.image = downloadedImage
-                    UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) { [weak self] in
-                        self?.alpha = 1
-                        self?.transform = CGAffineTransform.identity
-                    }
+                self?.alpha = 0
+                self?.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                self?.image = downloadedImage
+                UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) { [weak self] in
+                    self?.alpha = 1
+                    self?.transform = CGAffineTransform.identity
                 }
             }
+            
         }.resume()
         
     }

@@ -1,14 +1,27 @@
 import UIKit
+import Combine
 
 class AgentDetailVC: UIViewController {
     
     //MARK: - Views
 
     let navBar = VHNavBar()
+    
+    let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = AppColor.darkBlack.color
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    
 
     //MARK: - Variables
 
-    // Your Variables Here
+    var viewModel: AgentDetailVM?
+    var cancellableList: Set<AnyCancellable> = []
 
     //MARK: - LifeCycle
     
@@ -18,6 +31,7 @@ class AgentDetailVC: UIViewController {
         view.backgroundColor = AppColor.darkBlack.color
         buildSubviews()
         setupGestures()
+        setupViewModel()
         configureNavBar()
     }
     
@@ -52,6 +66,23 @@ class AgentDetailVC: UIViewController {
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
+        
+    }
+    
+    private func setupViewModel() {
+        viewModel?.itemSubject.sink(receiveValue: { _ in
+            DispatchQueue.main.async { [weak self] in
+                self?.setupView()
+            }
+        }).store(in: &cancellableList)
+        viewModel?.getItem()
+    }
+    
+    func setupView() {
+        
+        guard let viewModel = viewModel else { return }
+        
+        
         
     }
 

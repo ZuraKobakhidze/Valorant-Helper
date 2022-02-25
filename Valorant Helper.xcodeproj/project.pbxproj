@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */; };
 		F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF727C8B53600A8F511 /* VHNavBar.swift */; };
+		F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */; };
 		F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6227C6674200B4DB44 /* Endpoint.swift */; };
 		F167DC6627C6674200B4DB44 /* AgentsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6327C6674200B4DB44 /* AgentsEndpoint.swift */; };
 		F167DC6727C6674200B4DB44 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6427C6674200B4DB44 /* NetworkEngine.swift */; };
@@ -76,6 +77,7 @@
 /* Begin PBXFileReference section */
 		F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBarVM.swift; sourceTree = "<group>"; };
 		F12E3DF727C8B53600A8F511 /* VHNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBar.swift; sourceTree = "<group>"; };
+		F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgentModel.swift; sourceTree = "<group>"; };
 		F167DC6227C6674200B4DB44 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		F167DC6327C6674200B4DB44 /* AgentsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentsEndpoint.swift; sourceTree = "<group>"; };
 		F167DC6427C6674200B4DB44 /* NetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				F167DC6927C66AD700B4DB44 /* AgentsModel.swift */,
+				F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				F1C6B6F927C4F57E00848580 /* UITextField+Extension.swift in Sources */,
 				F1C6B6F527C4F57E00848580 /* UIView+Extension.swift in Sources */,
 				F1C6B70227C4F8A500848580 /* AppFont.swift in Sources */,
+				F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */,
 				F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */,
 				F1C6B70727C5101A00848580 /* AgentsHeaderView.swift in Sources */,
 				F1C6B70027C4F57E00848580 /* UIColor+Extension.swift in Sources */,
