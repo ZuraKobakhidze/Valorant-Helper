@@ -3,20 +3,57 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */; };
+		F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF727C8B53600A8F511 /* VHNavBar.swift */; };
+		F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6227C6674200B4DB44 /* Endpoint.swift */; };
+		F167DC6627C6674200B4DB44 /* AgentsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6327C6674200B4DB44 /* AgentsEndpoint.swift */; };
+		F167DC6727C6674200B4DB44 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6427C6674200B4DB44 /* NetworkEngine.swift */; };
+		F167DC6A27C66AD700B4DB44 /* AgentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6927C66AD700B4DB44 /* AgentsModel.swift */; };
+		F167DC6E27C66E0A00B4DB44 /* AgentsCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6C27C66E0A00B4DB44 /* AgentsCellVM.swift */; };
+		F167DC6F27C66E0A00B4DB44 /* AgentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6D27C66E0A00B4DB44 /* AgentsCell.swift */; };
+		F167DC7227C6701000B4DB44 /* AgentsCellVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7127C6701000B4DB44 /* AgentsCellVMFactory.swift */; };
+		F167DC7527C7968A00B4DB44 /* AgentsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7427C7968A00B4DB44 /* AgentsFooterView.swift */; };
+		F167DC7927C7A4DA00B4DB44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F167DC7B27C7A4DA00B4DB44 /* Localizable.strings */; };
+		F167DC8027C7BE3600B4DB44 /* AgentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */; };
+		F167DC8127C7BE3600B4DB44 /* AgentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */; };
 		F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68C27C4EBA700848580 /* AppDelegate.swift */; };
 		F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */; };
-		F1C6B69127C4EBA700848580 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B69027C4EBA700848580 /* ViewController.swift */; };
-		F1C6B69427C4EBA700848580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B69227C4EBA700848580 /* Main.storyboard */; };
 		F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */; };
 		F1C6B69927C4EBA800848580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B69827C4EBA800848580 /* Assets.xcassets */; };
 		F1C6B69C27C4EBA800848580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B69A27C4EBA800848580 /* LaunchScreen.storyboard */; };
 		F1C6B6A727C4EBA900848580 /* Valorant_HelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6A627C4EBA900848580 /* Valorant_HelperTests.swift */; };
 		F1C6B6B127C4EBA900848580 /* Valorant_HelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6B027C4EBA900848580 /* Valorant_HelperUITests.swift */; };
 		F1C6B6B327C4EBA900848580 /* Valorant_HelperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6B227C4EBA900848580 /* Valorant_HelperUITestsLaunchTests.swift */; };
+		F1C6B6CA27C4EFAA00848580 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6C927C4EFAA00848580 /* MainTabBar.swift */; };
+		F1C6B6D027C4F07900848580 /* AppAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6CF27C4F07900848580 /* AppAsset.swift */; };
+		F1C6B6D527C4F12000848580 /* AgentsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6D327C4F12000848580 /* AgentsVM.swift */; };
+		F1C6B6D627C4F12000848580 /* AgentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6D427C4F12000848580 /* AgentsVC.swift */; };
+		F1C6B6DE27C4F51E00848580 /* Valorant-Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B6D727C4F51E00848580 /* Valorant-Font.ttf */; };
+		F1C6B6DF27C4F51E00848580 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B6D827C4F51E00848580 /* Oswald-Medium.ttf */; };
+		F1C6B6E027C4F51E00848580 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B6D927C4F51E00848580 /* Oswald-Light.ttf */; };
+		F1C6B6E127C4F51E00848580 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B6DA27C4F51E00848580 /* Oswald-ExtraLight.ttf */; };
+		F1C6B6E227C4F51E00848580 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B6DB27C4F51E00848580 /* Oswald-Regular.ttf */; };
+		F1C6B6E327C4F51E00848580 /* Oswald-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B6DC27C4F51E00848580 /* Oswald-SemiBold.ttf */; };
+		F1C6B6E427C4F51E00848580 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B6DD27C4F51E00848580 /* Oswald-Bold.ttf */; };
+		F1C6B6E627C4F54F00848580 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6E527C4F54F00848580 /* AppColor.swift */; };
+		F1C6B6F527C4F57E00848580 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6E827C4F57E00848580 /* UIView+Extension.swift */; };
+		F1C6B6F627C4F57E00848580 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6E927C4F57E00848580 /* NSMutableAttributedString+Extension.swift */; };
+		F1C6B6F727C4F57E00848580 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6EA27C4F57E00848580 /* String+Extension.swift */; };
+		F1C6B6F827C4F57E00848580 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6EB27C4F57E00848580 /* UIImageView+Extension.swift */; };
+		F1C6B6F927C4F57E00848580 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6EC27C4F57E00848580 /* UITextField+Extension.swift */; };
+		F1C6B6FA27C4F57E00848580 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6ED27C4F57E00848580 /* Date+Extension.swift */; };
+		F1C6B6FC27C4F57E00848580 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6EF27C4F57E00848580 /* UITableView+Extension.swift */; };
+		F1C6B6FD27C4F57E00848580 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6F027C4F57E00848580 /* Double+Extension.swift */; };
+		F1C6B70027C4F57E00848580 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B6F327C4F57E00848580 /* UIColor+Extension.swift */; };
+		F1C6B70227C4F8A500848580 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B70127C4F8A500848580 /* AppFont.swift */; };
+		F1C6B70627C5101A00848580 /* AgentsHeaderViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B70427C5101A00848580 /* AgentsHeaderViewVM.swift */; };
+		F1C6B70727C5101A00848580 /* AgentsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B70527C5101A00848580 /* AgentsHeaderView.swift */; };
+		F1C6B70B27C5114500848580 /* AgentsHeaderViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B70927C5114500848580 /* AgentsHeaderViewCellVM.swift */; };
+		F1C6B70C27C5114500848580 /* AgentsHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B70A27C5114500848580 /* AgentsHeaderViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,11 +74,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBarVM.swift; sourceTree = "<group>"; };
+		F12E3DF727C8B53600A8F511 /* VHNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBar.swift; sourceTree = "<group>"; };
+		F167DC6227C6674200B4DB44 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		F167DC6327C6674200B4DB44 /* AgentsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentsEndpoint.swift; sourceTree = "<group>"; };
+		F167DC6427C6674200B4DB44 /* NetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
+		F167DC6927C66AD700B4DB44 /* AgentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsModel.swift; sourceTree = "<group>"; };
+		F167DC6C27C66E0A00B4DB44 /* AgentsCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsCellVM.swift; sourceTree = "<group>"; };
+		F167DC6D27C66E0A00B4DB44 /* AgentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsCell.swift; sourceTree = "<group>"; };
+		F167DC7127C6701000B4DB44 /* AgentsCellVMFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsCellVMFactory.swift; sourceTree = "<group>"; };
+		F167DC7427C7968A00B4DB44 /* AgentsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsFooterView.swift; sourceTree = "<group>"; };
+		F167DC7A27C7A4DA00B4DB44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F167DC7C27C7A53B00B4DB44 /* ka-GE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ka-GE"; path = "ka-GE.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailVM.swift; sourceTree = "<group>"; };
+		F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailVC.swift; sourceTree = "<group>"; };
 		F1C6B68927C4EBA700848580 /* Valorant Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B68C27C4EBA700848580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F1C6B69027C4EBA700848580 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F1C6B69327C4EBA700848580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1C6B69627C4EBA700848580 /* Valorant_Helper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Valorant_Helper.xcdatamodel; sourceTree = "<group>"; };
 		F1C6B69827C4EBA800848580 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1C6B69B27C4EBA800848580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +100,32 @@
 		F1C6B6AC27C4EBA900848580 /* Valorant HelperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Valorant HelperUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B6B027C4EBA900848580 /* Valorant_HelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valorant_HelperUITests.swift; sourceTree = "<group>"; };
 		F1C6B6B227C4EBA900848580 /* Valorant_HelperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Valorant_HelperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F1C6B6C927C4EFAA00848580 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		F1C6B6CF27C4F07900848580 /* AppAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAsset.swift; sourceTree = "<group>"; };
+		F1C6B6D327C4F12000848580 /* AgentsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsVM.swift; sourceTree = "<group>"; };
+		F1C6B6D427C4F12000848580 /* AgentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsVC.swift; sourceTree = "<group>"; };
+		F1C6B6D727C4F51E00848580 /* Valorant-Font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Valorant-Font.ttf"; sourceTree = "<group>"; };
+		F1C6B6D827C4F51E00848580 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
+		F1C6B6D927C4F51E00848580 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
+		F1C6B6DA27C4F51E00848580 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
+		F1C6B6DB27C4F51E00848580 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
+		F1C6B6DC27C4F51E00848580 /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
+		F1C6B6DD27C4F51E00848580 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
+		F1C6B6E527C4F54F00848580 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		F1C6B6E827C4F57E00848580 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B6E927C4F57E00848580 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B6EA27C4F57E00848580 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B6EB27C4F57E00848580 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B6EC27C4F57E00848580 /* UITextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B6ED27C4F57E00848580 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B6EF27C4F57E00848580 /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B6F027C4F57E00848580 /* Double+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B6F327C4F57E00848580 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		F1C6B70127C4F8A500848580 /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		F1C6B70427C5101A00848580 /* AgentsHeaderViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsHeaderViewVM.swift; sourceTree = "<group>"; };
+		F1C6B70527C5101A00848580 /* AgentsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsHeaderView.swift; sourceTree = "<group>"; };
+		F1C6B70927C5114500848580 /* AgentsHeaderViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsHeaderViewCellVM.swift; sourceTree = "<group>"; };
+		F1C6B70A27C5114500848580 /* AgentsHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsHeaderViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +153,83 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F12E3DF427C8B4D400A8F511 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				F12E3DF527C8B50F00A8F511 /* VHNavBar */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		F12E3DF527C8B50F00A8F511 /* VHNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */,
+				F12E3DF727C8B53600A8F511 /* VHNavBar.swift */,
+			);
+			path = VHNavBar;
+			sourceTree = "<group>";
+		};
+		F167DC6127C666DA00B4DB44 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC6327C6674200B4DB44 /* AgentsEndpoint.swift */,
+				F167DC6227C6674200B4DB44 /* Endpoint.swift */,
+				F167DC6427C6674200B4DB44 /* NetworkEngine.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F167DC6827C66ABC00B4DB44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC6927C66AD700B4DB44 /* AgentsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F167DC6B27C66DEF00B4DB44 /* AgentsCell */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC6C27C66E0A00B4DB44 /* AgentsCellVM.swift */,
+				F167DC6D27C66E0A00B4DB44 /* AgentsCell.swift */,
+			);
+			path = AgentsCell;
+			sourceTree = "<group>";
+		};
+		F167DC7027C66FF800B4DB44 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC7127C6701000B4DB44 /* AgentsCellVMFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		F167DC7327C7965000B4DB44 /* AgentsFooterView */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC7427C7968A00B4DB44 /* AgentsFooterView.swift */,
+			);
+			path = AgentsFooterView;
+			sourceTree = "<group>";
+		};
+		F167DC7627C7A30D00B4DB44 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC7B27C7A4DA00B4DB44 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		F167DC7D27C7BB5500B4DB44 /* AgentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */,
+				F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */,
+			);
+			path = AgentDetail;
+			sourceTree = "<group>";
+		};
 		F1C6B68027C4EBA700848580 = {
 			isa = PBXGroup;
 			children = (
@@ -101,14 +253,13 @@
 		F1C6B68B27C4EBA700848580 /* Valorant Helper */ = {
 			isa = PBXGroup;
 			children = (
-				F1C6B68C27C4EBA700848580 /* AppDelegate.swift */,
-				F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */,
-				F1C6B69027C4EBA700848580 /* ViewController.swift */,
-				F1C6B69227C4EBA700848580 /* Main.storyboard */,
-				F1C6B69827C4EBA800848580 /* Assets.xcassets */,
-				F1C6B69A27C4EBA800848580 /* LaunchScreen.storyboard */,
-				F1C6B69D27C4EBA800848580 /* Info.plist */,
-				F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */,
+				F1C6B6BF27C4EC5200848580 /* App */,
+				F1C6B6C527C4ECC100848580 /* Resources */,
+				F167DC7627C7A30D00B4DB44 /* Localizable */,
+				F1C6B6C327C4EC6800848580 /* Infrastructure */,
+				F1C6B6C027C4EC5600848580 /* Presentation */,
+				F12E3DF427C8B4D400A8F511 /* CustomElements */,
+				F1C6B6C427C4EC8E00848580 /* SupportingFiles */,
 			);
 			path = "Valorant Helper";
 			sourceTree = "<group>";
@@ -128,6 +279,183 @@
 				F1C6B6B227C4EBA900848580 /* Valorant_HelperUITestsLaunchTests.swift */,
 			);
 			path = "Valorant HelperUITests";
+			sourceTree = "<group>";
+		};
+		F1C6B6BF27C4EC5200848580 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B68C27C4EBA700848580 /* AppDelegate.swift */,
+				F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F1C6B6C027C4EC5600848580 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B6C227C4EC6100848580 /* Launch */,
+				F1C6B6C127C4EC5D00848580 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		F1C6B6C127C4EC5D00848580 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B6D127C4F0DC00848580 /* AgentsFLOW */,
+				F1C6B6C827C4EF6900848580 /* MainTabBar */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F1C6B6C227C4EC6100848580 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B69A27C4EBA800848580 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		F1C6B6C327C4EC6800848580 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC7027C66FF800B4DB44 /* Factory */,
+				F167DC6827C66ABC00B4DB44 /* Model */,
+				F167DC6127C666DA00B4DB44 /* Network */,
+				F1C6B6CD27C4F05200848580 /* AppColor */,
+				F1C6B6CC27C4F04400848580 /* AppFont */,
+				F1C6B6CB27C4F03E00848580 /* AppAsset */,
+				F1C6B6CE27C4F06100848580 /* Extensions */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		F1C6B6C427C4EC8E00848580 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B69D27C4EBA800848580 /* Info.plist */,
+				F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		F1C6B6C527C4ECC100848580 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B6C727C4ECD500848580 /* Fonts */,
+				F1C6B6C627C4ECCD00848580 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F1C6B6C627C4ECCD00848580 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B69827C4EBA800848580 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		F1C6B6C727C4ECD500848580 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B6DD27C4F51E00848580 /* Oswald-Bold.ttf */,
+				F1C6B6DA27C4F51E00848580 /* Oswald-ExtraLight.ttf */,
+				F1C6B6D927C4F51E00848580 /* Oswald-Light.ttf */,
+				F1C6B6D827C4F51E00848580 /* Oswald-Medium.ttf */,
+				F1C6B6DB27C4F51E00848580 /* Oswald-Regular.ttf */,
+				F1C6B6DC27C4F51E00848580 /* Oswald-SemiBold.ttf */,
+				F1C6B6D727C4F51E00848580 /* Valorant-Font.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F1C6B6C827C4EF6900848580 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B6C927C4EFAA00848580 /* MainTabBar.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		F1C6B6CB27C4F03E00848580 /* AppAsset */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B6CF27C4F07900848580 /* AppAsset.swift */,
+			);
+			path = AppAsset;
+			sourceTree = "<group>";
+		};
+		F1C6B6CC27C4F04400848580 /* AppFont */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B70127C4F8A500848580 /* AppFont.swift */,
+			);
+			path = AppFont;
+			sourceTree = "<group>";
+		};
+		F1C6B6CD27C4F05200848580 /* AppColor */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B6E527C4F54F00848580 /* AppColor.swift */,
+			);
+			path = AppColor;
+			sourceTree = "<group>";
+		};
+		F1C6B6CE27C4F06100848580 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B6ED27C4F57E00848580 /* Date+Extension.swift */,
+				F1C6B6F027C4F57E00848580 /* Double+Extension.swift */,
+				F1C6B6E927C4F57E00848580 /* NSMutableAttributedString+Extension.swift */,
+				F1C6B6EA27C4F57E00848580 /* String+Extension.swift */,
+				F1C6B6F327C4F57E00848580 /* UIColor+Extension.swift */,
+				F1C6B6EB27C4F57E00848580 /* UIImageView+Extension.swift */,
+				F1C6B6EF27C4F57E00848580 /* UITableView+Extension.swift */,
+				F1C6B6EC27C4F57E00848580 /* UITextField+Extension.swift */,
+				F1C6B6E827C4F57E00848580 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1C6B6D127C4F0DC00848580 /* AgentsFLOW */ = {
+			isa = PBXGroup;
+			children = (
+				F167DC7D27C7BB5500B4DB44 /* AgentDetail */,
+				F1C6B6D227C4F10700848580 /* Agents */,
+			);
+			path = AgentsFLOW;
+			sourceTree = "<group>";
+		};
+		F1C6B6D227C4F10700848580 /* Agents */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B70327C50FEF00848580 /* AgentsHeaderView */,
+				F167DC6B27C66DEF00B4DB44 /* AgentsCell */,
+				F167DC7327C7965000B4DB44 /* AgentsFooterView */,
+				F1C6B6D327C4F12000848580 /* AgentsVM.swift */,
+				F1C6B6D427C4F12000848580 /* AgentsVC.swift */,
+			);
+			path = Agents;
+			sourceTree = "<group>";
+		};
+		F1C6B70327C50FEF00848580 /* AgentsHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B70827C5113100848580 /* AgentsHeaderViewCell */,
+				F1C6B70427C5101A00848580 /* AgentsHeaderViewVM.swift */,
+				F1C6B70527C5101A00848580 /* AgentsHeaderView.swift */,
+			);
+			path = AgentsHeaderView;
+			sourceTree = "<group>";
+		};
+		F1C6B70827C5113100848580 /* AgentsHeaderViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1C6B70927C5114500848580 /* AgentsHeaderViewCellVM.swift */,
+				F1C6B70A27C5114500848580 /* AgentsHeaderViewCell.swift */,
+			);
+			path = AgentsHeaderViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,12 +538,13 @@
 				};
 			};
 			buildConfigurationList = F1C6B68427C4EBA700848580 /* Build configuration list for PBXProject "Valorant Helper" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"ka-GE",
 			);
 			mainGroup = F1C6B68027C4EBA700848580;
 			productRefGroup = F1C6B68A27C4EBA700848580 /* Products */;
@@ -235,8 +564,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C6B69C27C4EBA800848580 /* LaunchScreen.storyboard in Resources */,
+				F1C6B6E427C4F51E00848580 /* Oswald-Bold.ttf in Resources */,
 				F1C6B69927C4EBA800848580 /* Assets.xcassets in Resources */,
-				F1C6B69427C4EBA700848580 /* Main.storyboard in Resources */,
+				F1C6B6DF27C4F51E00848580 /* Oswald-Medium.ttf in Resources */,
+				F1C6B6E127C4F51E00848580 /* Oswald-ExtraLight.ttf in Resources */,
+				F167DC7927C7A4DA00B4DB44 /* Localizable.strings in Resources */,
+				F1C6B6E327C4F51E00848580 /* Oswald-SemiBold.ttf in Resources */,
+				F1C6B6E027C4F51E00848580 /* Oswald-Light.ttf in Resources */,
+				F1C6B6DE27C4F51E00848580 /* Valorant-Font.ttf in Resources */,
+				F1C6B6E227C4F51E00848580 /* Oswald-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +597,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1C6B69127C4EBA700848580 /* ViewController.swift in Sources */,
+				F1C6B6F927C4F57E00848580 /* UITextField+Extension.swift in Sources */,
+				F1C6B6F527C4F57E00848580 /* UIView+Extension.swift in Sources */,
+				F1C6B70227C4F8A500848580 /* AppFont.swift in Sources */,
+				F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */,
+				F1C6B70727C5101A00848580 /* AgentsHeaderView.swift in Sources */,
+				F1C6B70027C4F57E00848580 /* UIColor+Extension.swift in Sources */,
+				F1C6B6F827C4F57E00848580 /* UIImageView+Extension.swift in Sources */,
+				F1C6B6F627C4F57E00848580 /* NSMutableAttributedString+Extension.swift in Sources */,
+				F167DC7527C7968A00B4DB44 /* AgentsFooterView.swift in Sources */,
+				F167DC6A27C66AD700B4DB44 /* AgentsModel.swift in Sources */,
+				F167DC8127C7BE3600B4DB44 /* AgentDetailVC.swift in Sources */,
+				F167DC8027C7BE3600B4DB44 /* AgentDetailVM.swift in Sources */,
+				F167DC6627C6674200B4DB44 /* AgentsEndpoint.swift in Sources */,
+				F1C6B6FA27C4F57E00848580 /* Date+Extension.swift in Sources */,
+				F1C6B70627C5101A00848580 /* AgentsHeaderViewVM.swift in Sources */,
 				F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */,
+				F167DC6727C6674200B4DB44 /* NetworkEngine.swift in Sources */,
+				F1C6B6D027C4F07900848580 /* AppAsset.swift in Sources */,
+				F1C6B70B27C5114500848580 /* AgentsHeaderViewCellVM.swift in Sources */,
+				F1C6B6D527C4F12000848580 /* AgentsVM.swift in Sources */,
+				F167DC6E27C66E0A00B4DB44 /* AgentsCellVM.swift in Sources */,
+				F1C6B6F727C4F57E00848580 /* String+Extension.swift in Sources */,
+				F1C6B6D627C4F12000848580 /* AgentsVC.swift in Sources */,
+				F167DC7227C6701000B4DB44 /* AgentsCellVMFactory.swift in Sources */,
+				F1C6B6FD27C4F57E00848580 /* Double+Extension.swift in Sources */,
+				F1C6B6FC27C4F57E00848580 /* UITableView+Extension.swift in Sources */,
+				F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */,
 				F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */,
+				F1C6B6CA27C4EFAA00848580 /* MainTabBar.swift in Sources */,
 				F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */,
+				F167DC6F27C66E0A00B4DB44 /* AgentsCell.swift in Sources */,
+				F1C6B6E627C4F54F00848580 /* AppColor.swift in Sources */,
+				F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */,
+				F1C6B70C27C5114500848580 /* AgentsHeaderViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,12 +667,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F1C6B69227C4EBA700848580 /* Main.storyboard */ = {
+		F167DC7B27C7A4DA00B4DB44 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F1C6B69327C4EBA700848580 /* Base */,
+				F167DC7A27C7A4DA00B4DB44 /* en */,
+				F167DC7C27C7A53B00B4DB44 /* ka-GE */,
 			);
-			name = Main.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		F1C6B69A27C4EBA800848580 /* LaunchScreen.storyboard */ = {
@@ -324,6 +691,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -371,7 +739,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -385,6 +753,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -426,7 +795,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -445,12 +814,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F6YDGXZ9YY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Valorant Helper/Info.plist";
+				INFOPLIST_FILE = "Valorant Helper/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,12 +842,12 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F6YDGXZ9YY;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Valorant Helper/Info.plist";
+				INFOPLIST_FILE = "Valorant Helper/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
