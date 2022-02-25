@@ -17,4 +17,12 @@ class AppAsset {
         UIImage(named: "tab_bar_agents_not_selected")
     }
     
+    static var logoValorantHelper: UIImage? {
+        UIImage(named: "logo_valorant_helper")
+    }
+    
+    static var iconBackButton: UIImage? {
+        UIImage(named: "icon_back_button")
+    }
+    
 }

@@ -4,7 +4,7 @@ class AgentDetailVC: UIViewController {
     
     //MARK: - Views
 
-    // Your Views Here
+    let navBar = VHNavBar()
 
     //MARK: - Variables
 
@@ -15,8 +15,10 @@ class AgentDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
+        view.backgroundColor = AppColor.darkBlack.color
         buildSubviews()
+        setupGestures()
+        configureNavBar()
     }
     
     override func viewWillLayoutSubviews() {
@@ -28,23 +30,45 @@ class AgentDetailVC: UIViewController {
     //MARK: - Build
 
     private func buildSubviews() {
-
+        view.addSubview(navBar)
     }
 
     private func buildConstraints() {
 
+        NSLayoutConstraint.activate([
+        
+            navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top),
+            navBar.leftAnchor.constraint(equalTo: view.leftAnchor),
+            navBar.rightAnchor.constraint(equalTo: view.rightAnchor)
+        
+        ])
+        
     }
 
     //MARK: - Setup
 
-    // Your Setup Methods Here
+    private func setupGestures() {
+        
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
+        view.addGestureRecognizer(edgePan)
+        
+    }
 
     //MARK: - Configure
 
-    // Your Configure Methods Here
+    private func configureNavBar() {
+        navBar.configure(with: VHNavBarVM(leftAction: { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        }))
+    }
 
     //MARK: - Actions
 
-    // Your Actions Here
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            navigationController?.popViewController(animated: true)
+        }
+    }
     
 }
