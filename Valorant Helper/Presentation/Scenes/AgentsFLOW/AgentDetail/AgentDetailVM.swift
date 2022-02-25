@@ -1,13 +1,20 @@
 import Foundation
 import Combine
 
-class AgentDetailVM {
+protocol AgentDetailVMProtocol {
+    var item: SingleAgentModel? { get set }
+    var itemSubject: PassthroughSubject<Bool, Never> { get set }
+    init(agentID: String)
+    func getItem()
+}
+
+class AgentDetailVM: AgentDetailVMProtocol {
     
     let agentID: String
     var item: SingleAgentModel?
     var itemSubject = PassthroughSubject<Bool, Never>()
     
-    init(agentID: String) {
+    required init(agentID: String) {
         self.agentID = agentID
     }
     

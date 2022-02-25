@@ -10,6 +10,8 @@
 		F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */; };
 		F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF727C8B53600A8F511 /* VHNavBar.swift */; };
 		F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */; };
+		F12E3DFF27C9057400A8F511 /* AgentAbilityViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFD27C9057400A8F511 /* AgentAbilityViewVM.swift */; };
+		F12E3E0027C9057400A8F511 /* AgentAbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFE27C9057400A8F511 /* AgentAbilityView.swift */; };
 		F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6227C6674200B4DB44 /* Endpoint.swift */; };
 		F167DC6627C6674200B4DB44 /* AgentsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6327C6674200B4DB44 /* AgentsEndpoint.swift */; };
 		F167DC6727C6674200B4DB44 /* NetworkEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6427C6674200B4DB44 /* NetworkEngine.swift */; };
@@ -78,6 +80,8 @@
 		F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBarVM.swift; sourceTree = "<group>"; };
 		F12E3DF727C8B53600A8F511 /* VHNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBar.swift; sourceTree = "<group>"; };
 		F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgentModel.swift; sourceTree = "<group>"; };
+		F12E3DFD27C9057400A8F511 /* AgentAbilityViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentAbilityViewVM.swift; sourceTree = "<group>"; };
+		F12E3DFE27C9057400A8F511 /* AgentAbilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentAbilityView.swift; sourceTree = "<group>"; };
 		F167DC6227C6674200B4DB44 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		F167DC6327C6674200B4DB44 /* AgentsEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentsEndpoint.swift; sourceTree = "<group>"; };
 		F167DC6427C6674200B4DB44 /* NetworkEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkEngine.swift; sourceTree = "<group>"; };
@@ -172,6 +176,15 @@
 			path = VHNavBar;
 			sourceTree = "<group>";
 		};
+		F12E3DFC27C9055600A8F511 /* AgentAbilityView */ = {
+			isa = PBXGroup;
+			children = (
+				F12E3DFD27C9057400A8F511 /* AgentAbilityViewVM.swift */,
+				F12E3DFE27C9057400A8F511 /* AgentAbilityView.swift */,
+			);
+			path = AgentAbilityView;
+			sourceTree = "<group>";
+		};
 		F167DC6127C666DA00B4DB44 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +240,7 @@
 		F167DC7D27C7BB5500B4DB44 /* AgentDetail */ = {
 			isa = PBXGroup;
 			children = (
+				F12E3DFC27C9055600A8F511 /* AgentAbilityView */,
 				F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */,
 				F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */,
 			);
@@ -605,7 +619,9 @@
 				F1C6B70227C4F8A500848580 /* AppFont.swift in Sources */,
 				F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */,
 				F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */,
+				F12E3E0027C9057400A8F511 /* AgentAbilityView.swift in Sources */,
 				F1C6B70727C5101A00848580 /* AgentsHeaderView.swift in Sources */,
+				F12E3DFF27C9057400A8F511 /* AgentAbilityViewVM.swift in Sources */,
 				F1C6B70027C4F57E00848580 /* UIColor+Extension.swift in Sources */,
 				F1C6B6F827C4F57E00848580 /* UIImageView+Extension.swift in Sources */,
 				F1C6B6F627C4F57E00848580 /* NSMutableAttributedString+Extension.swift in Sources */,

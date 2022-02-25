@@ -16,11 +16,115 @@ class AgentDetailVC: UIViewController {
         return scrollView
     }()
     
+    let backgroundImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
     
+    let coverImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    let nameLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.lightWhite.color
+        label.font = AppFont.getVALORANT(ofSize: 24)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let roleTagLabel: UILabel = {
+        let label = UILabel()
+        label.text = "//ROLE".localized()
+        label.textColor = AppColor.darkWhite.color
+        label.font = AppFont.getLight(ofSize: 10)
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let roleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.lightWhite.color
+        label.font = AppFont.getMedium(ofSize: 18)
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let roleImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    let roleDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.lightWhite.color
+        label.font = AppFont.getRegular(ofSize: 14)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let biographyTagLabel: UILabel = {
+        let label = UILabel()
+        label.text = "//BIOGRAPHY".localized()
+        label.textColor = AppColor.darkWhite.color
+        label.font = AppFont.getLight(ofSize: 10)
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let biographyDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = AppColor.lightWhite.color
+        label.font = AppFont.getRegular(ofSize: 14)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let specialAbilitiesLabel: UILabel = {
+        let label = UILabel()
+        label.text = "SPECIAL ABILITIES".localized()
+        label.textColor = AppColor.lightWhite.color
+        label.font = AppFont.getSemiBold(ofSize: 18)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
 
     //MARK: - Variables
 
-    var viewModel: AgentDetailVM?
+    var viewModel: AgentDetailVMProtocol?
     var cancellableList: Set<AnyCancellable> = []
 
     //MARK: - LifeCycle
@@ -45,6 +149,18 @@ class AgentDetailVC: UIViewController {
 
     private func buildSubviews() {
         view.addSubview(navBar)
+        view.addSubview(scrollView)
+        scrollView.addSubview(backgroundImage)
+        scrollView.addSubview(coverImage)
+        scrollView.addSubview(nameLabel)
+        scrollView.addSubview(roleTagLabel)
+        scrollView.addSubview(roleLabel)
+        scrollView.addSubview(roleImage)
+        scrollView.addSubview(roleDescriptionLabel)
+        scrollView.addSubview(biographyTagLabel)
+        scrollView.addSubview(biographyDescriptionLabel)
+        scrollView.addSubview(specialAbilitiesLabel)
+        scrollView.addSubview(stackView)
     }
 
     private func buildConstraints() {
@@ -53,8 +169,63 @@ class AgentDetailVC: UIViewController {
         
             navBar.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top),
             navBar.leftAnchor.constraint(equalTo: view.leftAnchor),
-            navBar.rightAnchor.constraint(equalTo: view.rightAnchor)
+            navBar.rightAnchor.constraint(equalTo: view.rightAnchor),
+            
+            scrollView.topAnchor.constraint(equalTo: navBar.bottomAnchor),
+            scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom),
+            
+            backgroundImage.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            backgroundImage.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            backgroundImage.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            backgroundImage.widthAnchor.constraint(equalToConstant: view.frame.width),
+            backgroundImage.heightAnchor.constraint(equalToConstant: 300),
+            
+            coverImage.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            coverImage.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            coverImage.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            coverImage.widthAnchor.constraint(equalToConstant: view.frame.width),
+            coverImage.heightAnchor.constraint(equalToConstant: 300),
+            
+            nameLabel.topAnchor.constraint(equalTo: coverImage.bottomAnchor, constant: 20),
+            nameLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
+            nameLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            
+            roleTagLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
+            roleTagLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
+            roleTagLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
         
+            roleLabel.topAnchor.constraint(equalTo: roleTagLabel.bottomAnchor, constant: 5),
+            roleLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
+            roleLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            
+            roleImage.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            roleImage.centerYAnchor.constraint(equalTo: roleLabel.centerYAnchor),
+            roleImage.widthAnchor.constraint(equalToConstant: 15),
+            roleImage.heightAnchor.constraint(equalToConstant: 15),
+            
+            roleDescriptionLabel.topAnchor.constraint(equalTo: roleLabel.bottomAnchor, constant: 5),
+            roleDescriptionLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
+            roleDescriptionLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            
+            biographyTagLabel.topAnchor.constraint(equalTo: roleDescriptionLabel.bottomAnchor, constant: 10),
+            biographyTagLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
+            biographyTagLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            
+            biographyDescriptionLabel.topAnchor.constraint(equalTo: biographyTagLabel.bottomAnchor, constant: 5),
+            biographyDescriptionLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
+            biographyDescriptionLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            
+            specialAbilitiesLabel.topAnchor.constraint(equalTo: biographyDescriptionLabel.bottomAnchor, constant: 20),
+            specialAbilitiesLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
+            specialAbilitiesLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            
+            stackView.topAnchor.constraint(equalTo: specialAbilitiesLabel.bottomAnchor, constant: 10),
+            stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
+            stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -60)
+            
         ])
         
     }
@@ -66,6 +237,11 @@ class AgentDetailVC: UIViewController {
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
         edgePan.edges = .left
         view.addGestureRecognizer(edgePan)
+        
+        let swipeGes = UISwipeGestureRecognizer(target: self, action: #selector(screenSwiped))
+        swipeGes.direction = .right
+        scrollView.isUserInteractionEnabled = true
+        scrollView.addGestureRecognizer(swipeGes)
         
     }
     
@@ -80,9 +256,23 @@ class AgentDetailVC: UIViewController {
     
     func setupView() {
         
-        guard let viewModel = viewModel else { return }
+        guard let item = viewModel?.item else { return }
         
+        backgroundImage.loadImageFromURL(urlString: item.background ?? "")
+        coverImage.loadImageFromURL(urlString: item.fullPortrait ?? "")
+        nameLabel.text = item.displayName
+        roleLabel.text = item.role?.displayName
+        roleImage.loadImageFromURL(urlString: item.role?.displayIcon ?? "")
+        roleDescriptionLabel.text = item.role?.description
+        biographyDescriptionLabel.text = item.description
         
+        if let abilities = item.abilities {
+            for ability in abilities {
+                let abilityView = AgentAbilityView()
+                abilityView.configure(with: AgentAbilityViewVM(item: ability))
+                stackView.addArrangedSubview(abilityView)
+            }
+        }
         
     }
 
@@ -98,6 +288,12 @@ class AgentDetailVC: UIViewController {
 
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
         if recognizer.state == .recognized {
+            navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    @objc func screenSwiped(_ recognizer: UISwipeGestureRecognizer) {
+        if recognizer.state == .ended {
             navigationController?.popViewController(animated: true)
         }
     }

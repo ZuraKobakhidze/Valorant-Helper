@@ -14,11 +14,11 @@ struct SingleAgentModelList: Codable {
 struct SingleAgentModel: Codable {
     let uuid: String?
     let displayName: String?
-    let bustPortrait: String?
+    let description: String?
+    let fullPortrait: String?
     let background: String?
-    let isPlayableCharacter: Bool?
     let role: SingleAgentRoleModel?
-    let abilities: [SingleAgentAbilitie?]?
+    let abilities: [SingleAgentAbility?]?
 }
 
 struct SingleAgentRoleModel: Codable {
@@ -27,7 +27,7 @@ struct SingleAgentRoleModel: Codable {
     let displayIcon: String?
 }
 
-struct SingleAgentAbilitie: Codable {
+struct SingleAgentAbility: Codable {
     let displayName: String?
     let description: String?
     let displayIcon: String?
