@@ -21,6 +21,13 @@ class LineUpsVC: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
+    
+    let footerView: UIView = {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 60))
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     //MARK: - Variables
 
@@ -34,6 +41,7 @@ class LineUpsVC: UIViewController {
 
         view.backgroundColor = AppColor.darkBlack.color
         tableView.register(LineUpsCell.self, forCellReuseIdentifier: LineUpsCell.reusableIdentifer)
+        tableView.tableFooterView = footerView
         buildSubviews()
         setupHeaderView()
         setupViewModel()
@@ -43,6 +51,12 @@ class LineUpsVC: UIViewController {
         super.viewWillLayoutSubviews()
         
         buildConstraints()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        tableView.layoutFooter()
     }
 
     //MARK: - Build
@@ -114,6 +128,17 @@ extension LineUpsVC: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: LineUpsCell.reusableIdentifer) as! LineUpsCell
         cell.configure(with: viewModel.itemList?[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+        cell.transform = CGAffineTransform(translationX: -view.frame.width, y: 0)
+        
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseOut) {
+            cell.alpha = 1
+            cell.transform = CGAffineTransform.identity
+        }
+
     }
     
 }
