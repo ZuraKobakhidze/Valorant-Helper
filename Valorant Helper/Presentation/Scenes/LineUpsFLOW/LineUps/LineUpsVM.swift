@@ -1,5 +1,46 @@
 import Foundation
+import Combine
 
-struct LineUpsVM {
-    // Your Properties Goes Here 
+protocol LineUpsVMProtocol {
+    var itemList: [LineUpsModel?]? { get set }
+    var fullItemList: [LineUpsModel?]? { get set }
+    var itemSubject: PassthroughSubject<Bool, Never> { get set }
+    func getAllItems()
+    func filterItemList(by agentType: AgentsDataType)
+}
+
+class LineUpsVM: LineUpsVMProtocol {
+    
+    var itemList: [LineUpsModel?]? = [LineUpsModel]()
+    var fullItemList: [LineUpsModel?]? = [LineUpsModel]()
+    var itemSubject = PassthroughSubject<Bool, Never>()
+    
+    func getAllItems() {
+        
+        NetworkEngine.shared.request(endPoint: LineUpsEndpoint.getAllAgent) { [weak self] (result: Result<LineUpsModelList, Error>) in
+            switch result {
+                case .success(let success):
+                    self?.fullItemList = success.data?.filter { $0?.isPlayableCharacter != false }
+                    self?.itemList = self?.fullItemList
+                    self?.itemSubject.send(true)
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
+        }
+        
+    }
+    
+    func filterItemList(by agentType: AgentsDataType) {
+        
+        switch agentType {
+            case .all:
+                itemList = fullItemList
+                itemSubject.send(true)
+            default:
+                itemList = fullItemList?.filter { $0?.role?.displayName?.uppercased() == agentType.rawValue }
+                itemSubject.send(true)
+        }
+        
+    }
+    
 }

@@ -19,6 +19,14 @@ class MainTabBar: UITabBarController {
         return nav
     }()
     
+    let lineUpsVC: UIViewController = {
+        let vc = LineUpsVC()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.title = "LINE-UPS".localized()
+        nav.isNavigationBarHidden = true
+        return nav
+    }()
+    
     //MARK: - Views
     
     lazy var topLineView: UIView = {
@@ -29,16 +37,18 @@ class MainTabBar: UITabBarController {
     
     //MARK: - Variables
     
-    let viewControllerCount = 1
+    let viewControllerCount = 2
     
     //MARK: - Images
     
     let tabBarSelectedImages = [
-        AppAsset.tabBarAgentsSelected
+        AppAsset.tabBarAgentsSelected,
+        AppAsset.tabBarLineUpsSelected,
     ]
     
     let tabBarUnselectedImages = [
-        AppAsset.tabBarAgentsNotSelected
+        AppAsset.tabBarAgentsNotSelected,
+        AppAsset.tabBarLineUpsNotSelected
     ]
     
     //MARK: - LifeCycle
@@ -55,7 +65,7 @@ class MainTabBar: UITabBarController {
     
     private func setupTabBarItems() {
 
-        self.setViewControllers([agentsVC], animated: false)
+        self.setViewControllers([agentsVC, lineUpsVC], animated: false)
         setupTabBarTitles()
         setupTabBarImages()
         

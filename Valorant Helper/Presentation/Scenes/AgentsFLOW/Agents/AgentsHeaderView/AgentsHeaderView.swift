@@ -82,6 +82,8 @@ class AgentsHeaderView: UIView {
     
 }
 
+    //MARK: - DataSource & Delegate
+
 extension AgentsHeaderView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

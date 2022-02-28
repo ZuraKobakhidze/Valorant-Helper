@@ -9,6 +9,8 @@ import UIKit
 
 class AppAsset {
     
+    //MARK: - TabBar
+    
     static var tabBarAgentsSelected: UIImage? {
         UIImage(named: "tab_bar_agents_selected")
     }
@@ -17,12 +19,28 @@ class AppAsset {
         UIImage(named: "tab_bar_agents_not_selected")
     }
     
+    static var tabBarLineUpsSelected: UIImage? {
+        UIImage(named: "tab_bar_lineups_selected")
+    }
+    
+    static var tabBarLineUpsNotSelected: UIImage? {
+        UIImage(named: "tab_bar_lineups_not_selected")
+    }
+    
+    //MARK: - Logo
+    
     static var logoValorantHelper: UIImage? {
         UIImage(named: "logo_valorant_helper")
     }
     
+    //MARK: - Icon
+    
     static var iconBackButton: UIImage? {
         UIImage(named: "icon_back_button")
+    }
+    
+    static var iconRightArrow: UIImage? {
+        UIImage(named: "icon_right_arrow")
     }
     
 }
