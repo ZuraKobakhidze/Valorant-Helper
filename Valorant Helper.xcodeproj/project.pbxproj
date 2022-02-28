@@ -23,6 +23,8 @@
 		F167DC7927C7A4DA00B4DB44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F167DC7B27C7A4DA00B4DB44 /* Localizable.strings */; };
 		F167DC8027C7BE3600B4DB44 /* AgentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */; };
 		F167DC8127C7BE3600B4DB44 /* AgentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */; };
+		F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610327CCD9C100F13D92 /* LineUpsVM.swift */; };
+		F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610427CCD9C100F13D92 /* LineUpsVC.swift */; };
 		F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68C27C4EBA700848580 /* AppDelegate.swift */; };
 		F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */; };
 		F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */; };
@@ -94,6 +96,8 @@
 		F167DC7C27C7A53B00B4DB44 /* ka-GE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ka-GE"; path = "ka-GE.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailVM.swift; sourceTree = "<group>"; };
 		F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailVC.swift; sourceTree = "<group>"; };
+		F19E610327CCD9C100F13D92 /* LineUpsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVM.swift; sourceTree = "<group>"; };
+		F19E610427CCD9C100F13D92 /* LineUpsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVC.swift; sourceTree = "<group>"; };
 		F1C6B68927C4EBA700848580 /* Valorant Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B68C27C4EBA700848580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +251,23 @@
 			path = AgentDetail;
 			sourceTree = "<group>";
 		};
+		F19E610127CCD99100F13D92 /* LineUpsFLOW */ = {
+			isa = PBXGroup;
+			children = (
+				F19E610227CCD99D00F13D92 /* LineUps */,
+			);
+			path = LineUpsFLOW;
+			sourceTree = "<group>";
+		};
+		F19E610227CCD99D00F13D92 /* LineUps */ = {
+			isa = PBXGroup;
+			children = (
+				F19E610327CCD9C100F13D92 /* LineUpsVM.swift */,
+				F19E610427CCD9C100F13D92 /* LineUpsVC.swift */,
+			);
+			path = LineUps;
+			sourceTree = "<group>";
+		};
 		F1C6B68027C4EBA700848580 = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +340,7 @@
 		F1C6B6C127C4EC5D00848580 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F19E610127CCD99100F13D92 /* LineUpsFLOW */,
 				F1C6B6D127C4F0DC00848580 /* AgentsFLOW */,
 				F1C6B6C827C4EF6900848580 /* MainTabBar */,
 			);
@@ -619,6 +641,7 @@
 				F1C6B70227C4F8A500848580 /* AppFont.swift in Sources */,
 				F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */,
 				F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */,
+				F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */,
 				F12E3E0027C9057400A8F511 /* AgentAbilityView.swift in Sources */,
 				F1C6B70727C5101A00848580 /* AgentsHeaderView.swift in Sources */,
 				F12E3DFF27C9057400A8F511 /* AgentAbilityViewVM.swift in Sources */,
@@ -641,6 +664,7 @@
 				F1C6B6F727C4F57E00848580 /* String+Extension.swift in Sources */,
 				F1C6B6D627C4F12000848580 /* AgentsVC.swift in Sources */,
 				F167DC7227C6701000B4DB44 /* AgentsCellVMFactory.swift in Sources */,
+				F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */,
 				F1C6B6FD27C4F57E00848580 /* Double+Extension.swift in Sources */,
 				F1C6B6FC27C4F57E00848580 /* UITableView+Extension.swift in Sources */,
 				F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */,
