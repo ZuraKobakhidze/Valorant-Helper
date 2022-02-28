@@ -21,6 +21,7 @@ class AgentsHeaderViewVM: AgentsHeaderViewVMProtocol {
     var itemSubject = PassthroughSubject<AgentsDataType, Never>()
     
     func changeItemListIsOn(on index: IndexPath) {
+        if itemList[index.row].isOn == true { return }
         for i in 0..<itemList.count {
             if itemList[i].isOn == true {
                 itemList[i].isOn = false
