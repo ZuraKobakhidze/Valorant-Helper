@@ -2,9 +2,9 @@ import Foundation
 import Combine
 
 protocol LineUpsVMProtocol {
-    var itemList: [LineUpsModel?]? { get set }
-    var fullItemList: [LineUpsModel?]? { get set }
-    var itemSubject: PassthroughSubject<Bool, Never> { get set }
+    var itemList: [LineUpsModel?]? { get }
+    var fullItemList: [LineUpsModel?]? { get }
+    var itemSubject: PassthroughSubject<Bool, Never> { get }
     func getAllItems()
     func filterItemList(by agentType: AgentsDataType)
 }

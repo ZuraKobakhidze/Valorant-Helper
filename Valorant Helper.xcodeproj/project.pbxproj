@@ -25,6 +25,8 @@
 		F167DC7927C7A4DA00B4DB44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F167DC7B27C7A4DA00B4DB44 /* Localizable.strings */; };
 		F167DC8027C7BE3600B4DB44 /* AgentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */; };
 		F167DC8127C7BE3600B4DB44 /* AgentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */; };
+		F18B52F727CE356000E7CBD4 /* LineUpsMapsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B52F527CE356000E7CBD4 /* LineUpsMapsVM.swift */; };
+		F18B52F827CE356000E7CBD4 /* LineUpsMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B52F627CE356000E7CBD4 /* LineUpsMapsVC.swift */; };
 		F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610327CCD9C100F13D92 /* LineUpsVM.swift */; };
 		F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610427CCD9C100F13D92 /* LineUpsVC.swift */; };
 		F19E610B27CCE72800F13D92 /* LineUpsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610927CCE72800F13D92 /* LineUpsCell.swift */; };
@@ -101,6 +103,8 @@
 		F167DC7C27C7A53B00B4DB44 /* ka-GE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ka-GE"; path = "ka-GE.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailVM.swift; sourceTree = "<group>"; };
 		F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailVC.swift; sourceTree = "<group>"; };
+		F18B52F527CE356000E7CBD4 /* LineUpsMapsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsMapsVM.swift; sourceTree = "<group>"; };
+		F18B52F627CE356000E7CBD4 /* LineUpsMapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsMapsVC.swift; sourceTree = "<group>"; };
 		F19E610327CCD9C100F13D92 /* LineUpsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVM.swift; sourceTree = "<group>"; };
 		F19E610427CCD9C100F13D92 /* LineUpsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVC.swift; sourceTree = "<group>"; };
 		F19E610927CCE72800F13D92 /* LineUpsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsCell.swift; sourceTree = "<group>"; };
@@ -259,9 +263,19 @@
 			path = AgentDetail;
 			sourceTree = "<group>";
 		};
+		F18B52F427CE353C00E7CBD4 /* LineUpsMaps */ = {
+			isa = PBXGroup;
+			children = (
+				F18B52F527CE356000E7CBD4 /* LineUpsMapsVM.swift */,
+				F18B52F627CE356000E7CBD4 /* LineUpsMapsVC.swift */,
+			);
+			path = LineUpsMaps;
+			sourceTree = "<group>";
+		};
 		F19E610127CCD99100F13D92 /* LineUpsFLOW */ = {
 			isa = PBXGroup;
 			children = (
+				F18B52F427CE353C00E7CBD4 /* LineUpsMaps */,
 				F19E610227CCD99D00F13D92 /* LineUps */,
 			);
 			path = LineUpsFLOW;
@@ -685,6 +699,7 @@
 				F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */,
 				F1C6B6FD27C4F57E00848580 /* Double+Extension.swift in Sources */,
 				F1C6B6FC27C4F57E00848580 /* UITableView+Extension.swift in Sources */,
+				F18B52F827CE356000E7CBD4 /* LineUpsMapsVC.swift in Sources */,
 				F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */,
 				F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */,
 				F1C6B6CA27C4EFAA00848580 /* MainTabBar.swift in Sources */,
@@ -694,6 +709,7 @@
 				F19E610B27CCE72800F13D92 /* LineUpsCell.swift in Sources */,
 				F1C6B6E627C4F54F00848580 /* AppColor.swift in Sources */,
 				F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */,
+				F18B52F727CE356000E7CBD4 /* LineUpsMapsVM.swift in Sources */,
 				F1C6B70C27C5114500848580 /* AgentsHeaderViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

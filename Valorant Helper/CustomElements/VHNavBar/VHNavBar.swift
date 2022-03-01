@@ -21,15 +21,6 @@ class VHNavBar: UIView {
         image.isUserInteractionEnabled = true
         return image
     }()
-    
-    let centerItemImageView: UIImageView = {
-        let image = UIImageView()
-        image.image = AppAsset.logoValorantHelper
-        image.contentMode = .scaleAspectFit
-        image.layer.masksToBounds = true
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
 
     //MARK: - Variables
 
@@ -60,7 +51,6 @@ class VHNavBar: UIView {
     private func buildSubviews() {
         addSubview(containerView)
         containerView.addSubview(leftItemImageView)
-        containerView.addSubview(centerItemImageView)
     }
 
     private func buildConstraints() {
@@ -73,15 +63,10 @@ class VHNavBar: UIView {
             containerView.leftAnchor.constraint(equalTo: self.leftAnchor),
             containerView.heightAnchor.constraint(equalToConstant: 60),
             
-            centerItemImageView.widthAnchor.constraint(equalToConstant: 43),
-            centerItemImageView.heightAnchor.constraint(equalToConstant: 38),
-            centerItemImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
-            centerItemImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-            
             leftItemImageView.widthAnchor.constraint(equalToConstant: 24),
             leftItemImageView.heightAnchor.constraint(equalToConstant: 20),
             leftItemImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 25),
-            leftItemImageView.centerYAnchor.constraint(equalTo: centerItemImageView.centerYAnchor),
+            leftItemImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
         
         ])
         
@@ -89,12 +74,95 @@ class VHNavBar: UIView {
 
     //MARK: - Setup
 
-    // Your Setup Methods Here
+    private func setupWithLogo() {
+        
+        let centerItemImageView: UIImageView = {
+            let image = UIImageView()
+            image.image = AppAsset.logoValorantHelper
+            image.contentMode = .scaleAspectFit
+            image.layer.masksToBounds = true
+            image.translatesAutoresizingMaskIntoConstraints = false
+            return image
+        }()
+        
+        containerView.addSubview(centerItemImageView)
+        
+        NSLayoutConstraint.activate( [
+            
+            centerItemImageView.widthAnchor.constraint(equalToConstant: 43),
+            centerItemImageView.heightAnchor.constraint(equalToConstant: 38),
+            centerItemImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            centerItemImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+        
+        ])
+        
+    }
+    
+    private func setupWithAgent(agentImage: String) {
+        
+        let borderLineView: UIView = {
+            let view = UIView()
+            view.backgroundColor = .clear
+            view.layer.borderWidth = 1
+            view.layer.cornerRadius = 22
+            view.layer.borderColor = AppColor.mediumRed.color.cgColor
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
+        
+        let imageBackgroundView: UIView = {
+            let view = UIView()
+            view.backgroundColor = AppColor.darkWhite.color
+            view.layer.cornerRadius = 20
+            view.translatesAutoresizingMaskIntoConstraints = false
+            return view
+        }()
+        
+        let agentImage: UIImageView = {
+            let image = UIImageView()
+            image.loadImageFromURL(urlString: agentImage)
+            image.contentMode = .scaleAspectFit
+            image.layer.cornerRadius = 20
+            image.layer.masksToBounds = true
+            image.translatesAutoresizingMaskIntoConstraints = false
+            return image
+        }()
+        
+        containerView.addSubview(borderLineView)
+        borderLineView.addSubview(imageBackgroundView)
+        imageBackgroundView.addSubview(agentImage)
+        
+        NSLayoutConstraint.activate([
+        
+            borderLineView.widthAnchor.constraint(equalToConstant: 44),
+            borderLineView.heightAnchor.constraint(equalToConstant: 44),
+            borderLineView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            borderLineView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            
+            imageBackgroundView.widthAnchor.constraint(equalToConstant: 40),
+            imageBackgroundView.heightAnchor.constraint(equalToConstant: 40),
+            imageBackgroundView.centerYAnchor.constraint(equalTo: borderLineView.centerYAnchor),
+            imageBackgroundView.centerXAnchor.constraint(equalTo: borderLineView.centerXAnchor),
+            
+            agentImage.widthAnchor.constraint(equalToConstant: 40),
+            agentImage.heightAnchor.constraint(equalToConstant: 40),
+            agentImage.centerYAnchor.constraint(equalTo: imageBackgroundView.centerYAnchor),
+            agentImage.centerXAnchor.constraint(equalTo: imageBackgroundView.centerXAnchor),
+            
+        ])
+        
+    }
 
     //MARK: - Configure
 
     func configure(with vm: VHNavBarVM) {
         leftAction = vm.leftAction
+        switch vm.navBarStyle {
+            case .withLogo:
+                setupWithLogo()
+            case .withAgentImage(agentImage: let image):
+                setupWithAgent(agentImage: image)
+        }
     }
 
     //MARK: - Actions

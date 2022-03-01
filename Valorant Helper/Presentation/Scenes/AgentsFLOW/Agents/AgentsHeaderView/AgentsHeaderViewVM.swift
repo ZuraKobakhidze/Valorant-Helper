@@ -2,8 +2,8 @@ import UIKit
 import Combine
 
 protocol AgentsHeaderViewVMProtocol {
-    var itemList: [AgentsHeaderViewCellVM] { get set }
-    var itemSubject: PassthroughSubject<AgentsDataType, Never> { get set }
+    var itemList: [AgentsHeaderViewCellVM] { get }
+    var itemSubject: PassthroughSubject<AgentsDataType, Never> { get }
     func changeItemListIsOn(on index: IndexPath)
     func widthForLabel(to index: IndexPath) -> CGFloat
 }

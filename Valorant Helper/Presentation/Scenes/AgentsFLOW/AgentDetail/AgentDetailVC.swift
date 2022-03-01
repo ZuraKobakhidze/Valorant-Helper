@@ -279,7 +279,9 @@ class AgentDetailVC: UIViewController {
     //MARK: - Configure
 
     private func configureNavBar() {
-        navBar.configure(with: VHNavBarVM(leftAction: { [weak self] in
+        navBar.configure(with: VHNavBarVM(
+            navBarStyle: .withLogo,
+            leftAction: { [weak self] in
             self?.navigationController?.popViewController(animated: true)
         }))
     }

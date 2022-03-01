@@ -2,9 +2,9 @@ import Foundation
 import Combine
 
 protocol AgentsVMProtocol {
-    var itemList: [AgentsCellVM]? { get set }
-    var fullItemList: [AgentsCellVM]? { get set }
-    var itemSubject: PassthroughSubject<Bool, Never> { get set }
+    var itemList: [AgentsCellVM]? { get }
+    var fullItemList: [AgentsCellVM]? { get }
+    var itemSubject: PassthroughSubject<Bool, Never> { get }
     func getAllItems()
     func filterItemList(by agentType: AgentsDataType)
 }

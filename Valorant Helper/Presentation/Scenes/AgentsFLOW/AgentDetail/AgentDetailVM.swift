@@ -2,8 +2,8 @@ import Foundation
 import Combine
 
 protocol AgentDetailVMProtocol {
-    var item: SingleAgentModel? { get set }
-    var itemSubject: PassthroughSubject<Bool, Never> { get set }
+    var item: SingleAgentModel? { get }
+    var itemSubject: PassthroughSubject<Bool, Never> { get }
     init(agentID: String)
     func getItem()
 }
