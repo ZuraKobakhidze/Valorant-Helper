@@ -17,7 +17,7 @@ class LineUpsVC: UIViewController {
         table.separatorColor = .clear
         table.dataSource = self
         table.delegate = self
-        table.bounces = false
+        table.bounces = true
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
@@ -134,18 +134,6 @@ extension LineUpsVC: UITableViewDataSource, UITableViewDelegate {
         let vc = LineUpsMapVC()
         vc.viewModel = LineUpsMapVM(agentId: viewModel.itemList?[indexPath.row]?.uuid ?? "", agentImage: viewModel.itemList?[indexPath.row]?.displayIconSmall ?? "")
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        cell.alpha = 0
-        cell.transform = CGAffineTransform(translationX: -view.frame.width, y: 0)
-        
-        UIView.animate(withDuration: 0.6, delay: 0, options: .curveEaseIn) {
-            cell.alpha = 1
-            cell.transform = CGAffineTransform.identity
-        }
-
     }
     
 }

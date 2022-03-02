@@ -22,13 +22,7 @@ extension UIImageView {
         self.image = nil
         
         if let cachedImage = imageCache.object(forKey: NSString(string: urlString)) {
-            self.alpha = 0
-            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
             self.image = cachedImage
-            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) { [weak self] in
-                self?.alpha = 1
-                self?.transform = CGAffineTransform.identity
-            }
             return
         }
         

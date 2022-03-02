@@ -43,4 +43,12 @@ class AppAsset {
         UIImage(named: "icon_right_arrow")
     }
     
+    static var iconCollapsed: UIImage? {
+        UIImage(named: "icon_collapsed")
+    }
+    
+    static var iconNotCollapsed: UIImage? {
+        UIImage(named: "icon_not_collapsed")
+    }
+    
 }
