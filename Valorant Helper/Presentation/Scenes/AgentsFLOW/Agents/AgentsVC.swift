@@ -1,5 +1,6 @@
 import UIKit
 import Combine
+import AVKit
 
 class AgentsVC: UIViewController {
     
@@ -124,7 +125,7 @@ extension AgentsVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = AgentDetailVC()
-        vc.viewModel = AgentDetailVM(agentID: viewModel.itemList?[indexPath.row].uuid ?? "")
+        vc.viewModel = AgentDetailVM(name: viewModel.itemList?[indexPath.row].displayName?.lowercased() ?? "")
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -198,4 +198,15 @@ extension LineUpsMapVC: UITableViewDataSource, UITableViewDelegate {
         UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 15))
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 0 { return }
+        
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) {
+            cell.alpha = 1
+        }
+
+    }
+    
 }

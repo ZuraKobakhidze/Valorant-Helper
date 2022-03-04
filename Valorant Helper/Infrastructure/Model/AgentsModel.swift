@@ -7,16 +7,11 @@
 
 import Foundation
 
-struct AgentsModelList: Codable {
-    let data: [AgentsModel?]?
-}
-
 struct AgentsModel: Codable {
     let uuid: String?
     let displayName: String?
     let bustPortrait: String?
     let background: String?
-    let isPlayableCharacter: Bool?
     let role: AgentsRoleModel?
 }
 

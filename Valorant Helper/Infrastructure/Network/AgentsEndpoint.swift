@@ -7,10 +7,11 @@
 
 import Foundation
 
+//https://raw.githubusercontent.com/DimitriTsikaridze/Valorant-Helper-API/main/agents.json
 enum AgentsEndpoint: Endpoint {
     
     case getAllAgent
-    case getSingleAgent(agentId: String)
+    case getSingleAgent(name: String)
     
     var scheme: String {
         switch self {
@@ -24,18 +25,18 @@ enum AgentsEndpoint: Endpoint {
     var baseURL: String {
         switch self {
             case .getAllAgent:
-                return "valorant-api.com"
+                return "raw.githubusercontent.com"
             case .getSingleAgent:
-                return "valorant-api.com"
+                return "raw.githubusercontent.com"
         }
     }
     
     var path: String {
         switch self {
             case .getAllAgent:
-                return "/v1/agents"
-            case .getSingleAgent(let id):
-                return "/v1/agents/\(id)"
+                return "/DimitriTsikaridze/Valorant-Helper-API/main/all-agents.json"
+            case .getSingleAgent(let name):
+                return "/DimitriTsikaridze/Valorant-Helper-API/main/agents/\(name).json"
         }
     }
     

@@ -187,12 +187,12 @@
 			path = LineUpsMapsCell;
 			sourceTree = "<group>";
 		};
-		F1070C5127CF821F0054F131 /* LineUpsMapsSectionView */ = {
+		F1070C5127CF821F0054F131 /* LineUpsMapsSectionCell */ = {
 			isa = PBXGroup;
 			children = (
 				F1070C5727CFA8BB0054F131 /* LineUpsMapsSectionCell.swift */,
 			);
-			path = LineUpsMapsSectionView;
+			path = LineUpsMapsSectionCell;
 			sourceTree = "<group>";
 		};
 		F12E3DF427C8B4D400A8F511 /* CustomElements */ = {
@@ -289,7 +289,7 @@
 		F18B52F427CE353C00E7CBD4 /* LineUpsMaps */ = {
 			isa = PBXGroup;
 			children = (
-				F1070C5127CF821F0054F131 /* LineUpsMapsSectionView */,
+				F1070C5127CF821F0054F131 /* LineUpsMapsSectionCell */,
 				F1070C4C27CF7F690054F131 /* LineUpsMapsCell */,
 				F18B52F527CE356000E7CBD4 /* LineUpsMapsVM.swift */,
 				F18B52F627CE356000E7CBD4 /* LineUpsMapsVC.swift */,

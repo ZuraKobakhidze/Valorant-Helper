@@ -32,6 +32,10 @@ extension UIImageView {
             
             guard let data = data, let downloadedImage = UIImage(data: data) else { return }
             
+            if urlString == "https://i.ibb.co/Pt31MhK/background.png" {
+                print(data)
+            }
+            
             imageCache.setObject(downloadedImage, forKey: NSString(string: urlString))
             
             DispatchQueue.main.async { [weak self] in

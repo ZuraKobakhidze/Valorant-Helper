@@ -7,12 +7,7 @@
 
 import Foundation
 
-struct SingleAgentModelList: Codable {
-    let data: SingleAgentModel?
-}
-
 struct SingleAgentModel: Codable {
-    let uuid: String?
     let displayName: String?
     let description: String?
     let fullPortrait: String?

@@ -17,10 +17,10 @@ class AgentsVM: AgentsVMProtocol {
     
     func getAllItems() {
         
-        NetworkEngine.shared.request(endPoint: AgentsEndpoint.getAllAgent) { [weak self] (result: Result<AgentsModelList, Error>) in
+        NetworkEngine.shared.request(endPoint: AgentsEndpoint.getAllAgent) { [weak self] (result: Result<[AgentsModel], Error>) in
             switch result {
                 case .success(let success):
-                    self?.fullItemList = success.data?.filter { $0?.isPlayableCharacter != false }.map { AgentsCellVMFactory.getAgentsCellVM(from: $0) }
+                    self?.fullItemList = success.map { AgentsCellVMFactory.getAgentsCellVM(from: $0) }
                     self?.itemList = self?.fullItemList
                     self?.itemSubject.send(true)
                 case .failure(let error):
