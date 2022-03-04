@@ -122,7 +122,7 @@ class AgentsCell: UICollectionViewCell {
     func configure(with vm: AgentsCellVM?) {
         guard let vm = vm else { return }
         backgroundImage.loadImageFromURL(urlString: vm.background ?? "")
-        coverImage.loadImageFromURL(urlString: "https://i.ibb.co/Pt31MhK/background.png")
+        coverImage.loadImageFromURL(urlString: vm.bustPortrait ?? "")
         roleImage.loadImageFromURL(urlString: vm.roleIcon ?? "")
         nameLabel.text = vm.displayName
         roleLabel.text = vm.roleName
