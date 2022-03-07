@@ -15,6 +15,7 @@ class AgentsCellVMFactory {
                      displayName: vm?.displayName,
                      bustPortrait: vm?.bustPortrait,
                      background: vm?.background,
+                     pathName: vm?.pathName,
                      roleName: vm?.role?.displayName,
                      roleIcon: vm?.role?.displayIcon)
         

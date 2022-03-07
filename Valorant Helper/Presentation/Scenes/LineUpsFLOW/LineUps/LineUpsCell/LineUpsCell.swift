@@ -48,7 +48,7 @@ class LineUpsCell: UITableViewCell {
         return label
     }()
     
-    let righArrowImage: UIImageView = {
+    let rightArrowImage: UIImageView = {
         let image = UIImageView()
         image.image = AppAsset.iconRightArrow
         image.contentMode = .scaleAspectFit
@@ -87,7 +87,7 @@ class LineUpsCell: UITableViewCell {
         containerView.addSubview(stackView)
         stackView.addArrangedSubview(nameLabel)
         stackView.addArrangedSubview(roleLabel)
-        containerView.addSubview(righArrowImage)
+        containerView.addSubview(rightArrowImage)
         containerView.addSubview(bottomLineView)
     }
     
@@ -110,10 +110,10 @@ class LineUpsCell: UITableViewCell {
             stackView.leftAnchor.constraint(equalTo: agentImage.rightAnchor, constant: 20),
             stackView.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -50),
             
-            righArrowImage.centerYAnchor.constraint(equalTo: agentImage.centerYAnchor),
-            righArrowImage.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
-            righArrowImage.widthAnchor.constraint(equalToConstant: 15),
-            righArrowImage.heightAnchor.constraint(equalToConstant: 13),
+            rightArrowImage.centerYAnchor.constraint(equalTo: agentImage.centerYAnchor),
+            rightArrowImage.rightAnchor.constraint(equalTo: containerView.rightAnchor, constant: -20),
+            rightArrowImage.widthAnchor.constraint(equalToConstant: 15),
+            rightArrowImage.heightAnchor.constraint(equalToConstant: 13),
             
             bottomLineView.leftAnchor.constraint(equalTo: containerView.leftAnchor),
             bottomLineView.rightAnchor.constraint(equalTo: containerView.rightAnchor),

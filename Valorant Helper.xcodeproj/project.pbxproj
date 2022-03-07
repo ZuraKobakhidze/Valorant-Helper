@@ -10,6 +10,10 @@
 		F1070C4827CF5E1C0054F131 /* LineUpsMapsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1070C4727CF5E1C0054F131 /* LineUpsMapsModel.swift */; };
 		F1070C5027CF7F7B0054F131 /* LineUpsMapsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1070C4E27CF7F7B0054F131 /* LineUpsMapsCell.swift */; };
 		F1070C5927CFA8BB0054F131 /* LineUpsMapsSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1070C5727CFA8BB0054F131 /* LineUpsMapsSectionCell.swift */; };
+		F112D3FA27D62056009C972C /* SiteLineUpsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112D3F827D62056009C972C /* SiteLineUpsVM.swift */; };
+		F112D3FB27D62056009C972C /* SiteLineUpsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112D3F927D62056009C972C /* SiteLineUpsVC.swift */; };
+		F112D40027D64456009C972C /* SiteLineUpsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112D3FE27D64456009C972C /* SiteLineUpsCell.swift */; };
+		F112D40227D651F2009C972C /* SiteLineUpsCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112D40127D651F2009C972C /* SiteLineUpsCellVM.swift */; };
 		F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */; };
 		F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF727C8B53600A8F511 /* VHNavBar.swift */; };
 		F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */; };
@@ -90,6 +94,10 @@
 		F1070C4727CF5E1C0054F131 /* LineUpsMapsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsMapsModel.swift; sourceTree = "<group>"; };
 		F1070C4E27CF7F7B0054F131 /* LineUpsMapsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsMapsCell.swift; sourceTree = "<group>"; };
 		F1070C5727CFA8BB0054F131 /* LineUpsMapsSectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsMapsSectionCell.swift; sourceTree = "<group>"; };
+		F112D3F827D62056009C972C /* SiteLineUpsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLineUpsVM.swift; sourceTree = "<group>"; };
+		F112D3F927D62056009C972C /* SiteLineUpsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLineUpsVC.swift; sourceTree = "<group>"; };
+		F112D3FE27D64456009C972C /* SiteLineUpsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLineUpsCell.swift; sourceTree = "<group>"; };
+		F112D40127D651F2009C972C /* SiteLineUpsCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLineUpsCellVM.swift; sourceTree = "<group>"; };
 		F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBarVM.swift; sourceTree = "<group>"; };
 		F12E3DF727C8B53600A8F511 /* VHNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBar.swift; sourceTree = "<group>"; };
 		F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgentModel.swift; sourceTree = "<group>"; };
@@ -193,6 +201,25 @@
 				F1070C5727CFA8BB0054F131 /* LineUpsMapsSectionCell.swift */,
 			);
 			path = LineUpsMapsSectionCell;
+			sourceTree = "<group>";
+		};
+		F112D3F727D6203F009C972C /* SiteLineUps */ = {
+			isa = PBXGroup;
+			children = (
+				F112D3FC27D64448009C972C /* SiteLineUpsCell */,
+				F112D3F827D62056009C972C /* SiteLineUpsVM.swift */,
+				F112D3F927D62056009C972C /* SiteLineUpsVC.swift */,
+			);
+			path = SiteLineUps;
+			sourceTree = "<group>";
+		};
+		F112D3FC27D64448009C972C /* SiteLineUpsCell */ = {
+			isa = PBXGroup;
+			children = (
+				F112D3FE27D64456009C972C /* SiteLineUpsCell.swift */,
+				F112D40127D651F2009C972C /* SiteLineUpsCellVM.swift */,
+			);
+			path = SiteLineUpsCell;
 			sourceTree = "<group>";
 		};
 		F12E3DF427C8B4D400A8F511 /* CustomElements */ = {
@@ -300,6 +327,7 @@
 		F19E610127CCD99100F13D92 /* LineUpsFLOW */ = {
 			isa = PBXGroup;
 			children = (
+				F112D3F727D6203F009C972C /* SiteLineUps */,
 				F18B52F427CE353C00E7CBD4 /* LineUpsMaps */,
 				F19E610227CCD99D00F13D92 /* LineUps */,
 			);
@@ -701,6 +729,7 @@
 				F1C6B70227C4F8A500848580 /* AppFont.swift in Sources */,
 				F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */,
 				F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */,
+				F112D40027D64456009C972C /* SiteLineUpsCell.swift in Sources */,
 				F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */,
 				F12E3E0027C9057400A8F511 /* AgentAbilityView.swift in Sources */,
 				F1C6B70727C5101A00848580 /* AgentsHeaderView.swift in Sources */,
@@ -715,10 +744,13 @@
 				F167DC6627C6674200B4DB44 /* AgentsEndpoint.swift in Sources */,
 				F1C6B6FA27C4F57E00848580 /* Date+Extension.swift in Sources */,
 				F1C6B70627C5101A00848580 /* AgentsHeaderViewVM.swift in Sources */,
+				F112D3FB27D62056009C972C /* SiteLineUpsVC.swift in Sources */,
 				F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */,
 				F167DC6727C6674200B4DB44 /* NetworkEngine.swift in Sources */,
 				F1C6B6D027C4F07900848580 /* AppAsset.swift in Sources */,
+				F112D3FA27D62056009C972C /* SiteLineUpsVM.swift in Sources */,
 				F1C6B70B27C5114500848580 /* AgentsHeaderViewCellVM.swift in Sources */,
+				F112D40227D651F2009C972C /* SiteLineUpsCellVM.swift in Sources */,
 				F1C6B6D527C4F12000848580 /* AgentsVM.swift in Sources */,
 				F144869327CCFBB000EDF72C /* LineUpsEndpoint.swift in Sources */,
 				F1070C5027CF7F7B0054F131 /* LineUpsMapsCell.swift in Sources */,

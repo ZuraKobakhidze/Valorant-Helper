@@ -188,8 +188,14 @@ extension LineUpsMapVC: UITableViewDataSource, UITableViewDelegate {
         if indexPath.row == 0 {
             viewModel?.collapseItems(on: indexPath.section)
         } else {
-            //TODO: - do the navigation here dumbass
-            print(indexPath.section, indexPath.row)
+            let vc = SiteLineUpsVC()
+            let mapIcon = viewModel?.itemList[indexPath.section].item?.listViewIcon
+            let mapName = viewModel?.itemList[indexPath.section].item?.displayName
+            let siteName = viewModel?.itemList[indexPath.section].item?.site?[indexPath.row-1]?.siteName
+            let agentImage = viewModel?.agentImage
+            let itemList = viewModel?.itemList[indexPath.section].item?.site?[indexPath.row-1]?.lineUps.map { $0.map { SiteLineUpsCellVM(item: $0, agentImage: agentImage) } }
+            vc.viewModel = SiteLineUpsVM(itemList: itemList, agentPath: viewModel?.agentPath, mapIcon: mapIcon, mapName: mapName, siteName: siteName, agentImage: agentImage)
+            navigationController?.pushViewController(vc, animated: true)
         }
         
     }

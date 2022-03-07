@@ -2,33 +2,32 @@ import Foundation
 import Combine
 
 protocol LineUpsMapVMProtocol {
-    var agentName: String { get }
+    var agentPath: String { get }
     var agentImage: String { get }
     var itemList: [LineUpsMapList] { get }
     var itemSubject: PassthroughSubject<Bool, Never> { get }
     var sectionReloadSubject: PassthroughSubject<Int, Never> { get }
-    init(agentName: String, agentImage: String)
+    init(agentPath: String, agentImage: String)
     func getItemList()
     func collapseItems(on section: Int) 
 }
 
 class LineUpsMapVM: LineUpsMapVMProtocol {
     
-    var agentName: String
+    var agentPath: String
     var agentImage: String
     var itemList: [LineUpsMapList] = [LineUpsMapList]()
     var itemSubject = PassthroughSubject<Bool, Never>()
     var sectionReloadSubject = PassthroughSubject<Int, Never>()
-    var hiddenSections = Set<Int>()
     
-    required init(agentName: String, agentImage: String) {
-        self.agentName = agentName
+    required init(agentPath: String, agentImage: String) {
+        self.agentPath = agentPath
         self.agentImage = agentImage
     }
     
     func getItemList() {
         
-        NetworkEngine.shared.request(endPoint: LineUpsEndpoint.getMapsForAgent) { [weak self] (result: Result<[LineUpsMapsModel], Error>) in
+        NetworkEngine.shared.request(endPoint: LineUpsEndpoint.getMapsForAgent(agentPath: agentPath)) { [weak self] (result: Result<[LineUpsMapsModel], Error>) in
             switch result {
                 case .success(let success):
                     self?.itemList = success.map { LineUpsMapList(item: $0, isCollapsed: true) }

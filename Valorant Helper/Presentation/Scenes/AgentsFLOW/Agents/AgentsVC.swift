@@ -125,7 +125,7 @@ extension AgentsVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = AgentDetailVC()
-        vc.viewModel = AgentDetailVM(name: viewModel.itemList?[indexPath.row].displayName?.lowercased() ?? "")
+        vc.viewModel = AgentDetailVM(name: viewModel.itemList?[indexPath.row].pathName ?? "")
         navigationController?.pushViewController(vc, animated: true)
     }
     

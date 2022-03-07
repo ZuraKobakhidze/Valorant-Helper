@@ -10,6 +10,7 @@ import Foundation
 struct LineUpsModel: Codable {
     let displayName: String?
     let displayIcon: String?
+    let pathName: String?
     let role: LineUpsRoleModel?
 }
 

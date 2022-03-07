@@ -10,10 +10,15 @@ import Foundation
 struct LineUpsMapsModel: Codable {
     let displayName: String?
     let listViewIcon: String?
-    let site: [LineUpsMapsSiteModel]?
+    let site: [LineUpsMapsSiteModel?]?
 }
 
 struct LineUpsMapsSiteModel: Codable {
     let siteName: String?
-    let lineUpsUrl: String?
+    let lineUps: [SingleLineUpModel?]?
+}
+
+struct SingleLineUpModel: Codable {
+    let lineUpName: String?
+    let lineUpPath: String?
 }

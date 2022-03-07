@@ -12,6 +12,7 @@ struct AgentsModel: Codable {
     let displayName: String?
     let bustPortrait: String?
     let background: String?
+    let pathName: String?
     let role: AgentsRoleModel?
 }
 

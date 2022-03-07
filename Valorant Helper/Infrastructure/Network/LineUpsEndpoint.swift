@@ -10,13 +10,16 @@ import Foundation
 enum LineUpsEndpoint: Endpoint {
     
     case getAllAgent
-    case getMapsForAgent
+    case getMapsForAgent(agentPath: String)
+    case getSingleLineUp(agentPath: String, lineUpPath: String)
     
     var scheme: String {
         switch self {
             case .getAllAgent:
                 return "https"
             case .getMapsForAgent:
+                return "https"
+            case .getSingleLineUp:
                 return "https"
         }
     }
@@ -26,7 +29,9 @@ enum LineUpsEndpoint: Endpoint {
             case .getAllAgent:
                 return "raw.githubusercontent.com"
             case .getMapsForAgent:
-                return "run.mocky.io"
+                return "raw.githubusercontent.com"
+            case .getSingleLineUp:
+                return "raw.githubusercontent.com"
         }
     }
     
@@ -34,8 +39,10 @@ enum LineUpsEndpoint: Endpoint {
         switch self {
             case .getAllAgent:
                 return "/DimitriTsikaridze/Valorant-Helper-API/main/all-agents.json"
-            case .getMapsForAgent:
-                return "/v3/4a645420-6523-417f-9af7-b91ea93436e8"
+            case .getMapsForAgent(let agentPath):
+                return "/DimitriTsikaridze/Valorant-Helper-API/main/lineups/\(agentPath)/all_lineups_\(agentPath).json"
+            case.getSingleLineUp(let agentPath, let lineUpPath):
+                return "/DimitriTsikaridze/Valorant-Helper-API/main/lineups/\(agentPath)/\(agentPath)_lineup_\(lineUpPath).json"
         }
     }
     
@@ -44,6 +51,8 @@ enum LineUpsEndpoint: Endpoint {
             case .getAllAgent:
                 return "GET"
             case .getMapsForAgent:
+                return "GET"
+            case .getSingleLineUp:
                 return "GET"
         }
     }
