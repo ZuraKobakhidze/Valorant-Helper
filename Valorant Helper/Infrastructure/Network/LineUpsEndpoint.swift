@@ -24,7 +24,7 @@ enum LineUpsEndpoint: Endpoint {
     var baseURL: String {
         switch self {
             case .getAllAgent:
-                return "valorant-api.com"
+                return "raw.githubusercontent.com"
             case .getMapsForAgent:
                 return "run.mocky.io"
         }
@@ -33,7 +33,7 @@ enum LineUpsEndpoint: Endpoint {
     var path: String {
         switch self {
             case .getAllAgent:
-                return "/v1/agents"
+                return "/DimitriTsikaridze/Valorant-Helper-API/main/all-agents.json"
             case .getMapsForAgent:
                 return "/v3/4a645420-6523-417f-9af7-b91ea93436e8"
         }

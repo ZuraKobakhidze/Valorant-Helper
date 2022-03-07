@@ -127,7 +127,7 @@ class LineUpsCell: UITableViewCell {
     //MARK: - Configure
     
     func configure(with vm: LineUpsModel?) {
-        agentImage.loadImageFromURL(urlString: vm?.displayIconSmall ?? "")
+        agentImage.loadImageFromURL(urlString: vm?.displayIcon ?? "")
         nameLabel.text = vm?.displayName
         roleLabel.text = vm?.role?.displayName
     }

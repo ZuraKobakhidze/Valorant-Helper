@@ -7,7 +7,6 @@
 
 import Foundation
 
-//https://raw.githubusercontent.com/DimitriTsikaridze/Valorant-Helper-API/main/agents.json
 enum AgentsEndpoint: Endpoint {
     
     case getAllAgent

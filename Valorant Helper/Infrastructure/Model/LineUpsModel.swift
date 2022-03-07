@@ -7,15 +7,9 @@
 
 import Foundation
 
-struct LineUpsModelList: Codable {
-    let data: [LineUpsModel?]?
-}
-
 struct LineUpsModel: Codable {
-    let uuid: String?
     let displayName: String?
-    let displayIconSmall: String?
-    let isPlayableCharacter: Bool?
+    let displayIcon: String?
     let role: LineUpsRoleModel?
 }
 

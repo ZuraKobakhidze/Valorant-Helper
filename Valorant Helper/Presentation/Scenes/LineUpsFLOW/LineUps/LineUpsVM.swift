@@ -17,10 +17,10 @@ class LineUpsVM: LineUpsVMProtocol {
     
     func getAllItems() {
         
-        NetworkEngine.shared.request(endPoint: LineUpsEndpoint.getAllAgent) { [weak self] (result: Result<LineUpsModelList, Error>) in
+        NetworkEngine.shared.request(endPoint: LineUpsEndpoint.getAllAgent) { [weak self] (result: Result<[LineUpsModel], Error>) in
             switch result {
                 case .success(let success):
-                    self?.fullItemList = success.data?.filter { $0?.isPlayableCharacter != false }
+                    self?.fullItemList = success
                     self?.itemList = self?.fullItemList
                     self?.itemSubject.send(true)
                 case .failure(let error):

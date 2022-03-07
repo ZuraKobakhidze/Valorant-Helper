@@ -2,27 +2,27 @@ import Foundation
 import Combine
 
 protocol LineUpsMapVMProtocol {
-    var agentId: String { get }
+    var agentName: String { get }
     var agentImage: String { get }
     var itemList: [LineUpsMapList] { get }
     var itemSubject: PassthroughSubject<Bool, Never> { get }
     var sectionReloadSubject: PassthroughSubject<Int, Never> { get }
-    init(agentId: String, agentImage: String)
+    init(agentName: String, agentImage: String)
     func getItemList()
     func collapseItems(on section: Int) 
 }
 
 class LineUpsMapVM: LineUpsMapVMProtocol {
     
-    var agentId: String
+    var agentName: String
     var agentImage: String
     var itemList: [LineUpsMapList] = [LineUpsMapList]()
     var itemSubject = PassthroughSubject<Bool, Never>()
     var sectionReloadSubject = PassthroughSubject<Int, Never>()
     var hiddenSections = Set<Int>()
     
-    required init(agentId: String, agentImage: String) {
-        self.agentId = agentId
+    required init(agentName: String, agentImage: String) {
+        self.agentName = agentName
         self.agentImage = agentImage
     }
     

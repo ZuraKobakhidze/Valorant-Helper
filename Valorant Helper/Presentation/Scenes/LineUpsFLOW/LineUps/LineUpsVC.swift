@@ -132,7 +132,7 @@ extension LineUpsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = LineUpsMapVC()
-        vc.viewModel = LineUpsMapVM(agentId: viewModel.itemList?[indexPath.row]?.uuid ?? "", agentImage: viewModel.itemList?[indexPath.row]?.displayIconSmall ?? "")
+        vc.viewModel = LineUpsMapVM(agentName: viewModel.itemList?[indexPath.row]?.displayName ?? "", agentImage: viewModel.itemList?[indexPath.row]?.displayIcon ?? "")
         navigationController?.pushViewController(vc, animated: true)
     }
     
