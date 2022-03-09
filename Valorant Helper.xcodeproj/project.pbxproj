@@ -19,6 +19,12 @@
 		F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */; };
 		F12E3DFF27C9057400A8F511 /* AgentAbilityViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFD27C9057400A8F511 /* AgentAbilityViewVM.swift */; };
 		F12E3E0027C9057400A8F511 /* AgentAbilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFE27C9057400A8F511 /* AgentAbilityView.swift */; };
+		F131EE4127D8944300DED4AD /* LineUpDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE3F27D8944300DED4AD /* LineUpDetailVM.swift */; };
+		F131EE4227D8944300DED4AD /* LineUpDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4027D8944300DED4AD /* LineUpDetailVC.swift */; };
+		F131EE4427D8A21400DED4AD /* LineUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4327D8A21400DED4AD /* LineUpModel.swift */; };
+		F131EE4627D8A6B100DED4AD /* LineUpDetailVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4527D8A6B100DED4AD /* LineUpDetailVMFactory.swift */; };
+		F131EE4827D8A93C00DED4AD /* SiteLineUpsVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4727D8A93C00DED4AD /* SiteLineUpsVMFactory.swift */; };
+		F131EE5127D8BFEB00DED4AD /* SingleStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4F27D8BFEB00DED4AD /* SingleStepView.swift */; };
 		F144869327CCFBB000EDF72C /* LineUpsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144869227CCFBB000EDF72C /* LineUpsEndpoint.swift */; };
 		F144869527CCFC1300EDF72C /* LineUpsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144869427CCFC1300EDF72C /* LineUpsModel.swift */; };
 		F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6227C6674200B4DB44 /* Endpoint.swift */; };
@@ -103,6 +109,12 @@
 		F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgentModel.swift; sourceTree = "<group>"; };
 		F12E3DFD27C9057400A8F511 /* AgentAbilityViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentAbilityViewVM.swift; sourceTree = "<group>"; };
 		F12E3DFE27C9057400A8F511 /* AgentAbilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentAbilityView.swift; sourceTree = "<group>"; };
+		F131EE3F27D8944300DED4AD /* LineUpDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpDetailVM.swift; sourceTree = "<group>"; };
+		F131EE4027D8944300DED4AD /* LineUpDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpDetailVC.swift; sourceTree = "<group>"; };
+		F131EE4327D8A21400DED4AD /* LineUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpModel.swift; sourceTree = "<group>"; };
+		F131EE4527D8A6B100DED4AD /* LineUpDetailVMFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpDetailVMFactory.swift; sourceTree = "<group>"; };
+		F131EE4727D8A93C00DED4AD /* SiteLineUpsVMFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLineUpsVMFactory.swift; sourceTree = "<group>"; };
+		F131EE4F27D8BFEB00DED4AD /* SingleStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStepView.swift; sourceTree = "<group>"; };
 		F144869227CCFBB000EDF72C /* LineUpsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsEndpoint.swift; sourceTree = "<group>"; };
 		F144869427CCFC1300EDF72C /* LineUpsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsModel.swift; sourceTree = "<group>"; };
 		F167DC6227C6674200B4DB44 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -248,6 +260,24 @@
 			path = AgentAbilityView;
 			sourceTree = "<group>";
 		};
+		F131EE3E27D8942600DED4AD /* LineUpDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F131EE4927D8BFB600DED4AD /* SingleStepView */,
+				F131EE3F27D8944300DED4AD /* LineUpDetailVM.swift */,
+				F131EE4027D8944300DED4AD /* LineUpDetailVC.swift */,
+			);
+			path = LineUpDetail;
+			sourceTree = "<group>";
+		};
+		F131EE4927D8BFB600DED4AD /* SingleStepView */ = {
+			isa = PBXGroup;
+			children = (
+				F131EE4F27D8BFEB00DED4AD /* SingleStepView.swift */,
+			);
+			path = SingleStepView;
+			sourceTree = "<group>";
+		};
 		F167DC6127C666DA00B4DB44 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +296,7 @@
 				F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */,
 				F144869427CCFC1300EDF72C /* LineUpsModel.swift */,
 				F1070C4727CF5E1C0054F131 /* LineUpsMapsModel.swift */,
+				F131EE4327D8A21400DED4AD /* LineUpModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				F167DC7127C6701000B4DB44 /* AgentsCellVMFactory.swift */,
+				F131EE4727D8A93C00DED4AD /* SiteLineUpsVMFactory.swift */,
+				F131EE4527D8A6B100DED4AD /* LineUpDetailVMFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -327,6 +360,7 @@
 		F19E610127CCD99100F13D92 /* LineUpsFLOW */ = {
 			isa = PBXGroup;
 			children = (
+				F131EE3E27D8942600DED4AD /* LineUpDetail */,
 				F112D3F727D6203F009C972C /* SiteLineUps */,
 				F18B52F427CE353C00E7CBD4 /* LineUpsMaps */,
 				F19E610227CCD99D00F13D92 /* LineUps */,
@@ -737,16 +771,20 @@
 				F1C6B70027C4F57E00848580 /* UIColor+Extension.swift in Sources */,
 				F1C6B6F827C4F57E00848580 /* UIImageView+Extension.swift in Sources */,
 				F1C6B6F627C4F57E00848580 /* NSMutableAttributedString+Extension.swift in Sources */,
+				F131EE4827D8A93C00DED4AD /* SiteLineUpsVMFactory.swift in Sources */,
 				F167DC7527C7968A00B4DB44 /* AgentsFooterView.swift in Sources */,
 				F167DC6A27C66AD700B4DB44 /* AgentsModel.swift in Sources */,
 				F167DC8127C7BE3600B4DB44 /* AgentDetailVC.swift in Sources */,
 				F167DC8027C7BE3600B4DB44 /* AgentDetailVM.swift in Sources */,
+				F131EE5127D8BFEB00DED4AD /* SingleStepView.swift in Sources */,
 				F167DC6627C6674200B4DB44 /* AgentsEndpoint.swift in Sources */,
 				F1C6B6FA27C4F57E00848580 /* Date+Extension.swift in Sources */,
 				F1C6B70627C5101A00848580 /* AgentsHeaderViewVM.swift in Sources */,
 				F112D3FB27D62056009C972C /* SiteLineUpsVC.swift in Sources */,
 				F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */,
+				F131EE4127D8944300DED4AD /* LineUpDetailVM.swift in Sources */,
 				F167DC6727C6674200B4DB44 /* NetworkEngine.swift in Sources */,
+				F131EE4427D8A21400DED4AD /* LineUpModel.swift in Sources */,
 				F1C6B6D027C4F07900848580 /* AppAsset.swift in Sources */,
 				F112D3FA27D62056009C972C /* SiteLineUpsVM.swift in Sources */,
 				F1C6B70B27C5114500848580 /* AgentsHeaderViewCellVM.swift in Sources */,
@@ -764,7 +802,9 @@
 				F1C6B6FC27C4F57E00848580 /* UITableView+Extension.swift in Sources */,
 				F18B52F827CE356000E7CBD4 /* LineUpsMapsVC.swift in Sources */,
 				F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */,
+				F131EE4227D8944300DED4AD /* LineUpDetailVC.swift in Sources */,
 				F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */,
+				F131EE4627D8A6B100DED4AD /* LineUpDetailVMFactory.swift in Sources */,
 				F1C6B6CA27C4EFAA00848580 /* MainTabBar.swift in Sources */,
 				F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */,
 				F144869527CCFC1300EDF72C /* LineUpsModel.swift in Sources */,

@@ -100,6 +100,7 @@ class LineUpsVC: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.headerView.isUserInteractionEnabled = true
                 self?.tableView.reloadData()
+                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
             }
         }.store(in: &cancellableList)
         viewModel.getAllItems()

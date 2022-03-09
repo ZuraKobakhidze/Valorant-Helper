@@ -51,4 +51,12 @@ class AppAsset {
         UIImage(named: "icon_not_collapsed")
     }
     
+    static var iconNotFavourite: UIImage? {
+        UIImage(named: "icon_not_favourite")
+    }
+    
+    static var iconFavourite: UIImage? {
+        UIImage(named: "icon_favourite")
+    }
+    
 }

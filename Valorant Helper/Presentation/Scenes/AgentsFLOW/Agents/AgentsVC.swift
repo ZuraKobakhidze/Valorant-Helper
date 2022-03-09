@@ -93,6 +93,7 @@ class AgentsVC: UIViewController {
             DispatchQueue.main.async { [weak self] in
                 self?.headerView.isUserInteractionEnabled = true
                 self?.collectionView.reloadData()
+                self?.collectionView.setContentOffset(CGPoint(x:0,y:0), animated: true)
             }
         }.store(in: &cancellableList)
         viewModel.getAllItems()
