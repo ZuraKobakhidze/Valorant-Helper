@@ -27,6 +27,14 @@ class AppAsset {
         UIImage(named: "tab_bar_lineups_not_selected")
     }
     
+    static var tabBarCrosshairsSelected: UIImage? {
+        UIImage(named: "tab_bar_crosshairs_selected")
+    }
+    
+    static var tabBarCrosshairsNotSelected: UIImage? {
+        UIImage(named: "tab_bar_crosshairs_not_selected")
+    }
+    
     //MARK: - Logo
     
     static var logoValorantHelper: UIImage? {

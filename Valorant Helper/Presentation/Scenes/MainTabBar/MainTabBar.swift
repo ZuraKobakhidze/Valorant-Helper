@@ -19,6 +19,14 @@ class MainTabBar: UITabBarController {
         return nav
     }()
     
+    let crosshairsVC: UIViewController = {
+        let vc = CrosshairsVC()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.title = "CROSSHAIRS".localized()
+        nav.isNavigationBarHidden = true
+        return nav
+    }()
+    
     let lineUpsVC: UIViewController = {
         let vc = LineUpsVC()
         let nav = UINavigationController(rootViewController: vc)
@@ -37,17 +45,19 @@ class MainTabBar: UITabBarController {
     
     //MARK: - Variables
     
-    let viewControllerCount = 2
+    let viewControllerCount = 3
     
     //MARK: - Images
     
     let tabBarSelectedImages = [
         AppAsset.tabBarAgentsSelected,
-        AppAsset.tabBarLineUpsSelected,
+        AppAsset.tabBarCrosshairsSelected,
+        AppAsset.tabBarLineUpsSelected
     ]
     
     let tabBarUnselectedImages = [
         AppAsset.tabBarAgentsNotSelected,
+        AppAsset.tabBarCrosshairsNotSelected,
         AppAsset.tabBarLineUpsNotSelected
     ]
     
@@ -65,7 +75,7 @@ class MainTabBar: UITabBarController {
     
     private func setupTabBarItems() {
 
-        self.setViewControllers([agentsVC, lineUpsVC], animated: false)
+        self.setViewControllers([agentsVC, crosshairsVC, lineUpsVC], animated: false)
         setupTabBarTitles()
         setupTabBarImages()
         
