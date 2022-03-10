@@ -110,4 +110,10 @@ extension CrosshairsVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CrosshairDetailVC()
+        vc.viewModel = CrosshairDetailVM(item: viewModel.itemList[indexPath.row])
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

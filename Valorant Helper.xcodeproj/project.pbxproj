@@ -19,6 +19,9 @@
 		F11A1CAC27DA07AE00758A3A /* CrosshairsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A1CAA27DA07AE00758A3A /* CrosshairsCell.swift */; };
 		F11A1CAE27DA07E000758A3A /* CrosshairsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A1CAD27DA07E000758A3A /* CrosshairsEndpoint.swift */; };
 		F11A1CB027DA084900758A3A /* CrosshairsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A1CAF27DA084900758A3A /* CrosshairsModel.swift */; };
+		F11A1CB427DA168E00758A3A /* CrosshairDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A1CB227DA168E00758A3A /* CrosshairDetailVM.swift */; };
+		F11A1CB527DA168E00758A3A /* CrosshairDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A1CB327DA168E00758A3A /* CrosshairDetailVC.swift */; };
+		F11A1CB927DA25B200758A3A /* CrosshairSingleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11A1CB727DA25B200758A3A /* CrosshairSingleDetailView.swift */; };
 		F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */; };
 		F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DF727C8B53600A8F511 /* VHNavBar.swift */; };
 		F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */; };
@@ -114,6 +117,9 @@
 		F11A1CAA27DA07AE00758A3A /* CrosshairsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairsCell.swift; sourceTree = "<group>"; };
 		F11A1CAD27DA07E000758A3A /* CrosshairsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairsEndpoint.swift; sourceTree = "<group>"; };
 		F11A1CAF27DA084900758A3A /* CrosshairsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairsModel.swift; sourceTree = "<group>"; };
+		F11A1CB227DA168E00758A3A /* CrosshairDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairDetailVM.swift; sourceTree = "<group>"; };
+		F11A1CB327DA168E00758A3A /* CrosshairDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairDetailVC.swift; sourceTree = "<group>"; };
+		F11A1CB727DA25B200758A3A /* CrosshairSingleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairSingleDetailView.swift; sourceTree = "<group>"; };
 		F12E3DF627C8B53600A8F511 /* VHNavBarVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBarVM.swift; sourceTree = "<group>"; };
 		F12E3DF727C8B53600A8F511 /* VHNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHNavBar.swift; sourceTree = "<group>"; };
 		F12E3DFA27C8C84700A8F511 /* SingleAgentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleAgentModel.swift; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 		F11A1CA227DA073100758A3A /* CrosshairsFLOW */ = {
 			isa = PBXGroup;
 			children = (
+				F11A1CB127DA167200758A3A /* CrosshairDetail */,
 				F11A1CA327DA074D00758A3A /* Crosshairs */,
 			);
 			path = CrosshairsFLOW;
@@ -268,6 +275,24 @@
 				F11A1CAA27DA07AE00758A3A /* CrosshairsCell.swift */,
 			);
 			path = CrosshairsCell;
+			sourceTree = "<group>";
+		};
+		F11A1CB127DA167200758A3A /* CrosshairDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F11A1CBA27DA25B800758A3A /* CrosshairSingleDetailView */,
+				F11A1CB227DA168E00758A3A /* CrosshairDetailVM.swift */,
+				F11A1CB327DA168E00758A3A /* CrosshairDetailVC.swift */,
+			);
+			path = CrosshairDetail;
+			sourceTree = "<group>";
+		};
+		F11A1CBA27DA25B800758A3A /* CrosshairSingleDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				F11A1CB727DA25B200758A3A /* CrosshairSingleDetailView.swift */,
+			);
+			path = CrosshairSingleDetailView;
 			sourceTree = "<group>";
 		};
 		F12E3DF427C8B4D400A8F511 /* CustomElements */ = {
@@ -809,6 +834,8 @@
 				F12E3DFF27C9057400A8F511 /* AgentAbilityViewVM.swift in Sources */,
 				F1C6B70027C4F57E00848580 /* UIColor+Extension.swift in Sources */,
 				F1C6B6F827C4F57E00848580 /* UIImageView+Extension.swift in Sources */,
+				F11A1CB527DA168E00758A3A /* CrosshairDetailVC.swift in Sources */,
+				F11A1CB427DA168E00758A3A /* CrosshairDetailVM.swift in Sources */,
 				F1C6B6F627C4F57E00848580 /* NSMutableAttributedString+Extension.swift in Sources */,
 				F131EE4827D8A93C00DED4AD /* SiteLineUpsVMFactory.swift in Sources */,
 				F167DC7527C7968A00B4DB44 /* AgentsFooterView.swift in Sources */,
@@ -831,6 +858,7 @@
 				F112D3FA27D62056009C972C /* SiteLineUpsVM.swift in Sources */,
 				F1C6B70B27C5114500848580 /* AgentsHeaderViewCellVM.swift in Sources */,
 				F112D40227D651F2009C972C /* SiteLineUpsCellVM.swift in Sources */,
+				F11A1CB927DA25B200758A3A /* CrosshairSingleDetailView.swift in Sources */,
 				F1C6B6D527C4F12000848580 /* AgentsVM.swift in Sources */,
 				F11A1CA727DA076800758A3A /* CrosshairsVC.swift in Sources */,
 				F144869327CCFBB000EDF72C /* LineUpsEndpoint.swift in Sources */,
