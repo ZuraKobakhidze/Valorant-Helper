@@ -76,7 +76,8 @@ class LineUpsMapsSectionCell: UITableViewCell {
             coverImage.topAnchor.constraint(equalTo: self.topAnchor),
             coverImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25),
             coverImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25),
-            coverImage.heightAnchor.constraint(equalToConstant: 80),
+            coverImage.heightAnchor.constraint(greaterThanOrEqualToConstant: 80),
+            coverImage.heightAnchor.constraint(equalToConstant: (PublicConstants.screenWidth-50)/5),
             
             containerView.topAnchor.constraint(equalTo: coverImage.bottomAnchor),
             containerView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25),

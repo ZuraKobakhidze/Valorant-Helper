@@ -128,7 +128,7 @@ class CrosshairDetailVC: UIViewController {
             coverImage.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
             coverImage.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
             coverImage.widthAnchor.constraint(equalToConstant: view.frame.width),
-            coverImage.heightAnchor.constraint(equalToConstant: 250),
+            coverImage.heightAnchor.constraint(equalToConstant: ((PublicConstants.screenWidth)/16)*9),
             
             containerView.topAnchor.constraint(equalTo: coverImage.bottomAnchor),
             containerView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),

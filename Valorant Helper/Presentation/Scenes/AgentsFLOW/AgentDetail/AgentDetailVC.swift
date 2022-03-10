@@ -198,9 +198,8 @@ class AgentDetailVC: UIViewController {
         
             roleLabel.topAnchor.constraint(equalTo: roleTagLabel.bottomAnchor, constant: 5),
             roleLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
-            roleLabel.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
             
-            roleImage.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            roleImage.leftAnchor.constraint(equalTo: roleLabel.rightAnchor, constant: 10),
             roleImage.centerYAnchor.constraint(equalTo: roleLabel.centerYAnchor),
             roleImage.widthAnchor.constraint(equalToConstant: 15),
             roleImage.heightAnchor.constraint(equalToConstant: 15),

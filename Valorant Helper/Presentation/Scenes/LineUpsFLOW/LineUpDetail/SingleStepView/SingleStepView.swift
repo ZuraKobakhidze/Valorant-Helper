@@ -77,7 +77,7 @@ class SingleStepView: UIView {
             coverImage.topAnchor.constraint(equalTo: titleView.bottomAnchor),
             coverImage.leftAnchor.constraint(equalTo: self.leftAnchor),
             coverImage.rightAnchor.constraint(equalTo: self.rightAnchor),
-            coverImage.heightAnchor.constraint(equalToConstant: 240),
+            coverImage.heightAnchor.constraint(equalToConstant: (PublicConstants.screenWidth/16)*9),
             coverImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         
         ])

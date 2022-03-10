@@ -35,6 +35,14 @@ class MainTabBar: UITabBarController {
         return nav
     }()
     
+    let favouritesVC: UIViewController = {
+        let vc = FavouritesVC()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.title = "FAVOURITES".localized()
+        nav.isNavigationBarHidden = true
+        return nav
+    }()
+    
     //MARK: - Views
     
     lazy var topLineView: UIView = {
@@ -45,20 +53,22 @@ class MainTabBar: UITabBarController {
     
     //MARK: - Variables
     
-    let viewControllerCount = 3
+    let viewControllerCount = 4
     
     //MARK: - Images
     
     let tabBarSelectedImages = [
         AppAsset.tabBarAgentsSelected,
         AppAsset.tabBarCrosshairsSelected,
-        AppAsset.tabBarLineUpsSelected
+        AppAsset.tabBarLineUpsSelected,
+        AppAsset.tabBarFavouriteSelected
     ]
     
     let tabBarUnselectedImages = [
         AppAsset.tabBarAgentsNotSelected,
         AppAsset.tabBarCrosshairsNotSelected,
-        AppAsset.tabBarLineUpsNotSelected
+        AppAsset.tabBarLineUpsNotSelected,
+        AppAsset.tabBarFavouriteNotSelected
     ]
     
     //MARK: - LifeCycle
@@ -75,7 +85,7 @@ class MainTabBar: UITabBarController {
     
     private func setupTabBarItems() {
 
-        self.setViewControllers([agentsVC, crosshairsVC, lineUpsVC], animated: false)
+        self.setViewControllers([agentsVC, crosshairsVC, lineUpsVC, favouritesVC], animated: false)
         setupTabBarTitles()
         setupTabBarImages()
         

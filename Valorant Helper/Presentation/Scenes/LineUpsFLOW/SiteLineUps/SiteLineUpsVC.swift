@@ -85,7 +85,8 @@ class SiteLineUpsVC: UIViewController {
             coverImage.topAnchor.constraint(equalTo: navBar.bottomAnchor),
             coverImage.leftAnchor.constraint(equalTo: view.leftAnchor),
             coverImage.rightAnchor.constraint(equalTo: view.rightAnchor),
-            coverImage.heightAnchor.constraint(equalToConstant: 80),
+            coverImage.heightAnchor.constraint(greaterThanOrEqualToConstant: 80),
+            coverImage.heightAnchor.constraint(equalToConstant: (PublicConstants.screenWidth)/5),
             
             containerView.topAnchor.constraint(equalTo: coverImage.bottomAnchor),
             containerView.leftAnchor.constraint(equalTo: view.leftAnchor),

@@ -165,7 +165,8 @@ class LineUpDetailVC: UIViewController {
             mapImage.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
             mapImage.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
             mapImage.widthAnchor.constraint(equalToConstant: view.frame.width),
-            mapImage.heightAnchor.constraint(equalToConstant: 80),
+            mapImage.heightAnchor.constraint(greaterThanOrEqualToConstant: 80),
+            mapImage.heightAnchor.constraint(equalToConstant: (PublicConstants.screenWidth)/5),
             
             titleView.topAnchor.constraint(equalTo: mapImage.bottomAnchor),
             titleView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),

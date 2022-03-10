@@ -35,6 +35,14 @@ class AppAsset {
         UIImage(named: "tab_bar_crosshairs_not_selected")
     }
     
+    static var tabBarFavouriteSelected: UIImage? {
+        UIImage(named: "tab_bar_favourites_selected")
+    }
+    
+    static var tabBarFavouriteNotSelected: UIImage? {
+        UIImage(named: "tab_bar_favourites_not_selected")
+    }
+    
     //MARK: - Logo
     
     static var logoValorantHelper: UIImage? {

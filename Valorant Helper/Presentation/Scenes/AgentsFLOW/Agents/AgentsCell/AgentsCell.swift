@@ -6,7 +6,7 @@ class AgentsCell: UICollectionViewCell {
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleAspectFit
         image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image

@@ -15,7 +15,7 @@ class AgentsVC: UIViewController {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: (view.frame.width - 50 - 10)/2, height: 217)
+        layout.itemSize = CGSize(width: (view.frame.width - 50 - 10)/2, height: (view.frame.width - 50 - 10)/2)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear

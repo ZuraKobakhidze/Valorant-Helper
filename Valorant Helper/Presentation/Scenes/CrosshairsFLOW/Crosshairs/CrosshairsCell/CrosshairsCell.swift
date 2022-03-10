@@ -79,7 +79,7 @@ class CrosshairsCell: UITableViewCell {
             coverImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             coverImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 25),
             coverImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -25),
-            coverImage.heightAnchor.constraint(equalToConstant: 220),
+            coverImage.heightAnchor.constraint(equalToConstant: ((PublicConstants.screenWidth-50)/16)*9),
             
             containerView.topAnchor.constraint(equalTo: coverImage.bottomAnchor),
             containerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 25),
