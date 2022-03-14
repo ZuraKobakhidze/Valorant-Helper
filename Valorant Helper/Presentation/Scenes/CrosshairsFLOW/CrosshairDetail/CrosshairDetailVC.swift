@@ -176,7 +176,7 @@ class CrosshairDetailVC: UIViewController {
         nameLabel.text = viewModel.item?.name
         
         let headerDetailView = CrosshairSingleDetailView()
-        headerDetailView.configure(with: CrosshairDetailModel(value: "Crosshair Detail".localized(), description: "Setting".localized()))
+        headerDetailView.configure(with: CrosshairDetailModel(orderNumber: 0, value: "Crosshair Detail".localized(), description: "Setting".localized()))
         headerDetailView.makeViewAsHeader()
         stackView.addArrangedSubview(headerDetailView)
         
@@ -203,7 +203,7 @@ class CrosshairDetailVC: UIViewController {
     //MARK: - Actions
 
     @objc func onFavourite() {
-        
+        viewModel?.saveItemToFavourite()
     }
     
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {

@@ -17,7 +17,7 @@ class FavouritesVC: UIViewController {
 
     //MARK: - Variables
 
-    // Your Variables Here
+    let viewModel = FavouritesVM()
 
     //MARK: - LifeCycle
     
@@ -26,6 +26,7 @@ class FavouritesVC: UIViewController {
 
         view.backgroundColor = AppColor.darkBlack.color
         buildSubviews()
+        viewModel.read()
     }
     
     override func viewWillLayoutSubviews() {

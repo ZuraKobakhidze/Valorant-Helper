@@ -1,26 +1,35 @@
 import Foundation
 import Combine
 
-protocol LineUpDetailVMProtocol {
+protocol LineUpDetailVMProtocol: ViewModel {
     var agentPath: String? { get }
+    var agentImage: String? { get }
     var lineUpIdentifier: SingleLineUpModel? { get }
     var mapIcon: String? { get }
     var item: LineUpModel? { get }
     var itemSubject: PassthroughSubject<Bool, Never> { get }
     var getRequiremets: String { get }
-    init(agentPath: String?, lineUpIdentifier: SingleLineUpModel?, mapIcon: String?)
+    init(agentImage: String?, agentPath: String?, lineUpIdentifier: SingleLineUpModel?, mapIcon: String?)
     func getItem()
+    func saveItemToFavourite()
 }
 
 class LineUpDetailVM: LineUpDetailVMProtocol {
     
     var agentPath: String?
+    var agentImage: String?
     var lineUpIdentifier: SingleLineUpModel?
     var mapIcon: String?
     var item: LineUpModel?
     var itemSubject = PassthroughSubject<Bool, Never>()
+    let coreDataManager: CoreDataManagerProtocol = LineUpCoreDataManager()
     
-    required init(agentPath: String?, lineUpIdentifier: SingleLineUpModel?, mapIcon: String?) {
+    var getRequiremets: String {
+        item?.requirements?.map { "- \($0)" }.joined(separator: "\n") ?? "NONE"
+    }
+    
+    required init(agentImage: String?, agentPath: String?, lineUpIdentifier: SingleLineUpModel?, mapIcon: String?) {
+        self.agentImage = agentImage
         self.agentPath = agentPath
         self.lineUpIdentifier = lineUpIdentifier
         self.mapIcon = mapIcon
@@ -40,8 +49,10 @@ class LineUpDetailVM: LineUpDetailVMProtocol {
         
     }
     
-    var getRequiremets: String {
-        item?.requirements?.map { "- \($0)" }.joined(separator: "\n") ?? "NONE"
+    func saveItemToFavourite() {
+        
+        coreDataManager.save(viewModel: self)
+        
     }
     
 }

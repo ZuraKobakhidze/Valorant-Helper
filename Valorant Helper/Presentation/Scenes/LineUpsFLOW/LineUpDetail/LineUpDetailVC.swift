@@ -255,7 +255,7 @@ class LineUpDetailVC: UIViewController {
     //MARK: - Actions
 
     @objc func onFavourite() {
-        
+        viewModel?.saveItemToFavourite()
     }
     
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {

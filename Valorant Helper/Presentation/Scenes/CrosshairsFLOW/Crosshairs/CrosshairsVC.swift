@@ -116,4 +116,16 @@ extension CrosshairsVC: UITableViewDataSource, UITableViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.alpha = 0
+        cell.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
+            cell.alpha = 1
+            cell.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
 }

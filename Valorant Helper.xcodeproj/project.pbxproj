@@ -54,6 +54,8 @@
 		F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610327CCD9C100F13D92 /* LineUpsVM.swift */; };
 		F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610427CCD9C100F13D92 /* LineUpsVC.swift */; };
 		F19E610B27CCE72800F13D92 /* LineUpsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610927CCE72800F13D92 /* LineUpsCell.swift */; };
+		F1A1AB4927DB6BEC00B1326C /* CoreDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1AB4827DB6BEC00B1326C /* CoreDataManagerProtocol.swift */; };
+		F1A1AB4C27DB6D5D00B1326C /* PublicProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */; };
 		F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68C27C4EBA700848580 /* AppDelegate.swift */; };
 		F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */; };
 		F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */; };
@@ -156,6 +158,8 @@
 		F19E610327CCD9C100F13D92 /* LineUpsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVM.swift; sourceTree = "<group>"; };
 		F19E610427CCD9C100F13D92 /* LineUpsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVC.swift; sourceTree = "<group>"; };
 		F19E610927CCE72800F13D92 /* LineUpsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsCell.swift; sourceTree = "<group>"; };
+		F1A1AB4827DB6BEC00B1326C /* CoreDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerProtocol.swift; sourceTree = "<group>"; };
+		F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProtocols.swift; sourceTree = "<group>"; };
 		F1C6B68927C4EBA700848580 /* Valorant Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B68C27C4EBA700848580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -480,6 +484,22 @@
 			path = LineUpsCell;
 			sourceTree = "<group>";
 		};
+		F1A1AB4727DB6BCD00B1326C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				F1A1AB4827DB6BEC00B1326C /* CoreDataManagerProtocol.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		F1A1AB4A27DB6D3900B1326C /* PublicProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */,
+			);
+			path = PublicProtocols;
+			sourceTree = "<group>";
+		};
 		F1C6B68027C4EBA700848580 = {
 			isa = PBXGroup;
 			children = (
@@ -572,7 +592,9 @@
 		F1C6B6C327C4EC6800848580 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F1A1AB4A27DB6D3900B1326C /* PublicProtocols */,
 				F11A1CC127DA46F500758A3A /* PublicConstants */,
+				F1A1AB4727DB6BCD00B1326C /* CoreData */,
 				F167DC7027C66FF800B4DB44 /* Factory */,
 				F167DC6827C66ABC00B4DB44 /* Model */,
 				F167DC6127C666DA00B4DB44 /* Network */,
@@ -889,6 +911,7 @@
 				F131EE4127D8944300DED4AD /* LineUpDetailVM.swift in Sources */,
 				F167DC6727C6674200B4DB44 /* NetworkEngine.swift in Sources */,
 				F131EE4427D8A21400DED4AD /* LineUpModel.swift in Sources */,
+				F1A1AB4C27DB6D5D00B1326C /* PublicProtocols.swift in Sources */,
 				F1C6B6D027C4F07900848580 /* AppAsset.swift in Sources */,
 				F112D3FA27D62056009C972C /* SiteLineUpsVM.swift in Sources */,
 				F1C6B70B27C5114500848580 /* AgentsHeaderViewCellVM.swift in Sources */,
@@ -903,6 +926,7 @@
 				F1C6B6D627C4F12000848580 /* AgentsVC.swift in Sources */,
 				F167DC7227C6701000B4DB44 /* AgentsCellVMFactory.swift in Sources */,
 				F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */,
+				F1A1AB4927DB6BEC00B1326C /* CoreDataManagerProtocol.swift in Sources */,
 				F1C6B6FD27C4F57E00848580 /* Double+Extension.swift in Sources */,
 				F1070C5927CFA8BB0054F131 /* LineUpsMapsSectionCell.swift in Sources */,
 				F1C6B6FC27C4F57E00848580 /* UITableView+Extension.swift in Sources */,

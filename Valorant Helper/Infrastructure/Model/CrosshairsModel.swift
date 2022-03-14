@@ -14,6 +14,7 @@ struct CrosshairsModel: Codable {
 }
 
 struct CrosshairDetailModel: Codable {
+    let orderNumber: Int?
     let value: String?
     let description: String?
 }

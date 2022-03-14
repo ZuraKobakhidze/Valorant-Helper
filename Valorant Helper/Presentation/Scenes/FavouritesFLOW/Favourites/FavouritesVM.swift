@@ -1,5 +1,11 @@
 import Foundation
 
-struct FavouritesVM {
-    // Your Properties Goes Here 
+class FavouritesVM {
+    
+    let lineUpsCoreDataManager: CoreDataManagerProtocol = CrosshairCoreDataManager()
+    
+    func read() {
+        lineUpsCoreDataManager.read()
+    }
+    
 }
