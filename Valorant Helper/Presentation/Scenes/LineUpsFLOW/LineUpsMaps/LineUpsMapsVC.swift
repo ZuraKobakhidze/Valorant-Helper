@@ -172,11 +172,11 @@ extension LineUpsMapVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: LineUpsMapsSectionCell.reusableIdentifer) as! LineUpsMapsSectionCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: LineUpsMapsSectionCell.reusableIdentifer, for: indexPath) as! LineUpsMapsSectionCell
             cell.configure(with: viewModel?.itemList[indexPath.section])
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: LineUpsMapsCell.reusableIdentifer) as! LineUpsMapsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: LineUpsMapsCell.reusableIdentifer, for: indexPath) as! LineUpsMapsCell
             cell.configure(with: viewModel?.itemList[indexPath.section].item?.site?[indexPath.row - 1])
             return cell
         }

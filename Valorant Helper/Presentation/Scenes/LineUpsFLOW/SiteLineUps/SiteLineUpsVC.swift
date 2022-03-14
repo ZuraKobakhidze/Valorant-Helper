@@ -165,7 +165,7 @@ extension SiteLineUpsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SiteLineUpsCell.reusableIdentifer) as! SiteLineUpsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SiteLineUpsCell.reusableIdentifer, for: indexPath) as! SiteLineUpsCell
         cell.configure(with: viewModel?.itemList?[indexPath.row])
         return cell
     }

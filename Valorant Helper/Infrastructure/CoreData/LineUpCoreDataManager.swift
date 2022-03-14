@@ -21,6 +21,7 @@ class LineUpCoreDataManager {
         
         let newLineUp = LineUpCD(entity: entity!, insertInto: context)
         
+        newLineUp.id = UUID()
         newLineUp.agentImage = vm.agentImage
         newLineUp.agentPath = vm.agentPath
         newLineUp.lineUpName = vm.lineUpIdentifier?.lineUpName

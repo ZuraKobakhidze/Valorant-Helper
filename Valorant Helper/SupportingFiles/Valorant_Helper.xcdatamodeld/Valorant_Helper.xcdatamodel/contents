@@ -3,12 +3,13 @@
     <entity name="LineUpCD" representedClassName="LineUpCD" syncable="YES">
         <attribute name="agentImage" optional="YES" attributeType="String"/>
         <attribute name="agentPath" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="lineUpName" optional="YES" attributeType="String"/>
         <attribute name="lineUpPath" optional="YES" attributeType="String"/>
         <attribute name="mapIcon" optional="YES" attributeType="String"/>
         <attribute name="site" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="LineUpCD" positionX="-45" positionY="0" width="128" height="119"/>
+        <element name="LineUpCD" positionX="-45" positionY="0" width="128" height="134"/>
     </elements>
 </model>

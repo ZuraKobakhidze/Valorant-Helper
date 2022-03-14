@@ -105,7 +105,7 @@ extension CrosshairsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CrosshairsCell.reusableIdentifer) as! CrosshairsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CrosshairsCell.reusableIdentifer, for: indexPath) as! CrosshairsCell
         cell.configure(with: viewModel.itemList[indexPath.row])
         return cell
     }

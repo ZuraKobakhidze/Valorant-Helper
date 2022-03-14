@@ -6,8 +6,7 @@
 //
 
 import UIKit
-
-let imageCache = NSCache<NSString, UIImage>()
+import Kingfisher
 
 extension UIImageView {
     
@@ -19,32 +18,13 @@ extension UIImageView {
     
     func loadImageFromURL(urlString: String) {
         
-        self.image = nil
-        
-        if let cachedImage = imageCache.object(forKey: NSString(string: urlString)) {
-            self.image = cachedImage
-            return
-        }
-        
-        guard let url = URL(string: urlString) else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, _ in
-            
-            guard let data = data, let downloadedImage = UIImage(data: data) else { return }
-            
-            imageCache.setObject(downloadedImage, forKey: NSString(string: urlString))
-            
-            DispatchQueue.main.async { [weak self] in
-                self?.alpha = 0
-                self?.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-                self?.image = downloadedImage
-                UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) { [weak self] in
-                    self?.alpha = 1
-                    self?.transform = CGAffineTransform.identity
-                }
-            }
-            
-        }.resume()
+        let url = URL(string: urlString)
+        self.kf.setImage(
+            with: url,
+            options: [
+                .transition(.fade(0.3)),
+            ]
+        )
         
     }
     

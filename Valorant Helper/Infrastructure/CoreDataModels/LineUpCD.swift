@@ -10,6 +10,7 @@ import CoreData
 
 @objc(LineUpCD)
 class LineUpCD: NSManagedObject, ViewModel {
+    @NSManaged var id: UUID?
     @NSManaged var agentImage: String?
     @NSManaged var agentPath: String?
     @NSManaged var lineUpName: String?

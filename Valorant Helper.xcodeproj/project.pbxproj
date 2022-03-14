@@ -94,6 +94,7 @@
 		F1CF789227DF744800A5E74C /* FavouritesDataSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789027DF744800A5E74C /* FavouritesDataSelectorView.swift */; };
 		F1CF789627DF7B1100A5E74C /* FavouritesLineUpCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789427DF7B1100A5E74C /* FavouritesLineUpCellVM.swift */; };
 		F1CF789727DF7B1100A5E74C /* FavouritesLineUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789527DF7B1100A5E74C /* FavouritesLineUpCell.swift */; };
+		F1CF789A27DFAB5100A5E74C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F1CF789927DFAB5100A5E74C /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CF789A27DFAB5100A5E74C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,6 +789,7 @@
 			);
 			name = "Valorant Helper";
 			packageProductDependencies = (
+				F1CF789927DFAB5100A5E74C /* Kingfisher */,
 			);
 			productName = "Valorant Helper";
 			productReference = F1C6B68927C4EBA700848580 /* Valorant Helper.app */;
@@ -862,6 +865,7 @@
 			);
 			mainGroup = F1C6B68027C4EBA700848580;
 			packageReferences = (
+				F1CF789827DFAB5100A5E74C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = F1C6B68A27C4EBA700848580 /* Products */;
 			projectDirPath = "";
@@ -1333,6 +1337,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F1CF789827DFAB5100A5E74C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F1CF789927DFAB5100A5E74C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F1CF789827DFAB5100A5E74C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */ = {

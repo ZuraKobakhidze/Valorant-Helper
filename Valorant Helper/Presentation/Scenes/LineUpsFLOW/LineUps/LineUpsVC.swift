@@ -126,7 +126,7 @@ extension LineUpsVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LineUpsCell.reusableIdentifer) as! LineUpsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: LineUpsCell.reusableIdentifer, for: indexPath) as! LineUpsCell
         cell.configure(with: viewModel.itemList?[indexPath.row])
         return cell
     }
