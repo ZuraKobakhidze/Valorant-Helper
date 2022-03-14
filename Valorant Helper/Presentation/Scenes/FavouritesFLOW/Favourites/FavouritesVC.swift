@@ -1,8 +1,22 @@
 import UIKit
+import Combine
 
 class FavouritesVC: UIViewController {
     
     //MARK: - Views
+    
+    let headerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "FAVOURITES".localized()
+        label.textColor = AppColor.lightWhite.color
+        label.font = AppFont.getBold(ofSize: 20)
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let dataSelectorView = FavouritesDataSelectorView()
 
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
@@ -18,6 +32,7 @@ class FavouritesVC: UIViewController {
     //MARK: - Variables
 
     let viewModel = FavouritesVM()
+    var cancellableList: Set<AnyCancellable> = []
 
     //MARK: - LifeCycle
     
@@ -25,8 +40,16 @@ class FavouritesVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = AppColor.darkBlack.color
+        tableView.register(FavouritesLineUpCell.self, forCellReuseIdentifier: FavouritesLineUpCell.reusableIdentifer)
         buildSubviews()
-        viewModel.read()
+        setupDataSelection()
+        setupViewModel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel.fetchData()
     }
     
     override func viewWillLayoutSubviews() {
@@ -38,16 +61,51 @@ class FavouritesVC: UIViewController {
     //MARK: - Build
 
     private func buildSubviews() {
-
+        view.addSubview(headerLabel)
+        view.addSubview(dataSelectorView)
+        view.addSubview(tableView)
     }
 
     private func buildConstraints() {
 
+        NSLayoutConstraint.activate([
+        
+            headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top+25),
+            headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
+            headerLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
+            
+            dataSelectorView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 15),
+            dataSelectorView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
+            dataSelectorView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
+            
+            tableView.topAnchor.constraint(equalTo: dataSelectorView.bottomAnchor, constant: 15),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
+        
+        ])
+        
     }
 
     //MARK: - Setup
 
-    // Your Setup Methods Here
+    private func setupDataSelection() {
+        
+        dataSelectorView.$currentIndex.sink { index in
+            print(index)
+        }.store(in: &cancellableList)
+        
+    }
+    
+    private func setupViewModel() {
+        
+        viewModel.itemSubject.sink { _ in
+            DispatchQueue.main.async { [weak self] in
+                self?.tableView.reloadData()
+            }
+        }.store(in: &cancellableList)
+        
+    }
 
     //MARK: - Configure
 
@@ -64,11 +122,29 @@ class FavouritesVC: UIViewController {
 extension FavouritesVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        viewModel.itemList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let item = viewModel.itemList[indexPath.row] as? LineUpCD {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FavouritesLineUpCell.reusableIdentifer, for: indexPath) as! FavouritesLineUpCell
+            cell.configure(with: item)
+            return cell
+        }
+ 
         return UITableViewCell()
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let item = viewModel.itemList[indexPath.row] as? LineUpCD {
+            let vc = LineUpDetailVC()
+            vc.viewModel = LineUpDetailVMFactory.getLineUpDetailVM(from: item)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
 }

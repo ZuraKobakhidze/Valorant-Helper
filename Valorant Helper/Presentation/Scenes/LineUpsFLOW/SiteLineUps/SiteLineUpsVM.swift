@@ -6,6 +6,7 @@ protocol SiteLineUpsProtocol {
     var mapIcon: String? { get }
     var agentImage: String? { get }
     var headerName: NSAttributedString? { get }
+    var getSiteName: String? { get }
     init(itemList: [SiteLineUpsCellVM?]?, agentPath: String?, mapIcon: String?, mapName: String?, siteName: String?, agentImage: String?)
 }
 
@@ -31,6 +32,10 @@ class SiteLineUpsVM: SiteLineUpsProtocol {
         NSMutableAttributedString()
             .text("\(mapName?.uppercased() ?? "") - ", font: AppFont.getBold(ofSize: 18), color: AppColor.extraBlack.color, bgColor: nil, underlineStyle: nil, underlineColor: nil, strikeStyle: nil, strikeColor: nil)
             .text(siteName ?? "", font: AppFont.getBold(ofSize: 18), color: AppColor.mediumRed.color, bgColor: nil, underlineStyle: nil, underlineColor: nil, strikeStyle: nil, strikeColor: nil)
+    }
+    
+    var getSiteName: String? {
+        "\(mapName ?? "") - \(siteName ?? "")"
     }
     
 }

@@ -15,7 +15,19 @@ class LineUpDetailVMFactory {
             agentImage: vm?.agentImage,
             agentPath: vm?.agentPath,
             lineUpIdentifier: vm?.itemList?[index.row]?.item,
-            mapIcon: vm?.mapIcon)
+            mapIcon: vm?.mapIcon,
+            site: vm?.getSiteName)
+        
+    }
+    
+    static func getLineUpDetailVM(from vm: LineUpCD?) -> LineUpDetailVMProtocol {
+        
+        LineUpDetailVM(
+            agentImage: vm?.agentImage,
+            agentPath: vm?.agentPath,
+            lineUpIdentifier: SingleLineUpModel(lineUpName: vm?.lineUpName, lineUpPath: vm?.lineUpPath),
+            mapIcon: vm?.mapIcon,
+            site: vm?.site)
         
     }
     

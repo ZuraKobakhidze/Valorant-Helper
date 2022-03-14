@@ -9,7 +9,6 @@ protocol CrosshairDetailVMProtocol: ViewModel {
 class CrosshairDetailVM: CrosshairDetailVMProtocol {
     
     var item: CrosshairsModel?
-    let coreDataManager: CoreDataManagerProtocol = CrosshairCoreDataManager()
     
     required init(item: CrosshairsModel?) {
         self.item = item
@@ -17,7 +16,7 @@ class CrosshairDetailVM: CrosshairDetailVMProtocol {
     
     func saveItemToFavourite() {
         
-        coreDataManager.save(viewModel: self)
+        
         
     }
     

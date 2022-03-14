@@ -54,7 +54,6 @@
 		F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610327CCD9C100F13D92 /* LineUpsVM.swift */; };
 		F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610427CCD9C100F13D92 /* LineUpsVC.swift */; };
 		F19E610B27CCE72800F13D92 /* LineUpsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610927CCE72800F13D92 /* LineUpsCell.swift */; };
-		F1A1AB4927DB6BEC00B1326C /* CoreDataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1AB4827DB6BEC00B1326C /* CoreDataManagerProtocol.swift */; };
 		F1A1AB4C27DB6D5D00B1326C /* PublicProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */; };
 		F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68C27C4EBA700848580 /* AppDelegate.swift */; };
 		F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */; };
@@ -90,6 +89,11 @@
 		F1C6B70727C5101A00848580 /* AgentsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B70527C5101A00848580 /* AgentsHeaderView.swift */; };
 		F1C6B70B27C5114500848580 /* AgentsHeaderViewCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B70927C5114500848580 /* AgentsHeaderViewCellVM.swift */; };
 		F1C6B70C27C5114500848580 /* AgentsHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B70A27C5114500848580 /* AgentsHeaderViewCell.swift */; };
+		F1CF788A27DF579B00A5E74C /* LineUpCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF788927DF579B00A5E74C /* LineUpCoreDataManager.swift */; };
+		F1CF788D27DF59E500A5E74C /* LineUpCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF788C27DF59E500A5E74C /* LineUpCD.swift */; };
+		F1CF789227DF744800A5E74C /* FavouritesDataSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789027DF744800A5E74C /* FavouritesDataSelectorView.swift */; };
+		F1CF789627DF7B1100A5E74C /* FavouritesLineUpCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789427DF7B1100A5E74C /* FavouritesLineUpCellVM.swift */; };
+		F1CF789727DF7B1100A5E74C /* FavouritesLineUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789527DF7B1100A5E74C /* FavouritesLineUpCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,7 +162,6 @@
 		F19E610327CCD9C100F13D92 /* LineUpsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVM.swift; sourceTree = "<group>"; };
 		F19E610427CCD9C100F13D92 /* LineUpsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVC.swift; sourceTree = "<group>"; };
 		F19E610927CCE72800F13D92 /* LineUpsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsCell.swift; sourceTree = "<group>"; };
-		F1A1AB4827DB6BEC00B1326C /* CoreDataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerProtocol.swift; sourceTree = "<group>"; };
 		F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProtocols.swift; sourceTree = "<group>"; };
 		F1C6B68927C4EBA700848580 /* Valorant Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B68C27C4EBA700848580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +201,11 @@
 		F1C6B70527C5101A00848580 /* AgentsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsHeaderView.swift; sourceTree = "<group>"; };
 		F1C6B70927C5114500848580 /* AgentsHeaderViewCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsHeaderViewCellVM.swift; sourceTree = "<group>"; };
 		F1C6B70A27C5114500848580 /* AgentsHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsHeaderViewCell.swift; sourceTree = "<group>"; };
+		F1CF788927DF579B00A5E74C /* LineUpCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpCoreDataManager.swift; sourceTree = "<group>"; };
+		F1CF788C27DF59E500A5E74C /* LineUpCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpCD.swift; sourceTree = "<group>"; };
+		F1CF789027DF744800A5E74C /* FavouritesDataSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesDataSelectorView.swift; sourceTree = "<group>"; };
+		F1CF789427DF7B1100A5E74C /* FavouritesLineUpCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesLineUpCellVM.swift; sourceTree = "<group>"; };
+		F1CF789527DF7B1100A5E74C /* FavouritesLineUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesLineUpCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +324,8 @@
 		F11A1CBC27DA450200758A3A /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
+				F1CF789327DF7AE900A5E74C /* FavouritesLineUpCell */,
+				F1CF788E27DF742B00A5E74C /* FavouritesDataSelectorView */,
 				F11A1CBD27DA451200758A3A /* FavouritesVM.swift */,
 				F11A1CBE27DA451200758A3A /* FavouritesVC.swift */,
 			);
@@ -487,7 +497,7 @@
 		F1A1AB4727DB6BCD00B1326C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				F1A1AB4827DB6BEC00B1326C /* CoreDataManagerProtocol.swift */,
+				F1CF788927DF579B00A5E74C /* LineUpCoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -592,6 +602,7 @@
 		F1C6B6C327C4EC6800848580 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F1CF788B27DF59BC00A5E74C /* CoreDataModels */,
 				F1A1AB4A27DB6D3900B1326C /* PublicProtocols */,
 				F11A1CC127DA46F500758A3A /* PublicConstants */,
 				F1A1AB4727DB6BCD00B1326C /* CoreData */,
@@ -732,6 +743,31 @@
 				F1C6B70A27C5114500848580 /* AgentsHeaderViewCell.swift */,
 			);
 			path = AgentsHeaderViewCell;
+			sourceTree = "<group>";
+		};
+		F1CF788B27DF59BC00A5E74C /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				F1CF788C27DF59E500A5E74C /* LineUpCD.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		F1CF788E27DF742B00A5E74C /* FavouritesDataSelectorView */ = {
+			isa = PBXGroup;
+			children = (
+				F1CF789027DF744800A5E74C /* FavouritesDataSelectorView.swift */,
+			);
+			path = FavouritesDataSelectorView;
+			sourceTree = "<group>";
+		};
+		F1CF789327DF7AE900A5E74C /* FavouritesLineUpCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1CF789427DF7B1100A5E74C /* FavouritesLineUpCellVM.swift */,
+				F1CF789527DF7B1100A5E74C /* FavouritesLineUpCell.swift */,
+			);
+			path = FavouritesLineUpCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -890,8 +926,10 @@
 				F1C6B70027C4F57E00848580 /* UIColor+Extension.swift in Sources */,
 				F11A1CC027DA451200758A3A /* FavouritesVC.swift in Sources */,
 				F1C6B6F827C4F57E00848580 /* UIImageView+Extension.swift in Sources */,
+				F1CF788D27DF59E500A5E74C /* LineUpCD.swift in Sources */,
 				F11A1CB527DA168E00758A3A /* CrosshairDetailVC.swift in Sources */,
 				F11A1CB427DA168E00758A3A /* CrosshairDetailVM.swift in Sources */,
+				F1CF788A27DF579B00A5E74C /* LineUpCoreDataManager.swift in Sources */,
 				F1C6B6F627C4F57E00848580 /* NSMutableAttributedString+Extension.swift in Sources */,
 				F131EE4827D8A93C00DED4AD /* SiteLineUpsVMFactory.swift in Sources */,
 				F167DC7527C7968A00B4DB44 /* AgentsFooterView.swift in Sources */,
@@ -926,16 +964,17 @@
 				F1C6B6D627C4F12000848580 /* AgentsVC.swift in Sources */,
 				F167DC7227C6701000B4DB44 /* AgentsCellVMFactory.swift in Sources */,
 				F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */,
-				F1A1AB4927DB6BEC00B1326C /* CoreDataManagerProtocol.swift in Sources */,
 				F1C6B6FD27C4F57E00848580 /* Double+Extension.swift in Sources */,
 				F1070C5927CFA8BB0054F131 /* LineUpsMapsSectionCell.swift in Sources */,
 				F1C6B6FC27C4F57E00848580 /* UITableView+Extension.swift in Sources */,
+				F1CF789727DF7B1100A5E74C /* FavouritesLineUpCell.swift in Sources */,
 				F18B52F827CE356000E7CBD4 /* LineUpsMapsVC.swift in Sources */,
 				F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */,
 				F131EE4227D8944300DED4AD /* LineUpDetailVC.swift in Sources */,
 				F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */,
 				F131EE4627D8A6B100DED4AD /* LineUpDetailVMFactory.swift in Sources */,
 				F1C6B6CA27C4EFAA00848580 /* MainTabBar.swift in Sources */,
+				F1CF789627DF7B1100A5E74C /* FavouritesLineUpCellVM.swift in Sources */,
 				F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */,
 				F144869527CCFC1300EDF72C /* LineUpsModel.swift in Sources */,
 				F11A1CAE27DA07E000758A3A /* CrosshairsEndpoint.swift in Sources */,
@@ -945,6 +984,7 @@
 				F1C6B6E627C4F54F00848580 /* AppColor.swift in Sources */,
 				F1070C4827CF5E1C0054F131 /* LineUpsMapsModel.swift in Sources */,
 				F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */,
+				F1CF789227DF744800A5E74C /* FavouritesDataSelectorView.swift in Sources */,
 				F18B52F727CE356000E7CBD4 /* LineUpsMapsVM.swift in Sources */,
 				F1C6B70C27C5114500848580 /* AgentsHeaderViewCell.swift in Sources */,
 			);
