@@ -1,4 +1,5 @@
 import UIKit
+import Combine
 
 class CrosshairDetailVC: UIViewController {
     
@@ -74,6 +75,7 @@ class CrosshairDetailVC: UIViewController {
     //MARK: - Variables
 
     var viewModel: CrosshairDetailVMProtocol?
+    var cancellableList: Set<AnyCancellable> = []
 
     //MARK: - LifeCycle
     
@@ -83,8 +85,14 @@ class CrosshairDetailVC: UIViewController {
         view.backgroundColor = AppColor.darkBlack.color
         buildSubviews()
         setupGestures()
-        setupView()
+        setupViewModel()
         configureNavBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel?.checkIfFavourite()
     }
     
     override func viewWillLayoutSubviews() {
@@ -167,6 +175,29 @@ class CrosshairDetailVC: UIViewController {
         scrollView.addGestureRecognizer(swipeGes)
         
     }
+    
+    private func setupViewModel() {
+        
+        viewModel?.itemSubject.sink(receiveValue: { _ in
+            DispatchQueue.main.async { [weak self] in
+                self?.setupView()
+            }
+        }).store(in: &cancellableList)
+        
+        viewModel?.favouritedSubject.sink(receiveValue: { bool in
+            DispatchQueue.main.async { [weak self] in
+                if bool {
+                    self?.favouriteImage.image = AppAsset.iconFavourite
+                } else {
+                    self?.favouriteImage.image = AppAsset.iconNotFavourite
+                }
+            }
+        }).store(in: &cancellableList)
+        
+        viewModel?.getItem()
+        viewModel?.checkIfFavourite()
+        
+    }
 
     func setupView() {
         
@@ -203,7 +234,7 @@ class CrosshairDetailVC: UIViewController {
     //MARK: - Actions
 
     @objc func onFavourite() {
-        viewModel?.saveItemToFavourite()
+        viewModel?.onFavourite()
     }
     
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {

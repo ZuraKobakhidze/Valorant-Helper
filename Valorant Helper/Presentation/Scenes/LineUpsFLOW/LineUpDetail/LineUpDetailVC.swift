@@ -121,6 +121,12 @@ class LineUpDetailVC: UIViewController {
         configureNavBar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        viewModel?.checkIfFavourite()
+    }
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -218,12 +224,26 @@ class LineUpDetailVC: UIViewController {
     }
 
     private func setupViewModel() {
+        
         viewModel?.itemSubject.sink(receiveValue: { _ in
             DispatchQueue.main.async { [weak self] in
                 self?.setupView()
             }
         }).store(in: &cancellableList)
+        
+        viewModel?.favouritedSubject.sink(receiveValue: { bool in
+            DispatchQueue.main.async { [weak self] in
+                if bool {
+                    self?.favouriteImage.image = AppAsset.iconFavourite
+                } else {
+                    self?.favouriteImage.image = AppAsset.iconNotFavourite
+                }
+            }
+        }).store(in: &cancellableList)
+        
         viewModel?.getItem()
+        viewModel?.checkIfFavourite()
+        
     }
     
     func setupView() {
@@ -255,7 +275,7 @@ class LineUpDetailVC: UIViewController {
     //MARK: - Actions
 
     @objc func onFavourite() {
-        viewModel?.saveItemToFavourite()
+        viewModel?.onFavourite()
     }
     
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {

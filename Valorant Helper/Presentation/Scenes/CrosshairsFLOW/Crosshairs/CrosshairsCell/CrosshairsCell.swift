@@ -107,9 +107,20 @@ class CrosshairsCell: UITableViewCell {
     
     //MARK: - Configure
     
-    func configure(with vm: CrosshairsModel) {
-        coverImage.loadImageFromURL(urlString: vm.coverImage ?? "")
-        nameLabel.text = vm.name
+    func configure(with vm: ViewModel) {
+        
+        if let vm = vm as? CrosshairsListModel {
+            coverImage.loadImageFromURL(urlString: vm.coverImage ?? "")
+            nameLabel.text = vm.name
+            return
+        }
+        
+        if let vm = vm as? CrosshairCD {
+            coverImage.loadImageFromURL(urlString: vm.coverImage ?? "")
+            nameLabel.text = vm.name
+            return
+        }
+        
     }
     
 }

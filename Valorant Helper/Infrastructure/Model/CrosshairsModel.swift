@@ -8,6 +8,7 @@
 import Foundation
 
 struct CrosshairsModel: Codable {
+    let id: String?
     let name: String?
     let coverImage: String?
     let crosshairDetail: [CrosshairDetailModel]?

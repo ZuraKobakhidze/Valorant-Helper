@@ -2,6 +2,7 @@ import Foundation
 import Combine
 
 protocol LineUpDetailVMProtocol: ViewModel {
+    var favouritedSubject: PassthroughSubject<Bool, Never> { get }
     var agentPath: String? { get }
     var agentImage: String? { get }
     var lineUpIdentifier: SingleLineUpModel? { get }
@@ -12,11 +13,14 @@ protocol LineUpDetailVMProtocol: ViewModel {
     var getRequiremets: String { get }
     init(agentImage: String?, agentPath: String?, lineUpIdentifier: SingleLineUpModel?, mapIcon: String?, site: String?)
     func getItem()
-    func saveItemToFavourite()
+    func onFavourite()
+    func checkIfFavourite() 
 }
 
 class LineUpDetailVM: LineUpDetailVMProtocol {
     
+    var favouritedSubject = PassthroughSubject<Bool, Never>()
+    var favourited: Bool?
     var agentPath: String?
     var agentImage: String?
     var lineUpIdentifier: SingleLineUpModel?
@@ -53,8 +57,25 @@ class LineUpDetailVM: LineUpDetailVMProtocol {
         
     }
     
-    func saveItemToFavourite() {
-        coreDataManager.save(viewModel: self)
+    func onFavourite() {
+        
+        if favourited ?? false {
+            coreDataManager.delete(id: item?.id ?? "")
+            favourited?.toggle()
+            favouritedSubject.send(favourited ?? false)
+        } else {
+            coreDataManager.save(viewModel: self)
+            favourited?.toggle()
+            favouritedSubject.send(favourited ?? false)
+        }
+        
+    }
+    
+    func checkIfFavourite() {
+        coreDataManager.ifExists(id: item?.id ?? "") { [weak self] bool in
+            self?.favourited = bool
+            self?.favouritedSubject.send(self?.favourited ?? false)
+        }
     }
     
 }

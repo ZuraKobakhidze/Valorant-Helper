@@ -1,34 +1,30 @@
 //
-//  LineUpCoreDataManager.swift
+//  CrosshairCoreDataManager.swift
 //  Valorant Helper
 //
-//  Created by Zura Kobakhidze on 14.03.22.
+//  Created by Zura Kobakhidze on 15.03.22.
 //
 
 import UIKit
 import CoreData
 
-class LineUpCoreDataManager {
+class CrosshairCoreDataManager {
     
     func save(viewModel: ViewModel) {
         
-        guard let vm = viewModel as? LineUpDetailVMProtocol else { return }
-        
+        guard let vm = viewModel as? CrosshairDetailVMProtocol else { return }
+
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "LineUpCD", in: context)
-        
-        let newLineUp = LineUpCD(entity: entity!, insertInto: context)
-        
-        newLineUp.date = Date()
+
+        let entity = NSEntityDescription.entity(forEntityName: "CrosshairCD", in: context)
+
+        let newLineUp = CrosshairCD(entity: entity!, insertInto: context)
+
         newLineUp.id = vm.item?.id
-        newLineUp.agentImage = vm.agentImage
-        newLineUp.agentPath = vm.agentPath
-        newLineUp.lineUpName = vm.lineUpIdentifier?.lineUpName
-        newLineUp.lineUpPath = vm.lineUpIdentifier?.lineUpPath
-        newLineUp.mapIcon = vm.mapIcon
-        newLineUp.site = vm.site
+        newLineUp.date = Date()
+        newLineUp.coverImage = vm.item?.coverImage
+        newLineUp.name = vm.item?.name
         
         do {
             try context.save()
@@ -38,22 +34,22 @@ class LineUpCoreDataManager {
         
     }
     
-    func read(completion: @escaping ((Result<[LineUpCD], Error>) -> Void)) {
+    func read(completion: @escaping ((Result<[CrosshairCD], Error>) -> Void)) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "LineUpCD")
-        
+
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CrosshairCD")
+
         do {
             let arr: NSArray = try context.fetch(request) as NSArray
-            var lineUpItems = [LineUpCD]()
+            var crosshairItems = [CrosshairCD]()
             for item in arr {
-                if let lineUpItem = item as? LineUpCD {
-                    lineUpItems.append(lineUpItem)
+                if let crosshairItem = item as? CrosshairCD {
+                    crosshairItems.append(crosshairItem)
                 }
             }
-            completion(.success(lineUpItems.sorted { $0.date! > $1.date! }))
+            completion(.success(crosshairItems.sorted { $0.date! > $1.date! }))
         } catch {
             completion(.failure(error))
         }
@@ -65,15 +61,15 @@ class LineUpCoreDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
 
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "LineUpCD")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CrosshairCD")
 
         do {
             
             let arr: NSArray = try context.fetch(request) as NSArray
             
             for item in arr {
-                if let lineUpItem = item as? LineUpCD {
-                    if lineUpItem.id == id {
+                if let crosshairItem = item as? CrosshairCD {
+                    if crosshairItem.id == id {
                         completion(true)
                         return
                     }
@@ -96,16 +92,16 @@ class LineUpCoreDataManager {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
 
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "LineUpCD")
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CrosshairCD")
 
         do {
             
             let arr: NSArray = try context.fetch(request) as NSArray
             
             for item in arr {
-                if let lineUpItem = item as? LineUpCD {
-                    if lineUpItem.id == id {
-                        context.delete(lineUpItem)
+                if let crosshairItem = item as? CrosshairCD {
+                    if crosshairItem.id == id {
+                        context.delete(crosshairItem)
                         do {
                             try context.save()
                             return

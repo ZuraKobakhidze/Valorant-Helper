@@ -8,6 +8,7 @@
 import Foundation
 
 struct LineUpModel: Codable {
+    let id: String?
     let name: String?
     let description: String?
     let requirements: [String]?

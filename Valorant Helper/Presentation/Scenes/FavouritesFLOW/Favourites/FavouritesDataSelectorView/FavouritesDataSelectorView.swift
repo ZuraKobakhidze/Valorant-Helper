@@ -14,7 +14,7 @@ class FavouritesDataSelectorView: UIView {
     
     let leftLabel: UILabel = {
         let label = UILabel()
-        label.text = "CROSSHAIRS".localized()
+        label.text = "LINE-UPS".localized()
         label.font = AppFont.getBold(ofSize: 14)
         label.textColor = AppColor.mediumRed.color
         label.numberOfLines = 1
@@ -25,7 +25,7 @@ class FavouritesDataSelectorView: UIView {
     
     let rightLabel: UILabel = {
         let label = UILabel()
-        label.text = "LINE-UPS".localized()
+        label.text = "CROSSHAIRS".localized()
         label.font = AppFont.getBold(ofSize: 14)
         label.textColor = AppColor.extraBlack.color
         label.numberOfLines = 1

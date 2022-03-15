@@ -95,6 +95,9 @@
 		F1CF789627DF7B1100A5E74C /* FavouritesLineUpCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789427DF7B1100A5E74C /* FavouritesLineUpCellVM.swift */; };
 		F1CF789727DF7B1100A5E74C /* FavouritesLineUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789527DF7B1100A5E74C /* FavouritesLineUpCell.swift */; };
 		F1CF789A27DFAB5100A5E74C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F1CF789927DFAB5100A5E74C /* Kingfisher */; };
+		F1FBAD4827E07C7B0040F5F2 /* CrosshairsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBAD4727E07C7B0040F5F2 /* CrosshairsListModel.swift */; };
+		F1FBAD4A27E0AEC90040F5F2 /* CrosshairCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBAD4927E0AEC90040F5F2 /* CrosshairCD.swift */; };
+		F1FBAD4C27E0AFE40040F5F2 /* CrosshairCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBAD4B27E0AFE40040F5F2 /* CrosshairCoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +210,9 @@
 		F1CF789027DF744800A5E74C /* FavouritesDataSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesDataSelectorView.swift; sourceTree = "<group>"; };
 		F1CF789427DF7B1100A5E74C /* FavouritesLineUpCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesLineUpCellVM.swift; sourceTree = "<group>"; };
 		F1CF789527DF7B1100A5E74C /* FavouritesLineUpCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesLineUpCell.swift; sourceTree = "<group>"; };
+		F1FBAD4727E07C7B0040F5F2 /* CrosshairsListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairsListModel.swift; sourceTree = "<group>"; };
+		F1FBAD4927E0AEC90040F5F2 /* CrosshairCD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairCD.swift; sourceTree = "<group>"; };
+		F1FBAD4B27E0AFE40040F5F2 /* CrosshairCoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosshairCoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +413,7 @@
 				F1070C4727CF5E1C0054F131 /* LineUpsMapsModel.swift */,
 				F131EE4327D8A21400DED4AD /* LineUpModel.swift */,
 				F11A1CAF27DA084900758A3A /* CrosshairsModel.swift */,
+				F1FBAD4727E07C7B0040F5F2 /* CrosshairsListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -500,6 +507,7 @@
 			isa = PBXGroup;
 			children = (
 				F1CF788927DF579B00A5E74C /* LineUpCoreDataManager.swift */,
+				F1FBAD4B27E0AFE40040F5F2 /* CrosshairCoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -751,6 +759,7 @@
 			isa = PBXGroup;
 			children = (
 				F1CF788C27DF59E500A5E74C /* LineUpCD.swift */,
+				F1FBAD4927E0AEC90040F5F2 /* CrosshairCD.swift */,
 			);
 			path = CoreDataModels;
 			sourceTree = "<group>";
@@ -922,6 +931,7 @@
 				F1C6B70227C4F8A500848580 /* AppFont.swift in Sources */,
 				F12E3DFB27C8C84700A8F511 /* SingleAgentModel.swift in Sources */,
 				F12E3DF927C8B53600A8F511 /* VHNavBar.swift in Sources */,
+				F1FBAD4A27E0AEC90040F5F2 /* CrosshairCD.swift in Sources */,
 				F112D40027D64456009C972C /* SiteLineUpsCell.swift in Sources */,
 				F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */,
 				F12E3E0027C9057400A8F511 /* AgentAbilityView.swift in Sources */,
@@ -945,6 +955,7 @@
 				F131EE5127D8BFEB00DED4AD /* SingleStepView.swift in Sources */,
 				F167DC6627C6674200B4DB44 /* AgentsEndpoint.swift in Sources */,
 				F1C6B6FA27C4F57E00848580 /* Date+Extension.swift in Sources */,
+				F1FBAD4827E07C7B0040F5F2 /* CrosshairsListModel.swift in Sources */,
 				F1C6B70627C5101A00848580 /* AgentsHeaderViewVM.swift in Sources */,
 				F112D3FB27D62056009C972C /* SiteLineUpsVC.swift in Sources */,
 				F11A1CC327DA470600758A3A /* PublicConstants.swift in Sources */,
@@ -975,6 +986,7 @@
 				F18B52F827CE356000E7CBD4 /* LineUpsMapsVC.swift in Sources */,
 				F167DC6527C6674200B4DB44 /* Endpoint.swift in Sources */,
 				F131EE4227D8944300DED4AD /* LineUpDetailVC.swift in Sources */,
+				F1FBAD4C27E0AFE40040F5F2 /* CrosshairCoreDataManager.swift in Sources */,
 				F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */,
 				F131EE4627D8A6B100DED4AD /* LineUpDetailVMFactory.swift in Sources */,
 				F1C6B6CA27C4EFAA00848580 /* MainTabBar.swift in Sources */,

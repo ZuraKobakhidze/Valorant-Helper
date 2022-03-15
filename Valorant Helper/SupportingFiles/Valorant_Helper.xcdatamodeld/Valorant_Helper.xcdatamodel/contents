@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CrosshairCD" representedClassName="CrosshairCD" syncable="YES">
+        <attribute name="coverImage" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="LineUpCD" representedClassName="LineUpCD" syncable="YES">
         <attribute name="agentImage" optional="YES" attributeType="String"/>
         <attribute name="agentPath" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="lineUpName" optional="YES" attributeType="String"/>
         <attribute name="lineUpPath" optional="YES" attributeType="String"/>
         <attribute name="mapIcon" optional="YES" attributeType="String"/>
         <attribute name="site" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="LineUpCD" positionX="-45" positionY="0" width="128" height="134"/>
+        <element name="LineUpCD" positionX="-45" positionY="0" width="128" height="149"/>
+        <element name="CrosshairCD" positionX="-45" positionY="63" width="128" height="89"/>
     </elements>
 </model>

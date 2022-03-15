@@ -40,6 +40,7 @@ class FavouritesVC: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = AppColor.darkBlack.color
+        tableView.register(CrosshairsCell.self, forCellReuseIdentifier: CrosshairsCell.reusableIdentifer)
         tableView.register(FavouritesLineUpCell.self, forCellReuseIdentifier: FavouritesLineUpCell.reusableIdentifer)
         buildSubviews()
         setupDataSelection()
@@ -50,6 +51,7 @@ class FavouritesVC: UIViewController {
         super.viewDidAppear(animated)
         
         viewModel.fetchData()
+        viewModel.changeData(to: dataSelectorView.currentIndex)
     }
     
     override func viewWillLayoutSubviews() {
@@ -91,8 +93,8 @@ class FavouritesVC: UIViewController {
 
     private func setupDataSelection() {
         
-        dataSelectorView.$currentIndex.sink { index in
-            print(index)
+        dataSelectorView.$currentIndex.sink { [weak self] index in
+            self?.viewModel.changeData(to: index)
         }.store(in: &cancellableList)
         
     }
@@ -132,6 +134,12 @@ extension FavouritesVC: UITableViewDataSource, UITableViewDelegate {
             cell.configure(with: item)
             return cell
         }
+        
+        if let item = viewModel.itemList[indexPath.row] as? CrosshairCD {
+            let cell = tableView.dequeueReusableCell(withIdentifier: CrosshairsCell.reusableIdentifer, for: indexPath) as! CrosshairsCell
+            cell.configure(with: item)
+            return cell
+        }
  
         return UITableViewCell()
         
@@ -143,6 +151,38 @@ extension FavouritesVC: UITableViewDataSource, UITableViewDelegate {
             let vc = LineUpDetailVC()
             vc.viewModel = LineUpDetailVMFactory.getLineUpDetailVM(from: item)
             navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        if let item = viewModel.itemList[indexPath.row] as? CrosshairCD {
+            let vc = CrosshairDetailVC()
+            vc.viewModel = CrosshairDetailVM(id: item.id)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if let _ = viewModel.itemList[indexPath.row] as? LineUpCD {
+            cell.alpha = 0
+            cell.transform = CGAffineTransform(translationX: PublicConstants.screenWidth, y: 0)
+            
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
+                cell.alpha = 1
+                cell.transform = CGAffineTransform.identity
+            }
+            return
+        }
+        
+        if let _ = viewModel.itemList[indexPath.row] as? CrosshairCD {
+            cell.alpha = 0
+            cell.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+            
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
+                cell.alpha = 1
+                cell.transform = CGAffineTransform.identity
+            }
+            return
         }
         
     }
