@@ -33,6 +33,7 @@ class LineUpsMapVM: LineUpsMapVMProtocol {
                     self?.itemList = success.map { LineUpsMapList(item: $0, isCollapsed: true) }
                     self?.itemSubject.send(true)
                 case .failure(let failure):
+                    self?.itemSubject.send(false)
                     print(failure.localizedDescription)
             }
         }

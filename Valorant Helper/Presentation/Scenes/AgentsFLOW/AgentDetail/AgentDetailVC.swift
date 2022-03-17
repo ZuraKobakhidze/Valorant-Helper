@@ -49,6 +49,7 @@ class AgentDetailVC: UIViewController {
         label.font = AppFont.getLight(ofSize: 10)
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -88,6 +89,7 @@ class AgentDetailVC: UIViewController {
         label.font = AppFont.getLight(ofSize: 10)
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -109,6 +111,7 @@ class AgentDetailVC: UIViewController {
         label.font = AppFont.getSemiBold(ofSize: 18)
         label.textAlignment = .left
         label.numberOfLines = 0
+        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -121,6 +124,8 @@ class AgentDetailVC: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    let emptyBackgroundView = EmptyBackgroundView()
 
     //MARK: - Variables
 
@@ -161,6 +166,7 @@ class AgentDetailVC: UIViewController {
         scrollView.addSubview(biographyDescriptionLabel)
         scrollView.addSubview(specialAbilitiesLabel)
         scrollView.addSubview(stackView)
+        view.addSubview(emptyBackgroundView)
     }
 
     private func buildConstraints() {
@@ -223,7 +229,12 @@ class AgentDetailVC: UIViewController {
             stackView.topAnchor.constraint(equalTo: specialAbilitiesLabel.bottomAnchor, constant: 10),
             stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
             stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -60)
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -60),
+            
+            emptyBackgroundView.topAnchor.constraint(equalTo: navBar.bottomAnchor),
+            emptyBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            emptyBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            emptyBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
             
         ])
         
@@ -239,15 +250,22 @@ class AgentDetailVC: UIViewController {
         
         let swipeGes = UISwipeGestureRecognizer(target: self, action: #selector(screenSwiped))
         swipeGes.direction = .right
-        scrollView.isUserInteractionEnabled = true
-        scrollView.addGestureRecognizer(swipeGes)
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(swipeGes)
         
     }
     
     private func setupViewModel() {
-        viewModel?.itemSubject.sink(receiveValue: { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.setupView()
+        viewModel?.itemSubject.sink(receiveValue: { bool in
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.setupView()
+                    self?.emptyBackgroundView.isHidden = true
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.emptyBackgroundView.isHidden = false
+                }
             }
         }).store(in: &cancellableList)
         viewModel?.getItem()
@@ -264,6 +282,10 @@ class AgentDetailVC: UIViewController {
         roleImage.loadImageFromURL(urlString: item.role?.displayIcon ?? "")
         roleDescriptionLabel.text = item.role?.description
         biographyDescriptionLabel.text = item.description
+        
+        roleTagLabel.isHidden = false
+        biographyTagLabel.isHidden = false
+        specialAbilitiesLabel.isHidden = false
         
         if let abilities = item.abilities {
             for ability in abilities {

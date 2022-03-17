@@ -24,6 +24,7 @@ class AgentsVM: AgentsVMProtocol {
                     self?.itemList = self?.fullItemList
                     self?.itemSubject.send(true)
                 case .failure(let error):
+                    self?.itemSubject.send(false)
                     print(error.localizedDescription)
             }
         }
@@ -35,10 +36,22 @@ class AgentsVM: AgentsVMProtocol {
         switch agentType {
             case .all:
                 itemList = fullItemList
-                itemSubject.send(true)
+                if let bool = itemList?.isEmpty {
+                    if bool {
+                        itemSubject.send(false)
+                    } else {
+                        itemSubject.send(true)
+                    }
+                }
             default:
                 itemList = fullItemList?.filter { $0.roleName?.uppercased() == agentType.rawValue }
-                itemSubject.send(true)
+                if let bool = itemList?.isEmpty {
+                    if bool {
+                        itemSubject.send(false)
+                    } else {
+                        itemSubject.send(true)
+                    }
+                }
         }
         
     }

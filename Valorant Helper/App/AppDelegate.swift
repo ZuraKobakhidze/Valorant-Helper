@@ -14,6 +14,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [
+                .font: AppFont.getBold(ofSize: 10),
+                .foregroundColor: AppColor.lightWhite.color
+            ],
+            for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes(
+            [
+                .font: AppFont.getBold(ofSize: 10),
+                .foregroundColor: AppColor.mediumRed.color
+            ],
+            for: .selected)
+        
+        UITabBar.appearance().backgroundColor = AppColor.darkBlack.color
+        UITabBar.appearance().barTintColor = AppColor.darkBlack.color
+        UITabBar.appearance().isTranslucent = false
+        
         return true
         
     }

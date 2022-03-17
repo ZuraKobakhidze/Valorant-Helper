@@ -75,4 +75,8 @@ class AppAsset {
         UIImage(named: "icon_favourite")
     }
     
+    static var iconEmpty: UIImage? {
+        UIImage(named: "icon_empty")
+    }
+    
 }

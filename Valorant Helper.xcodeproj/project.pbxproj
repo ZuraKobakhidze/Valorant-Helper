@@ -55,6 +55,7 @@
 		F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610427CCD9C100F13D92 /* LineUpsVC.swift */; };
 		F19E610B27CCE72800F13D92 /* LineUpsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610927CCE72800F13D92 /* LineUpsCell.swift */; };
 		F1A1AB4C27DB6D5D00B1326C /* PublicProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */; };
+		F1AFC8D527E1EED90039153D /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */; };
 		F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68C27C4EBA700848580 /* AppDelegate.swift */; };
 		F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */; };
 		F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */; };
@@ -167,6 +168,7 @@
 		F19E610427CCD9C100F13D92 /* LineUpsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVC.swift; sourceTree = "<group>"; };
 		F19E610927CCE72800F13D92 /* LineUpsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsCell.swift; sourceTree = "<group>"; };
 		F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProtocols.swift; sourceTree = "<group>"; };
+		F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		F1C6B68927C4EBA700848580 /* Valorant Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B68C27C4EBA700848580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 		F12E3DF427C8B4D400A8F511 /* CustomElements */ = {
 			isa = PBXGroup;
 			children = (
+				F1AFC8D127E1EEC40039153D /* EmptyBackgroundView */,
 				F12E3DF527C8B50F00A8F511 /* VHNavBar */,
 			);
 			path = CustomElements;
@@ -518,6 +521,14 @@
 				F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */,
 			);
 			path = PublicProtocols;
+			sourceTree = "<group>";
+		};
+		F1AFC8D127E1EEC40039153D /* EmptyBackgroundView */ = {
+			isa = PBXGroup;
+			children = (
+				F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */,
+			);
+			path = EmptyBackgroundView;
 			sourceTree = "<group>";
 		};
 		F1C6B68027C4EBA700848580 = {
@@ -955,6 +966,7 @@
 				F131EE5127D8BFEB00DED4AD /* SingleStepView.swift in Sources */,
 				F167DC6627C6674200B4DB44 /* AgentsEndpoint.swift in Sources */,
 				F1C6B6FA27C4F57E00848580 /* Date+Extension.swift in Sources */,
+				F1AFC8D527E1EED90039153D /* EmptyBackgroundView.swift in Sources */,
 				F1FBAD4827E07C7B0040F5F2 /* CrosshairsListModel.swift in Sources */,
 				F1C6B70627C5101A00848580 /* AgentsHeaderViewVM.swift in Sources */,
 				F112D3FB27D62056009C972C /* SiteLineUpsVC.swift in Sources */,
@@ -1189,6 +1201,7 @@
 				INFOPLIST_FILE = "Valorant Helper/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1217,6 +1230,7 @@
 				INFOPLIST_FILE = "Valorant Helper/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;

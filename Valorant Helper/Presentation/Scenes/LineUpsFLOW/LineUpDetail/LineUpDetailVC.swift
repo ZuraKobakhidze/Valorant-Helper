@@ -10,11 +10,11 @@ class LineUpDetailVC: UIViewController {
     
     lazy var favouriteImage: UIImageView = {
         let image = UIImageView()
-        image.image = AppAsset.iconNotFavourite
         image.contentMode = .scaleAspectFit
         image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         image.isUserInteractionEnabled = true
+        image.isHidden = true
         image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onFavourite)))
         return image
     }()
@@ -39,6 +39,7 @@ class LineUpDetailVC: UIViewController {
     let titleView: UIView = {
         let view = UIView()
         view.backgroundColor = AppColor.darkWhite.color
+        view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -60,6 +61,7 @@ class LineUpDetailVC: UIViewController {
         label.font = AppFont.getLight(ofSize: 10)
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -81,6 +83,7 @@ class LineUpDetailVC: UIViewController {
         label.font = AppFont.getLight(ofSize: 10)
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -103,6 +106,8 @@ class LineUpDetailVC: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    let emptyBackgroundView = EmptyBackgroundView()
 
     //MARK: - Variables
 
@@ -147,6 +152,7 @@ class LineUpDetailVC: UIViewController {
         scrollView.addSubview(requirementsTagLabel)
         scrollView.addSubview(requirementsLabel)
         scrollView.addSubview(stackView)
+        view.addSubview(emptyBackgroundView)
     }
 
     private func buildConstraints() {
@@ -202,7 +208,12 @@ class LineUpDetailVC: UIViewController {
             stackView.topAnchor.constraint(equalTo: requirementsLabel.bottomAnchor, constant: 15),
             stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
             stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -60)
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -60),
+            
+            emptyBackgroundView.topAnchor.constraint(equalTo: navBar.bottomAnchor),
+            emptyBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            emptyBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            emptyBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
         
         ])
         
@@ -218,16 +229,22 @@ class LineUpDetailVC: UIViewController {
         
         let swipeGes = UISwipeGestureRecognizer(target: self, action: #selector(screenSwiped))
         swipeGes.direction = .right
-        scrollView.isUserInteractionEnabled = true
-        scrollView.addGestureRecognizer(swipeGes)
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(swipeGes)
         
     }
 
     private func setupViewModel() {
         
-        viewModel?.itemSubject.sink(receiveValue: { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.setupView()
+        viewModel?.itemSubject.sink(receiveValue: { bool in
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.setupView()
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.emptyBackgroundView.isHidden = false
+                }
             }
         }).store(in: &cancellableList)
         
@@ -242,7 +259,6 @@ class LineUpDetailVC: UIViewController {
         }).store(in: &cancellableList)
         
         viewModel?.getItem()
-        viewModel?.checkIfFavourite()
         
     }
     
@@ -254,6 +270,13 @@ class LineUpDetailVC: UIViewController {
         titleLabel.text = viewModel.item?.name
         descriptionLabel.text = viewModel.item?.description
         requirementsLabel.text = viewModel.getRequiremets
+        
+        descriptionTagLabel.isHidden = false
+        requirementsTagLabel.isHidden = false
+        emptyBackgroundView.isHidden = true
+        favouriteImage.isHidden = false
+        titleView.isHidden = false
+        
         viewModel.item?.steps?.forEach {
             let step = SingleStepView()
             step.configure(with: $0)

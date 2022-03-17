@@ -26,6 +26,8 @@ class CrosshairsVC: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
+    
+    let emptyBackgroundView = EmptyBackgroundView()
 
     //MARK: - Variables
 
@@ -54,6 +56,7 @@ class CrosshairsVC: UIViewController {
     private func buildSubviews() {
         view.addSubview(headerLabel)
         view.addSubview(tableView)
+        view.addSubview(emptyBackgroundView)
     }
 
     private func buildConstraints() {
@@ -67,7 +70,12 @@ class CrosshairsVC: UIViewController {
             tableView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 15),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom),
+            
+            emptyBackgroundView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 15),
+            emptyBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            emptyBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            emptyBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
         
         ])
         
@@ -77,9 +85,17 @@ class CrosshairsVC: UIViewController {
 
     private func setupViewModel() {
         
-        viewModel.itemSubject.sink { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
+        viewModel.itemSubject.sink { bool in
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                    self?.emptyBackgroundView.isHidden = true
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                    self?.emptyBackgroundView.isHidden = false
+                }
             }
         }.store(in: &cancellableList)
         viewModel.getItems()

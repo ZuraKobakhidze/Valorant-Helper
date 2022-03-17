@@ -31,6 +31,7 @@ class CrosshairDetailVM: CrosshairDetailVMProtocol {
                 self?.item = success
                 self?.itemSubject.send(true)
             case .failure(let failure):
+                self?.itemSubject.send(false)
                 print(failure.localizedDescription)
             }
         }

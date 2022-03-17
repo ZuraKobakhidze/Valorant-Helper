@@ -28,6 +28,8 @@ class LineUpsVC: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    let emptyBackgroundView = EmptyBackgroundView()
 
     //MARK: - Variables
 
@@ -64,6 +66,7 @@ class LineUpsVC: UIViewController {
     private func buildSubviews() {
         view.addSubview(headerView)
         view.addSubview(tableView)
+        view.addSubview(emptyBackgroundView)
     }
 
     private func buildConstraints() {
@@ -78,7 +81,12 @@ class LineUpsVC: UIViewController {
             tableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 15),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom),
+            
+            emptyBackgroundView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 15),
+            emptyBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            emptyBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            emptyBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
         
         ])
         
@@ -96,12 +104,23 @@ class LineUpsVC: UIViewController {
     
     private func setupViewModel() {
         
-        viewModel.itemSubject.sink { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.headerView.isUserInteractionEnabled = true
-                self?.tableView.reloadData()
-                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+        viewModel.itemSubject.sink { bool in
+            
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.headerView.isUserInteractionEnabled = true
+                    self?.tableView.reloadData()
+                    self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+                    self?.emptyBackgroundView.isHidden = true
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.headerView.isUserInteractionEnabled = true
+                    self?.tableView.reloadData()
+                    self?.emptyBackgroundView.isHidden = false
+                }
             }
+            
         }.store(in: &cancellableList)
         viewModel.getAllItems()
         

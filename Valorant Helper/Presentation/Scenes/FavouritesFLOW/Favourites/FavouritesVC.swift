@@ -28,10 +28,12 @@ class FavouritesVC: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
+    
+    let emptyBackgroundView = EmptyBackgroundView()
 
     //MARK: - Variables
 
-    let viewModel = FavouritesVM()
+    let viewModel: FavouritesVMProtocol = FavouritesVM()
     var cancellableList: Set<AnyCancellable> = []
 
     //MARK: - LifeCycle
@@ -66,6 +68,7 @@ class FavouritesVC: UIViewController {
         view.addSubview(headerLabel)
         view.addSubview(dataSelectorView)
         view.addSubview(tableView)
+        view.addSubview(emptyBackgroundView)
     }
 
     private func buildConstraints() {
@@ -83,7 +86,12 @@ class FavouritesVC: UIViewController {
             tableView.topAnchor.constraint(equalTo: dataSelectorView.bottomAnchor, constant: 15),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom),
+            
+            emptyBackgroundView.topAnchor.constraint(equalTo: dataSelectorView.bottomAnchor, constant: 15),
+            emptyBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            emptyBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            emptyBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
         
         ])
         
@@ -101,9 +109,17 @@ class FavouritesVC: UIViewController {
     
     private func setupViewModel() {
         
-        viewModel.itemSubject.sink { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
+        viewModel.itemSubject.sink { bool in
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                    self?.emptyBackgroundView.isHidden = true
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                    self?.emptyBackgroundView.isHidden = false
+                }
             }
         }.store(in: &cancellableList)
         
@@ -157,32 +173,6 @@ extension FavouritesVC: UITableViewDataSource, UITableViewDelegate {
             let vc = CrosshairDetailVC()
             vc.viewModel = CrosshairDetailVM(id: item.id)
             navigationController?.pushViewController(vc, animated: true)
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        if let _ = viewModel.itemList[indexPath.row] as? LineUpCD {
-            cell.alpha = 0
-            cell.transform = CGAffineTransform(translationX: PublicConstants.screenWidth, y: 0)
-            
-            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
-                cell.alpha = 1
-                cell.transform = CGAffineTransform.identity
-            }
-            return
-        }
-        
-        if let _ = viewModel.itemList[indexPath.row] as? CrosshairCD {
-            cell.alpha = 0
-            cell.transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
-            
-            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
-                cell.alpha = 1
-                cell.transform = CGAffineTransform.identity
-            }
-            return
         }
         
     }

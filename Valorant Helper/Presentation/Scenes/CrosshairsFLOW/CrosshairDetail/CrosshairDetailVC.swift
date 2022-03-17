@@ -9,11 +9,11 @@ class CrosshairDetailVC: UIViewController {
     
     lazy var favouriteImage: UIImageView = {
         let image = UIImageView()
-        image.image = AppAsset.iconNotFavourite
         image.contentMode = .scaleAspectFit
         image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         image.isUserInteractionEnabled = true
+        image.isHidden = true
         image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onFavourite)))
         return image
     }()
@@ -71,6 +71,8 @@ class CrosshairDetailVC: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+    
+    let emptyBackgroundView = EmptyBackgroundView()
 
     //MARK: - Variables
 
@@ -112,6 +114,7 @@ class CrosshairDetailVC: UIViewController {
         containerView.addSubview(nameLabel)
         scrollView.addSubview(bottomLineView)
         scrollView.addSubview(stackView)
+        view.addSubview(emptyBackgroundView)
     }
 
     private func buildConstraints() {
@@ -155,7 +158,12 @@ class CrosshairDetailVC: UIViewController {
             stackView.topAnchor.constraint(equalTo: bottomLineView.bottomAnchor, constant: 25),
             stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
             stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80)
+            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -80),
+            
+            emptyBackgroundView.topAnchor.constraint(equalTo: navBar.bottomAnchor),
+            emptyBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            emptyBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            emptyBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
         
         ])
         
@@ -171,16 +179,27 @@ class CrosshairDetailVC: UIViewController {
         
         let swipeGes = UISwipeGestureRecognizer(target: self, action: #selector(screenSwiped))
         swipeGes.direction = .right
-        scrollView.isUserInteractionEnabled = true
-        scrollView.addGestureRecognizer(swipeGes)
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(swipeGes)
         
     }
     
     private func setupViewModel() {
         
-        viewModel?.itemSubject.sink(receiveValue: { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.setupView()
+        viewModel?.itemSubject.sink(receiveValue: { bool in
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.setupView()
+                    self?.emptyBackgroundView.isHidden = true
+                    self?.favouriteImage.isHidden = false
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.emptyBackgroundView.isHidden = false
+                    self?.coverImage.isHidden = true
+                    self?.containerView.isHidden = true
+                    self?.bottomLineView.isHidden = true
+                }
             }
         }).store(in: &cancellableList)
         

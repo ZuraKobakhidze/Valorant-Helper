@@ -27,6 +27,8 @@ class AgentsVC: UIViewController {
         collectionView.register(AgentsHeaderViewCell.self, forCellWithReuseIdentifier: AgentsHeaderViewCell.reusableIdentifer)
         return collectionView
     }()
+    
+    let emptyBackgroundView = EmptyBackgroundView()
 
     //MARK: - Variables
 
@@ -57,6 +59,7 @@ class AgentsVC: UIViewController {
     private func buildSubviews() {
         view.addSubview(headerView)
         view.addSubview(collectionView)
+        view.addSubview(emptyBackgroundView)
     }
 
     private func buildConstraints() {
@@ -71,7 +74,12 @@ class AgentsVC: UIViewController {
             collectionView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 15),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom),
-            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor)
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            
+            emptyBackgroundView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 15),
+            emptyBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            emptyBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom),
+            emptyBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
         
         ])
         
@@ -89,12 +97,23 @@ class AgentsVC: UIViewController {
     
     private func setupViewModel() {
         
-        viewModel.itemSubject.sink { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.headerView.isUserInteractionEnabled = true
-                self?.collectionView.reloadData()
-                self?.collectionView.setContentOffset(CGPoint(x:0,y:0), animated: true)
+        viewModel.itemSubject.sink {bool in
+            
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.headerView.isUserInteractionEnabled = true
+                    self?.collectionView.reloadData()
+                    self?.collectionView.setContentOffset(CGPoint(x:0,y:0), animated: true)
+                    self?.emptyBackgroundView.isHidden = true
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.headerView.isUserInteractionEnabled = true
+                    self?.collectionView.reloadData()
+                    self?.emptyBackgroundView.isHidden = false
+                }
             }
+            
         }.store(in: &cancellableList)
         viewModel.getAllItems()
         

@@ -60,8 +60,18 @@ class AgentsHeaderViewCell: UICollectionViewCell {
     func configure(with vm: AgentsHeaderViewCellVM) {
         titleLabel.text = vm.title.getString
         if vm.isOn {
-            titleLabel.textColor = AppColor.mediumRed.color
-            underlineView.isHidden = false
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) { [weak self] in
+                self?.titleLabel.textColor = AppColor.mediumRed.color
+                self?.underlineView.isHidden = false
+                self?.titleLabel.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                self?.underlineView.transform = CGAffineTransform(scaleX: 1.1, y: 1)
+            } completion: { _ in
+                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut) { [weak self] in
+                    self?.titleLabel.transform = CGAffineTransform.identity
+                    self?.underlineView.transform = CGAffineTransform.identity
+                }
+            }
+
         } else {
             titleLabel.textColor = AppColor.lightWhite.color
             underlineView.isHidden = true

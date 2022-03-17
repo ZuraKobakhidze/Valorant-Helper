@@ -50,7 +50,9 @@ class LineUpDetailVM: LineUpDetailVMProtocol {
                 case .success(let success):
                     self?.item = success
                     self?.itemSubject.send(true)
+                    self?.checkIfFavourite()
                 case .failure(let failure):
+                    self?.itemSubject.send(false)
                     print(failure.localizedDescription)
             }
         }
@@ -72,10 +74,16 @@ class LineUpDetailVM: LineUpDetailVMProtocol {
     }
     
     func checkIfFavourite() {
-        coreDataManager.ifExists(id: item?.id ?? "") { [weak self] bool in
-            self?.favourited = bool
-            self?.favouritedSubject.send(self?.favourited ?? false)
+        
+        if let id = item?.id {
+            DispatchQueue.main.async { [weak self] in
+                self?.coreDataManager.ifExists(id: id) { [weak self] bool in
+                    self?.favourited = bool
+                    self?.favouritedSubject.send(self?.favourited ?? false)
+                }
+            }
         }
+        
     }
     
 }

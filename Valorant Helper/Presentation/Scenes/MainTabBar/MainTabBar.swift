@@ -76,7 +76,6 @@ class MainTabBar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tabBar.backgroundColor = .white
         self.tabBar.addSubview(topLineView)
         setupTabBarItems()
     }
@@ -86,7 +85,6 @@ class MainTabBar: UITabBarController {
     private func setupTabBarItems() {
 
         self.setViewControllers([agentsVC, crosshairsVC, lineUpsVC, favouritesVC], animated: false)
-        setupTabBarTitles()
         setupTabBarImages()
         
         if let count = self.tabBar.items?.count {
@@ -110,29 +108,16 @@ class MainTabBar: UITabBarController {
         }
         
     }
+
+}
+
+extension UITabBar {
     
-    private func setupTabBarTitles() {
-        
-        let tabBarAppearance = UITabBarAppearance()
-        let tabBarItemAppearance = UITabBarItemAppearance()
-
-        tabBarItemAppearance.normal.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: AppColor.lightWhite.color,
-            NSAttributedString.Key.font: AppFont.getBold(ofSize: 10)
-        ]
-        tabBarItemAppearance.selected.titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: AppColor.mediumRed.color,
-            NSAttributedString.Key.font: AppFont.getBold(ofSize: 10)
-        ]
-
-        tabBarAppearance.stackedLayoutAppearance = tabBarItemAppearance
-        tabBarAppearance.backgroundColor = AppColor.darkBlack.color
-
-        tabBar.standardAppearance = tabBarAppearance
-        if #available(iOS 15.0, *) {
-            tabBar.scrollEdgeAppearance = tabBarAppearance
+    override open var traitCollection: UITraitCollection {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return UITraitCollection(horizontalSizeClass: .compact)
         }
-        
+        return super.traitCollection
     }
-
+    
 }

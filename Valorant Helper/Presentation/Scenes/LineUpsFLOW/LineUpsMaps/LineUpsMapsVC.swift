@@ -14,6 +14,7 @@ class LineUpsMapVC: UIViewController {
         label.font = AppFont.getBold(ofSize: 20)
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,6 +30,8 @@ class LineUpsMapVC: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()
+    
+    let emptyBackgroundView = EmptyBackgroundView()
 
     //MARK: - Variables
 
@@ -67,6 +70,7 @@ class LineUpsMapVC: UIViewController {
         view.addSubview(navBar)
         view.addSubview(headerLabel)
         view.addSubview(tableView)
+        view.addSubview(emptyBackgroundView)
     }
 
     private func buildConstraints() {
@@ -84,7 +88,12 @@ class LineUpsMapVC: UIViewController {
             tableView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 15),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
             tableView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom),
+            
+            emptyBackgroundView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 15),
+            emptyBackgroundView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            emptyBackgroundView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            emptyBackgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -view.safeAreaInsets.bottom)
         
         ])
         
@@ -100,16 +109,26 @@ class LineUpsMapVC: UIViewController {
         
         let swipeGes = UISwipeGestureRecognizer(target: self, action: #selector(screenSwiped))
         swipeGes.direction = .right
-        tableView.isUserInteractionEnabled = true
-        tableView.addGestureRecognizer(swipeGes)
+        view.isUserInteractionEnabled = true
+        view.addGestureRecognizer(swipeGes)
         
     }
     
     private func setupViewModel() {
     
-        viewModel?.itemSubject.sink(receiveValue: { _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.tableView.reloadData()
+        viewModel?.itemSubject.sink(receiveValue: { bool in
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                    self?.emptyBackgroundView.isHidden = true
+                    self?.headerLabel.isHidden = false
+                }
+            } else {
+                DispatchQueue.main.async { [weak self] in
+                    self?.tableView.reloadData()
+                    self?.emptyBackgroundView.isHidden = false
+                    self?.headerLabel.isHidden = true
+                }
             }
         }).store(in: &cancellableList)
         
