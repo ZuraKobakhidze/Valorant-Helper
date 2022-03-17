@@ -190,7 +190,7 @@ extension AgentsVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         
         let currentOffset = scrollView.contentOffset.y
         
-        if currentOffset <= -20.0 {
+        if currentOffset <= -30.0 {
             viewModel.refreshItemList(by: headerView.viewModel.agentType)
         }
         

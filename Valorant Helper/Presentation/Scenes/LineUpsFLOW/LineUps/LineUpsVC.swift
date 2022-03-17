@@ -159,7 +159,7 @@ extension LineUpsVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         cell.alpha = 0
-        cell.transform = CGAffineTransform(translationX: -PublicConstants.screenWidth, y: 0)
+        cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         
         UIView.animate(withDuration: 0.4, delay: 0.1, options: .curveEaseOut) {
             cell.alpha = 1
@@ -172,7 +172,7 @@ extension LineUpsVC: UITableViewDataSource, UITableViewDelegate {
         
         let currentOffset = scrollView.contentOffset.y
         
-        if currentOffset <= -20.0 {
+        if currentOffset <= -30.0 {
             viewModel.refreshItemList(by: headerView.viewModel.agentType)
         }
         

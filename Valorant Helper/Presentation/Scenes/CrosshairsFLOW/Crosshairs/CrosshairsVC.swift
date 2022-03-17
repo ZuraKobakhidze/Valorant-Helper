@@ -148,7 +148,7 @@ extension CrosshairsVC: UITableViewDataSource, UITableViewDelegate {
         
         let currentOffset = scrollView.contentOffset.y
         
-        if currentOffset <= -20.0 {
+        if currentOffset <= -30.0 {
             viewModel.getItems()
         }
         
