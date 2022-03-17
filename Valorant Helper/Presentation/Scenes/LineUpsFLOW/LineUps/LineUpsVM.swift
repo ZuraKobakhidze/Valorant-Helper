@@ -7,6 +7,7 @@ protocol LineUpsVMProtocol {
     var itemSubject: PassthroughSubject<Bool, Never> { get }
     func getAllItems()
     func filterItemList(by agentType: AgentsDataType)
+    func refreshItemList(by agentType: AgentsDataType)
 }
 
 class LineUpsVM: LineUpsVMProtocol {
@@ -52,6 +53,21 @@ class LineUpsVM: LineUpsVMProtocol {
                         itemSubject.send(true)
                     }
                 }
+        }
+        
+    }
+    
+    func refreshItemList(by agentType: AgentsDataType) {
+        
+        NetworkEngine.shared.request(endPoint: LineUpsEndpoint.getAllAgent) { [weak self] (result: Result<[LineUpsModel], Error>) in
+            switch result {
+                case .success(let success):
+                    self?.fullItemList = success
+                    self?.itemList = self?.fullItemList
+                    self?.filterItemList(by: agentType)
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
         }
         
     }

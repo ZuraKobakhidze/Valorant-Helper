@@ -156,4 +156,26 @@ extension LineUpsVC: UITableViewDataSource, UITableViewDelegate {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.alpha = 0
+        cell.transform = CGAffineTransform(translationX: -PublicConstants.screenWidth, y: 0)
+        
+        UIView.animate(withDuration: 0.4, delay: 0.1, options: .curveEaseOut) {
+            cell.alpha = 1
+            cell.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        let currentOffset = scrollView.contentOffset.y
+        
+        if currentOffset <= -20.0 {
+            viewModel.refreshItemList(by: headerView.viewModel.agentType)
+        }
+        
+    }
+    
 }

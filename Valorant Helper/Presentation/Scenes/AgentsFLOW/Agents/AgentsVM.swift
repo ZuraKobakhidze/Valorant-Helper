@@ -7,6 +7,7 @@ protocol AgentsVMProtocol {
     var itemSubject: PassthroughSubject<Bool, Never> { get }
     func getAllItems()
     func filterItemList(by agentType: AgentsDataType)
+    func refreshItemList(by agentType: AgentsDataType)
 }
 
 class AgentsVM: AgentsVMProtocol {
@@ -52,6 +53,21 @@ class AgentsVM: AgentsVMProtocol {
                         itemSubject.send(true)
                     }
                 }
+        }
+        
+    }
+    
+    func refreshItemList(by agentType: AgentsDataType) {
+        
+        NetworkEngine.shared.request(endPoint: AgentsEndpoint.getAllAgent) { [weak self] (result: Result<[AgentsModel], Error>) in
+            switch result {
+                case .success(let success):
+                    self?.fullItemList = success.map { AgentsCellVMFactory.getAgentsCellVM(from: $0) }
+                    self?.itemList = self?.fullItemList
+                    self?.filterItemList(by: agentType)
+                case .failure(let error):
+                    print(error.localizedDescription)
+            }
         }
         
     }

@@ -186,4 +186,14 @@ extension AgentsVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
         CGSize(width: view.frame.width-50, height: 60)
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        let currentOffset = scrollView.contentOffset.y
+        
+        if currentOffset <= -20.0 {
+            viewModel.refreshItemList(by: headerView.viewModel.agentType)
+        }
+        
+    }
+    
 }

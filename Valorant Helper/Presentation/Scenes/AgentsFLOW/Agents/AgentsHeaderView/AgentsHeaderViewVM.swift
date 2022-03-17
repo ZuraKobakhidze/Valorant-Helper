@@ -3,6 +3,7 @@ import Combine
 
 protocol AgentsHeaderViewVMProtocol {
     var itemList: [AgentsHeaderViewCellVM] { get }
+    var agentType: AgentsDataType { get }
     var itemSubject: PassthroughSubject<AgentsDataType, Never> { get }
     func changeItemListIsOn(on index: IndexPath)
     func widthForLabel(to index: IndexPath) -> CGFloat
@@ -18,6 +19,8 @@ class AgentsHeaderViewVM: AgentsHeaderViewVMProtocol {
         AgentsHeaderViewCellVM(title: .sentinel, isOn: false)
     ]
     
+    var agentType: AgentsDataType = .all
+    
     var itemSubject = PassthroughSubject<AgentsDataType, Never>()
     
     func changeItemListIsOn(on index: IndexPath) {
@@ -31,6 +34,7 @@ class AgentsHeaderViewVM: AgentsHeaderViewVMProtocol {
             }
         }
         itemList[index.row].isOn = true
+        agentType = itemList[index.row].title
         itemSubject.send(itemList[index.row].title)
     }
     

@@ -144,4 +144,14 @@ extension CrosshairsVC: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        
+        let currentOffset = scrollView.contentOffset.y
+        
+        if currentOffset <= -20.0 {
+            viewModel.getItems()
+        }
+        
+    }
+    
 }
