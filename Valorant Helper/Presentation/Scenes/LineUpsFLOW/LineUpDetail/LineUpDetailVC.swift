@@ -25,6 +25,7 @@ class LineUpDetailVC: UIViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.alpha = 0
         return scrollView
     }()
     
@@ -283,6 +284,10 @@ class LineUpDetailVC: UIViewController {
             stackView.addArrangedSubview(step)
         }
         
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn) { [weak self] in
+            self?.scrollView.alpha = 1
+        }
+        
     }
 
     //MARK: - Configure
@@ -298,7 +303,20 @@ class LineUpDetailVC: UIViewController {
     //MARK: - Actions
 
     @objc func onFavourite() {
-        viewModel?.onFavourite()
+        
+        favouriteImage.isUserInteractionEnabled = false
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) { [weak self] in
+            self?.favouriteImage.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) { [weak self] in
+                self?.favouriteImage.transform = CGAffineTransform.identity
+            } completion: { [weak self] _ in
+                self?.viewModel?.onFavourite()
+                self?.favouriteImage.isUserInteractionEnabled = true
+            }
+        }
+
     }
     
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {

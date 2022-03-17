@@ -13,6 +13,7 @@ class AgentDetailVC: UIViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.alpha = 0
         return scrollView
     }()
     
@@ -293,6 +294,10 @@ class AgentDetailVC: UIViewController {
                 abilityView.configure(with: AgentAbilityViewVM(item: ability))
                 stackView.addArrangedSubview(abilityView)
             }
+        }
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn) { [weak self] in
+            self?.scrollView.alpha = 1
         }
         
     }

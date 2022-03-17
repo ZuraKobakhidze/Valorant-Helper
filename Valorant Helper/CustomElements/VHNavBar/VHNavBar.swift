@@ -21,6 +21,16 @@ class VHNavBar: UIView {
         image.isUserInteractionEnabled = true
         return image
     }()
+    
+    lazy var centerItemImageView: UIImageView = {
+        let image = UIImageView()
+        image.image = AppAsset.logoValorantHelper
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.alpha = 0
+        return image
+    }()
 
     //MARK: - Variables
 
@@ -76,15 +86,6 @@ class VHNavBar: UIView {
 
     private func setupWithLogo() {
         
-        let centerItemImageView: UIImageView = {
-            let image = UIImageView()
-            image.image = AppAsset.logoValorantHelper
-            image.contentMode = .scaleAspectFit
-            image.layer.masksToBounds = true
-            image.translatesAutoresizingMaskIntoConstraints = false
-            return image
-        }()
-        
         containerView.addSubview(centerItemImageView)
         
         NSLayoutConstraint.activate( [
@@ -95,6 +96,8 @@ class VHNavBar: UIView {
             centerItemImageView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
         
         ])
+        
+        logoAnimation()
         
     }
     
@@ -150,6 +153,21 @@ class VHNavBar: UIView {
             agentImage.centerXAnchor.constraint(equalTo: imageBackgroundView.centerXAnchor),
             
         ])
+        
+    }
+    
+    private func logoAnimation() {
+        
+        centerItemImageView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut) { [weak self] in
+            self?.centerItemImageView.alpha = 1
+            self?.centerItemImageView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear) { [weak self] in
+                self?.centerItemImageView.transform = CGAffineTransform.identity
+            }
+        }
         
     }
 
