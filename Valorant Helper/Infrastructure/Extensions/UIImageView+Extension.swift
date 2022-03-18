@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Kingfisher
+import SDWebImage
 
 extension UIImageView {
     
@@ -19,12 +19,7 @@ extension UIImageView {
     func loadImageFromURL(urlString: String) {
         
         let url = URL(string: urlString)
-        self.kf.setImage(
-            with: url,
-            options: [
-                .transition(.fade(0.3)),
-            ]
-        )
+        self.sd_setImage(with: url)
         
     }
     

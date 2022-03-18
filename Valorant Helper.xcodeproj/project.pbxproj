@@ -49,6 +49,7 @@
 		F167DC7927C7A4DA00B4DB44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F167DC7B27C7A4DA00B4DB44 /* Localizable.strings */; };
 		F167DC8027C7BE3600B4DB44 /* AgentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */; };
 		F167DC8127C7BE3600B4DB44 /* AgentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */; };
+		F1857D3B27E46A780094C13F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F1857D3A27E46A780094C13F /* SDWebImage */; };
 		F18B52F727CE356000E7CBD4 /* LineUpsMapsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B52F527CE356000E7CBD4 /* LineUpsMapsVM.swift */; };
 		F18B52F827CE356000E7CBD4 /* LineUpsMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B52F627CE356000E7CBD4 /* LineUpsMapsVC.swift */; };
 		F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610327CCD9C100F13D92 /* LineUpsVM.swift */; };
@@ -95,7 +96,6 @@
 		F1CF789227DF744800A5E74C /* FavouritesDataSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789027DF744800A5E74C /* FavouritesDataSelectorView.swift */; };
 		F1CF789627DF7B1100A5E74C /* FavouritesLineUpCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789427DF7B1100A5E74C /* FavouritesLineUpCellVM.swift */; };
 		F1CF789727DF7B1100A5E74C /* FavouritesLineUpCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CF789527DF7B1100A5E74C /* FavouritesLineUpCell.swift */; };
-		F1CF789A27DFAB5100A5E74C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F1CF789927DFAB5100A5E74C /* Kingfisher */; };
 		F1FBAD4827E07C7B0040F5F2 /* CrosshairsListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBAD4727E07C7B0040F5F2 /* CrosshairsListModel.swift */; };
 		F1FBAD4A27E0AEC90040F5F2 /* CrosshairCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBAD4927E0AEC90040F5F2 /* CrosshairCD.swift */; };
 		F1FBAD4C27E0AFE40040F5F2 /* CrosshairCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FBAD4B27E0AFE40040F5F2 /* CrosshairCoreDataManager.swift */; };
@@ -222,7 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1CF789A27DFAB5100A5E74C /* Kingfisher in Frameworks */,
+				F1857D3B27E46A780094C13F /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,7 +809,7 @@
 			);
 			name = "Valorant Helper";
 			packageProductDependencies = (
-				F1CF789927DFAB5100A5E74C /* Kingfisher */,
+				F1857D3A27E46A780094C13F /* SDWebImage */,
 			);
 			productName = "Valorant Helper";
 			productReference = F1C6B68927C4EBA700848580 /* Valorant Helper.app */;
@@ -885,7 +885,7 @@
 			);
 			mainGroup = F1C6B68027C4EBA700848580;
 			packageReferences = (
-				F1CF789827DFAB5100A5E74C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F1857D3927E46A780094C13F /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = F1C6B68A27C4EBA700848580 /* Products */;
 			projectDirPath = "";
@@ -1365,21 +1365,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F1CF789827DFAB5100A5E74C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		F1857D3927E46A780094C13F /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F1CF789927DFAB5100A5E74C /* Kingfisher */ = {
+		F1857D3A27E46A780094C13F /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F1CF789827DFAB5100A5E74C /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
+			package = F1857D3927E46A780094C13F /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 
