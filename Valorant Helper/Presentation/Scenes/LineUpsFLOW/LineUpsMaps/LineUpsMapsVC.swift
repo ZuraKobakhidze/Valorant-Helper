@@ -14,8 +14,8 @@ class LineUpsMapVC: UIViewController {
         label.font = AppFont.getBold(ofSize: 20)
         label.textAlignment = .left
         label.numberOfLines = 1
-        label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.alpha = 0
         return label
     }()
     
@@ -28,6 +28,7 @@ class LineUpsMapVC: UIViewController {
         table.delegate = self
         table.bounces = true
         table.translatesAutoresizingMaskIntoConstraints = false
+        table.alpha = 0
         return table
     }()
     
@@ -121,13 +122,19 @@ class LineUpsMapVC: UIViewController {
                 DispatchQueue.main.async { [weak self] in
                     self?.tableView.reloadData()
                     self?.emptyBackgroundView.isHidden = true
-                    self?.headerLabel.isHidden = false
+                    UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn) { [weak self] in
+                        self?.headerLabel.alpha = 1
+                        self?.tableView.alpha = 1
+                    }
                 }
             } else {
                 DispatchQueue.main.async { [weak self] in
                     self?.tableView.reloadData()
                     self?.emptyBackgroundView.isHidden = false
-                    self?.headerLabel.isHidden = true
+                    UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn) { [weak self] in
+                        self?.headerLabel.alpha = 1
+                        self?.tableView.alpha = 1
+                    }
                 }
             }
         }).store(in: &cancellableList)

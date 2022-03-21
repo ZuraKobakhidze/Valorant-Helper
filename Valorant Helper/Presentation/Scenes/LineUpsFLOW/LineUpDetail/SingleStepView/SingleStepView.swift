@@ -91,7 +91,7 @@ class SingleStepView: UIView {
     //MARK: - Configure
 
     func configure(with vm: LineUpStep?) {
-        titleLabel.text = "#Step \(vm?.stepNumber ?? 0)"
+        titleLabel.text = "\("#Step".localized()) \(vm?.stepNumber ?? 0)"
         coverImage.loadImageFromURL(urlString: vm?.stepImage ?? "")
     }
 

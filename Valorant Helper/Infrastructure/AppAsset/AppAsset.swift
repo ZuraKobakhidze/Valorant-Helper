@@ -79,4 +79,8 @@ class AppAsset {
         UIImage(named: "icon_empty")
     }
     
+    static var iconReload: UIImage? {
+        UIImage(named: "icon_reload")
+    }
+    
 }

@@ -19,7 +19,20 @@ extension UIImageView {
     func loadImageFromURL(urlString: String) {
         
         let url = URL(string: urlString)
-        self.sd_setImage(with: url)
+        
+        self.sd_setImage(with: url) { (image, error, cacheType, url) -> Void in
+            
+            if let downLoadedImage = image {
+                if cacheType == .none {
+                    self.alpha = 0
+                    self.image = downLoadedImage
+                    UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn) { [weak self] in
+                        self?.alpha = 1
+                    }
+                }
+            }
+            
+        }
         
     }
     

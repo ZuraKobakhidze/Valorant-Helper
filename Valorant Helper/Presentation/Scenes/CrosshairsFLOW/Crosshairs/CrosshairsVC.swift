@@ -15,6 +15,17 @@ class CrosshairsVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    lazy var reloadImage: UIImageView = {
+        let image = UIImageView()
+        image.image = AppAsset.iconReload
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onReload)))
+        return image
+    }()
 
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero)
@@ -55,6 +66,7 @@ class CrosshairsVC: UIViewController {
 
     private func buildSubviews() {
         view.addSubview(headerLabel)
+        view.addSubview(reloadImage)
         view.addSubview(tableView)
         view.addSubview(emptyBackgroundView)
     }
@@ -66,6 +78,11 @@ class CrosshairsVC: UIViewController {
             headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top+25),
             headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
             headerLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
+            
+            reloadImage.widthAnchor.constraint(equalToConstant: 15),
+            reloadImage.heightAnchor.constraint(equalToConstant: 15),
+            reloadImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
+            reloadImage.centerYAnchor.constraint(equalTo: headerLabel.centerYAnchor),
             
             tableView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 15),
             tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -108,7 +125,21 @@ class CrosshairsVC: UIViewController {
 
     //MARK: - Actions
 
-    // Your Actions Here
+    @objc func onReload() {
+        
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn) { [unowned self] in
+            self.reloadImage.transform = self.reloadImage.transform.rotated(by: .pi)
+            self.reloadImage.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        } completion: { [unowned self] _ in
+            UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut) { [unowned self] in
+                self.reloadImage.transform = self.reloadImage.transform.rotated(by: .pi)
+                self.reloadImage.transform = CGAffineTransform.identity
+            } completion: { [unowned self] _ in
+                self.viewModel.getItems()
+            }
+        }
+
+    }
     
 }
 
@@ -140,16 +171,6 @@ extension CrosshairsVC: UITableViewDataSource, UITableViewDelegate {
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
             cell.alpha = 1
             cell.transform = CGAffineTransform.identity
-        }
-        
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-        let currentOffset = scrollView.contentOffset.y
-        
-        if currentOffset <= -30.0 {
-            viewModel.getItems()
         }
         
     }

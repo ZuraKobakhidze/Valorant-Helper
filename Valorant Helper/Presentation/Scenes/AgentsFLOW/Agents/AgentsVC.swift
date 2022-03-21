@@ -5,6 +5,28 @@ import AVKit
 class AgentsVC: UIViewController {
     
     //MARK: - Views
+    
+    let headerLabel: UILabel = {
+        let label = UILabel()
+        label.text = "AGENTS".localized()
+        label.textColor = AppColor.lightWhite.color
+        label.font = AppFont.getBold(ofSize: 20)
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var reloadImage: UIImageView = {
+        let image = UIImageView()
+        image.image = AppAsset.iconReload
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onReload)))
+        return image
+    }()
 
     let headerView: AgentsHeaderView = {
         let headerView = AgentsHeaderView()
@@ -57,6 +79,8 @@ class AgentsVC: UIViewController {
     //MARK: - Build
 
     private func buildSubviews() {
+        view.addSubview(headerLabel)
+        view.addSubview(reloadImage)
         view.addSubview(headerView)
         view.addSubview(collectionView)
         view.addSubview(emptyBackgroundView)
@@ -65,8 +89,17 @@ class AgentsVC: UIViewController {
     private func buildConstraints() {
         
         NSLayoutConstraint.activate([
+            
+            headerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top+25),
+            headerLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
+            headerLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
+            
+            reloadImage.widthAnchor.constraint(equalToConstant: 15),
+            reloadImage.heightAnchor.constraint(equalToConstant: 15),
+            reloadImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
+            reloadImage.centerYAnchor.constraint(equalTo: headerLabel.centerYAnchor),
         
-            headerView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top+25),
+            headerView.topAnchor.constraint(equalTo: headerLabel.bottomAnchor, constant: 15),
             headerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
             headerView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
             headerView.heightAnchor.constraint(equalToConstant: 35),
@@ -125,7 +158,21 @@ class AgentsVC: UIViewController {
 
     //MARK: - Actions
 
-    // Your Actions Here
+    @objc func onReload() {
+        
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn) { [unowned self] in
+            self.reloadImage.transform = self.reloadImage.transform.rotated(by: .pi)
+            self.reloadImage.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        } completion: { [unowned self] _ in
+            UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseOut) { [unowned self] in
+                self.reloadImage.transform = self.reloadImage.transform.rotated(by: .pi)
+                self.reloadImage.transform = CGAffineTransform.identity
+            } completion: { [unowned self] _ in
+                self.viewModel.refreshItemList(by: self.headerView.viewModel.agentType)
+            }
+        }
+
+    }
     
 }
 
@@ -184,16 +231,6 @@ extension AgentsVC: UICollectionViewDataSource, UICollectionViewDelegate, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         CGSize(width: view.frame.width-50, height: 60)
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
-        let currentOffset = scrollView.contentOffset.y
-        
-        if currentOffset <= -30.0 {
-            viewModel.refreshItemList(by: headerView.viewModel.agentType)
-        }
-        
     }
     
 }
