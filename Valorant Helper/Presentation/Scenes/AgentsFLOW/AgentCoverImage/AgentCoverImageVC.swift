@@ -101,7 +101,7 @@ class AgentCoverImageVC: UIViewController {
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view.safeAreaInsets.top+5),
             titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 70),
             titleLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -70),
-            titleLabel.heightAnchor.constraint(equalToConstant: 50),
+            titleLabel.heightAnchor.constraint(equalToConstant: 40),
             
             closeImage.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
             closeImage.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
@@ -121,7 +121,7 @@ class AgentCoverImageVC: UIViewController {
             containerView.topAnchor.constraint(equalTo: separatorView.bottomAnchor),
             containerView.leftAnchor.constraint(equalTo: view.leftAnchor),
             containerView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -15),
+            containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             backgroundImage.topAnchor.constraint(equalTo: containerView.topAnchor),
             backgroundImage.leftAnchor.constraint(equalTo: containerView.leftAnchor),
@@ -143,6 +143,13 @@ class AgentCoverImageVC: UIViewController {
         backgroundImage.loadImageFromURL(urlString: vm?.backgroundImage ?? "")
         agentImage.loadImageFromURL(urlString: vm?.coverImage ?? "")
     }
+    
+    private func saveCompleted() {
+        let alert = UIAlertController(title: "Saved".localized(), message: "Image has been saved to your gallery.".localized(), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK".localized(), style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
 
     //MARK: - Actions
 
@@ -163,6 +170,7 @@ class AgentCoverImageVC: UIViewController {
             } completion: { [weak self] _ in
                 guard let image = self?.containerView.asImage() else { return }
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+                self?.saveCompleted()
             }
         }
     }
