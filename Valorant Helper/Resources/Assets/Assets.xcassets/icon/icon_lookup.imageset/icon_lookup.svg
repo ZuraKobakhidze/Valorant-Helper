@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="28" viewBox="0 0 31 28">
+  <g id="Group_46" data-name="Group 46" transform="translate(-375 -67)">
+    <rect id="Rectangle_115" data-name="Rectangle 115" width="25" height="22" transform="translate(378 70)" fill="#ece8e1"/>
+    <g id="Rectangle_116" data-name="Rectangle 116" transform="translate(375 67)" fill="none" stroke="#ff274d" stroke-width="1">
+      <rect width="31" height="28" stroke="none"/>
+      <rect x="0.5" y="0.5" width="30" height="27" fill="none"/>
+    </g>
+    <g id="noun-eye-4686795" transform="translate(222.459 -135.938)">
+      <path id="Path_18" data-name="Path 18" d="M163.721,217.667a4.292,4.292,0,0,1,1-2.75.275.275,0,0,0-.3-.448,10.544,10.544,0,0,0-1.971.927l-3.8,2.271,3.8,2.282a10.884,10.884,0,0,0,1.98.929.275.275,0,0,0,.3-.448,4.3,4.3,0,0,1-1-2.763Z" transform="translate(0 -0.723)" fill="#ff274d"/>
+      <path id="Path_19" data-name="Path 19" d="M417.5,214.662a10.863,10.863,0,0,0-1.977-.929.275.275,0,1,0-.3.462,4.325,4.325,0,0,1,0,5.524.275.275,0,0,0,.3.448,10.976,10.976,0,0,0,1.969-.927l3.805-2.3Z" transform="translate(-243.858 0)" fill="#ff274d"/>
+      <path id="Path_20" data-name="Path 20" d="M315.473,242.853a1.85,1.85,0,1,1-2.617,0,1.85,1.85,0,0,1,2.617,0" transform="translate(-146.123 -27.217)" fill="#ff274d"/>
+    </g>
+  </g>
+</svg>

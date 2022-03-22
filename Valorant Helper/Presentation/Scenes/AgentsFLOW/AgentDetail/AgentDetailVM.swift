@@ -3,6 +3,7 @@ import Combine
 
 protocol AgentDetailVMProtocol {
     var item: SingleAgentModel? { get }
+    var getAgentCoverImageVM: AgentCoverImageVM? { get }
     var itemSubject: PassthroughSubject<Bool, Never> { get }
     init(name: String)
     func getItem()
@@ -13,6 +14,12 @@ class AgentDetailVM: AgentDetailVMProtocol {
     let name: String
     var item: SingleAgentModel?
     var itemSubject = PassthroughSubject<Bool, Never>()
+    
+    var getAgentCoverImageVM: AgentCoverImageVM? {
+        AgentCoverImageVM(
+            backgroundImage:item?.background,
+            coverImage:item?.fullPortrait)
+    }
     
     required init(name: String) {
         self.name = name

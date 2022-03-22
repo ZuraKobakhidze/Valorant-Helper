@@ -83,4 +83,16 @@ class AppAsset {
         UIImage(named: "icon_reload")
     }
     
+    static var iconLookup: UIImage? {
+        UIImage(named: "icon_lookup")
+    }
+    
+    static var iconClose: UIImage? {
+        UIImage(named: "icon_close")
+    }
+    
+    static var iconDownload: UIImage? {
+        UIImage(named: "icon_download")
+    }
+    
 }

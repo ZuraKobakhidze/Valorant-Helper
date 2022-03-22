@@ -56,6 +56,8 @@
 		F19E610627CCD9C100F13D92 /* LineUpsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610427CCD9C100F13D92 /* LineUpsVC.swift */; };
 		F19E610B27CCE72800F13D92 /* LineUpsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610927CCE72800F13D92 /* LineUpsCell.swift */; };
 		F1A1AB4C27DB6D5D00B1326C /* PublicProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */; };
+		F1A8FCE227E8B36A0034221B /* AgentCoverImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8FCE027E8B36A0034221B /* AgentCoverImageVM.swift */; };
+		F1A8FCE327E8B36A0034221B /* AgentCoverImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8FCE127E8B36A0034221B /* AgentCoverImageVC.swift */; };
 		F1AFC8D527E1EED90039153D /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */; };
 		F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68C27C4EBA700848580 /* AppDelegate.swift */; };
 		F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */; };
@@ -168,6 +170,8 @@
 		F19E610427CCD9C100F13D92 /* LineUpsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVC.swift; sourceTree = "<group>"; };
 		F19E610927CCE72800F13D92 /* LineUpsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsCell.swift; sourceTree = "<group>"; };
 		F1A1AB4B27DB6D5D00B1326C /* PublicProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicProtocols.swift; sourceTree = "<group>"; };
+		F1A8FCE027E8B36A0034221B /* AgentCoverImageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoverImageVM.swift; sourceTree = "<group>"; };
+		F1A8FCE127E8B36A0034221B /* AgentCoverImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoverImageVC.swift; sourceTree = "<group>"; };
 		F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		F1C6B68927C4EBA700848580 /* Valorant Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B68C27C4EBA700848580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -523,6 +527,15 @@
 			path = PublicProtocols;
 			sourceTree = "<group>";
 		};
+		F1A8FCDF27E8B3170034221B /* AgentCoverImage */ = {
+			isa = PBXGroup;
+			children = (
+				F1A8FCE027E8B36A0034221B /* AgentCoverImageVM.swift */,
+				F1A8FCE127E8B36A0034221B /* AgentCoverImageVC.swift */,
+			);
+			path = AgentCoverImage;
+			sourceTree = "<group>";
+		};
 		F1AFC8D127E1EEC40039153D /* EmptyBackgroundView */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,6 +742,7 @@
 		F1C6B6D127C4F0DC00848580 /* AgentsFLOW */ = {
 			isa = PBXGroup;
 			children = (
+				F1A8FCDF27E8B3170034221B /* AgentCoverImage */,
 				F167DC7D27C7BB5500B4DB44 /* AgentDetail */,
 				F1C6B6D227C4F10700848580 /* Agents */,
 			);
@@ -949,6 +963,7 @@
 				F1C6B70727C5101A00848580 /* AgentsHeaderView.swift in Sources */,
 				F12E3DFF27C9057400A8F511 /* AgentAbilityViewVM.swift in Sources */,
 				F1C6B70027C4F57E00848580 /* UIColor+Extension.swift in Sources */,
+				F1A8FCE327E8B36A0034221B /* AgentCoverImageVC.swift in Sources */,
 				F11A1CC027DA451200758A3A /* FavouritesVC.swift in Sources */,
 				F1C6B6F827C4F57E00848580 /* UIImageView+Extension.swift in Sources */,
 				F1CF788D27DF59E500A5E74C /* LineUpCD.swift in Sources */,
@@ -989,6 +1004,7 @@
 				F167DC6E27C66E0A00B4DB44 /* AgentsCellVM.swift in Sources */,
 				F1C6B6F727C4F57E00848580 /* String+Extension.swift in Sources */,
 				F1C6B6D627C4F12000848580 /* AgentsVC.swift in Sources */,
+				F1A8FCE227E8B36A0034221B /* AgentCoverImageVM.swift in Sources */,
 				F167DC7227C6701000B4DB44 /* AgentsCellVMFactory.swift in Sources */,
 				F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */,
 				F1C6B6FD27C4F57E00848580 /* Double+Extension.swift in Sources */,
@@ -1201,9 +1217,8 @@
 				INFOPLIST_FILE = "Valorant Helper/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1230,9 +1245,8 @@
 				INFOPLIST_FILE = "Valorant Helper/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

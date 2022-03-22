@@ -33,6 +33,17 @@ class AgentDetailVC: UIViewController {
         return image
     }()
     
+    lazy var lookupImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.image = AppAsset.iconLookup
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onLookup)))
+        return image
+    }()
+    
     let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = AppColor.lightWhite.color
@@ -158,6 +169,7 @@ class AgentDetailVC: UIViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(backgroundImage)
         scrollView.addSubview(coverImage)
+        scrollView.addSubview(lookupImage)
         scrollView.addSubview(nameLabel)
         scrollView.addSubview(roleTagLabel)
         scrollView.addSubview(roleLabel)
@@ -194,6 +206,11 @@ class AgentDetailVC: UIViewController {
             coverImage.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
             coverImage.widthAnchor.constraint(equalToConstant: view.frame.width),
             coverImage.heightAnchor.constraint(equalToConstant: 300),
+            
+            lookupImage.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 25),
+            lookupImage.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: -25),
+            lookupImage.widthAnchor.constraint(equalToConstant: 31),
+            lookupImage.heightAnchor.constraint(equalToConstant: 28),
             
             nameLabel.topAnchor.constraint(equalTo: coverImage.bottomAnchor, constant: 20),
             nameLabel.leftAnchor.constraint(equalTo: scrollView.leftAnchor, constant: 25),
@@ -298,6 +315,14 @@ class AgentDetailVC: UIViewController {
         
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn) { [weak self] in
             self?.scrollView.alpha = 1
+        } completion: { _ in
+            UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) { [weak self] in
+                self?.lookupImage.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            } completion: { _ in
+                UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut) { [weak self] in
+                    self?.lookupImage.transform = CGAffineTransform.identity
+                }
+            }
         }
         
     }
@@ -324,6 +349,22 @@ class AgentDetailVC: UIViewController {
         if recognizer.state == .ended {
             navigationController?.popViewController(animated: true)
         }
+    }
+    
+    @objc func onLookup() {
+        
+        UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseIn) { [weak self] in
+            self?.lookupImage.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.15, delay: 0, options: .curveEaseIn) { [weak self] in
+                self?.lookupImage.transform = CGAffineTransform.identity
+            } completion: { [weak self] _ in
+                let vc = AgentCoverImageVC()
+                vc.configure(with: self?.viewModel?.getAgentCoverImageVM)
+                self?.navigationController?.present(vc, animated: true)
+            }
+        }
+
     }
     
 }
