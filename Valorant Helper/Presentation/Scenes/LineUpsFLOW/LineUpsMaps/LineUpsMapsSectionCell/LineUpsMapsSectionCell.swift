@@ -62,26 +62,26 @@ class LineUpsMapsSectionCell: UITableViewCell {
     //MARK: - Build
     
     private func buildSubviews() {
-        addSubview(coverImage)
-        addSubview(containerView)
+        contentView.addSubview(coverImage)
+        contentView.addSubview(containerView)
         containerView.addSubview(titleTextLabel)
         containerView.addSubview(collapseImage)
-        addSubview(underlineView)
+        contentView.addSubview(underlineView)
     }
 
     private func buildConstraints() {
         
         NSLayoutConstraint.activate([
         
-            coverImage.topAnchor.constraint(equalTo: self.topAnchor),
-            coverImage.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25),
-            coverImage.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25),
+            coverImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+            coverImage.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 25),
+            coverImage.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -25),
             coverImage.heightAnchor.constraint(greaterThanOrEqualToConstant: 80),
             coverImage.heightAnchor.constraint(equalToConstant: (PublicConstants.screenWidth-50)/5),
             
             containerView.topAnchor.constraint(equalTo: coverImage.bottomAnchor),
-            containerView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25),
-            containerView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25),
+            containerView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 25),
+            containerView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -25),
             containerView.heightAnchor.constraint(equalToConstant: 40),
             
             titleTextLabel.leftAnchor.constraint(equalTo: containerView.leftAnchor, constant: 20),
@@ -94,10 +94,10 @@ class LineUpsMapsSectionCell: UITableViewCell {
             collapseImage.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             
             underlineView.topAnchor.constraint(equalTo: containerView.bottomAnchor),
-            underlineView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 25),
-            underlineView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -25),
+            underlineView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 25),
+            underlineView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -25),
             underlineView.heightAnchor.constraint(equalToConstant: 5),
-            underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            underlineView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             
         ])
 

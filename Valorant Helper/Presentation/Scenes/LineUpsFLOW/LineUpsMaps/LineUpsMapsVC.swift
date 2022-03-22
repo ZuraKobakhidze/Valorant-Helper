@@ -221,6 +221,14 @@ extension LineUpsMapVC: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return ((PublicConstants.screenWidth-50)/5)+45
+        } else {
+            return 30
+        }
+    }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 15))
     }

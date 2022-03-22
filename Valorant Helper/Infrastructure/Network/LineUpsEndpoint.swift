@@ -42,7 +42,7 @@ enum LineUpsEndpoint: Endpoint {
             case .getMapsForAgent(let agentPath):
                 return "/DimitriTsikaridze/Valorant-Helper-API/main/lineups/\(agentPath)/all_lineups_\(agentPath).json"
             case.getSingleLineUp(let agentPath, let lineUpPath):
-                return "/DimitriTsikaridze/Valorant-Helper-API/main/lineups/\(agentPath)/\(agentPath)_lineup_\(lineUpPath).json"
+                return "/DimitriTsikaridze/Valorant-Helper-API/main/lineups/\(agentPath)/\(lineUpPath).json"
         }
     }
     
