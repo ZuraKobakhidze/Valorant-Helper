@@ -50,6 +50,7 @@
 		F167DC8027C7BE3600B4DB44 /* AgentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */; };
 		F167DC8127C7BE3600B4DB44 /* AgentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */; };
 		F1857D3B27E46A780094C13F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = F1857D3A27E46A780094C13F /* SDWebImage */; };
+		F18B2A2627EB0380004C3D6D /* LineUpImageDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B2A2427EB0380004C3D6D /* LineUpImageDetailVC.swift */; };
 		F18B52F727CE356000E7CBD4 /* LineUpsMapsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B52F527CE356000E7CBD4 /* LineUpsMapsVM.swift */; };
 		F18B52F827CE356000E7CBD4 /* LineUpsMapsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18B52F627CE356000E7CBD4 /* LineUpsMapsVC.swift */; };
 		F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19E610327CCD9C100F13D92 /* LineUpsVM.swift */; };
@@ -164,6 +165,7 @@
 		F167DC7C27C7A53B00B4DB44 /* ka-GE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ka-GE"; path = "ka-GE.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailVM.swift; sourceTree = "<group>"; };
 		F167DC7F27C7BE3600B4DB44 /* AgentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentDetailVC.swift; sourceTree = "<group>"; };
+		F18B2A2427EB0380004C3D6D /* LineUpImageDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpImageDetailVC.swift; sourceTree = "<group>"; };
 		F18B52F527CE356000E7CBD4 /* LineUpsMapsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsMapsVM.swift; sourceTree = "<group>"; };
 		F18B52F627CE356000E7CBD4 /* LineUpsMapsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsMapsVC.swift; sourceTree = "<group>"; };
 		F19E610327CCD9C100F13D92 /* LineUpsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsVM.swift; sourceTree = "<group>"; };
@@ -470,6 +472,14 @@
 			path = AgentDetail;
 			sourceTree = "<group>";
 		};
+		F18B2A2227EB0368004C3D6D /* LineUpImageDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F18B2A2427EB0380004C3D6D /* LineUpImageDetailVC.swift */,
+			);
+			path = LineUpImageDetail;
+			sourceTree = "<group>";
+		};
 		F18B52F427CE353C00E7CBD4 /* LineUpsMaps */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,6 +494,7 @@
 		F19E610127CCD99100F13D92 /* LineUpsFLOW */ = {
 			isa = PBXGroup;
 			children = (
+				F18B2A2227EB0368004C3D6D /* LineUpImageDetail */,
 				F131EE3E27D8942600DED4AD /* LineUpDetail */,
 				F112D3F727D6203F009C972C /* SiteLineUps */,
 				F18B52F427CE353C00E7CBD4 /* LineUpsMaps */,
@@ -1020,6 +1031,7 @@
 				F1C6B6CA27C4EFAA00848580 /* MainTabBar.swift in Sources */,
 				F1CF789627DF7B1100A5E74C /* FavouritesLineUpCellVM.swift in Sources */,
 				F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */,
+				F18B2A2627EB0380004C3D6D /* LineUpImageDetailVC.swift in Sources */,
 				F144869527CCFC1300EDF72C /* LineUpsModel.swift in Sources */,
 				F11A1CAE27DA07E000758A3A /* CrosshairsEndpoint.swift in Sources */,
 				F11A1CBF27DA451200758A3A /* FavouritesVM.swift in Sources */,
@@ -1383,8 +1395,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				kind = exactVersion;
+				version = 5.12.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

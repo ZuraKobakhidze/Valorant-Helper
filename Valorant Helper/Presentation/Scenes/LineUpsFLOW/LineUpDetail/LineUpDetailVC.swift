@@ -280,7 +280,12 @@ class LineUpDetailVC: UIViewController {
         
         viewModel.item?.steps?.forEach {
             let step = SingleStepView()
-            step.configure(with: $0)
+            step.configure(with: $0) { [weak self] image in
+                let vc = LineUpImageDetailVC()
+                vc.configure(with: image)
+                vc.modalPresentationStyle = .fullScreen
+                self?.present(vc, animated: true)
+            }
             stackView.addArrangedSubview(step)
         }
         

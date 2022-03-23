@@ -27,6 +27,7 @@ class LineUpsMapVC: UIViewController {
         table.dataSource = self
         table.delegate = self
         table.bounces = true
+        table.showsVerticalScrollIndicator = false
         table.translatesAutoresizingMaskIntoConstraints = false
         table.alpha = 0
         return table

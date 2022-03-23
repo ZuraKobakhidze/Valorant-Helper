@@ -34,6 +34,7 @@ class CrosshairsVC: UIViewController {
         table.dataSource = self
         table.delegate = self
         table.bounces = true
+        table.showsVerticalScrollIndicator = false
         table.translatesAutoresizingMaskIntoConstraints = false
         return table
     }()

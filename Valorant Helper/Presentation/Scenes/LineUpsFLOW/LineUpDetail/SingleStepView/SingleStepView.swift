@@ -21,17 +21,30 @@ class SingleStepView: UIView {
         return label
     }()
     
-    let coverImage: UIImageView = {
+    lazy var coverImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.layer.masksToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onLookup)))
+        return image
+    }()
+    
+    lazy var lookupImage: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.layer.masksToBounds = true
+        image.image = AppAsset.iconLookup
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.isUserInteractionEnabled = true
+        image.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onLookup)))
         return image
     }()
 
     //MARK: - Variables
 
-    // Your Variables Here
+    var onImageAction: ((UIImage) -> Void)?
 
     //MARK: - Init
 
@@ -59,6 +72,7 @@ class SingleStepView: UIView {
         addSubview(titleView)
         titleView.addSubview(titleLabel)
         addSubview(coverImage)
+        coverImage.addSubview(lookupImage)
     }
 
     private func buildConstraints() {
@@ -78,7 +92,12 @@ class SingleStepView: UIView {
             coverImage.leftAnchor.constraint(equalTo: self.leftAnchor),
             coverImage.rightAnchor.constraint(equalTo: self.rightAnchor),
             coverImage.heightAnchor.constraint(equalToConstant: (PublicConstants.screenWidth/16)*9),
-            coverImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            coverImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            lookupImage.topAnchor.constraint(equalTo: coverImage.topAnchor, constant: 25),
+            lookupImage.rightAnchor.constraint(equalTo: coverImage.rightAnchor, constant: -25),
+            lookupImage.widthAnchor.constraint(equalToConstant: 30),
+            lookupImage.heightAnchor.constraint(equalToConstant: 30)
         
         ])
         
@@ -90,13 +109,17 @@ class SingleStepView: UIView {
 
     //MARK: - Configure
 
-    func configure(with vm: LineUpStep?) {
+    func configure(with vm: LineUpStep?, onImageAction: ((UIImage) -> Void)?) {
         titleLabel.text = "\("#Step".localized()) \(vm?.stepNumber ?? 0)"
         coverImage.loadImageFromURL(urlString: vm?.stepImage ?? "")
+        self.onImageAction = onImageAction
     }
 
     //MARK: - Actions
 
-    // Your Actions Here
+    @objc func onLookup() {
+        guard let image = coverImage.image else { return }
+        onImageAction?(image)
+    }
     
 }
