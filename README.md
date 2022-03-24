@@ -9,6 +9,7 @@ On the first page there are agents and you can sort them by their role, also you
 <p float="left">
   <img src="https://i.ibb.co/t2MsPkP/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-45-40.png" width="276" height="600">
   <img src="https://i.ibb.co/Yb1vB8F/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-45-48.png" width="276" height="600">
+  <img src="https://i.ibb.co/dt9ZnFn/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-24-at-12-46-31.png" width="276" height="600">
 </p>
 
 # Crosshairs FLOW
@@ -27,7 +28,9 @@ On the third page there are agent line-ups that you can use to use against your 
 <p float="left">
   <img src="https://i.ibb.co/MNjpkDX/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-46-18.png" width="276" height="600">
   <img src="https://i.ibb.co/BnTk2Vx/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-46-29.png" width="276" height="600">
+  <img src="https://i.ibb.co/fDkc63b/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-24-at-12-46-43.png" width="276" height="600">
   <img src="https://i.ibb.co/mhxS1gp/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-46-50.png" width="276" height="600">
+  <img src="https://i.ibb.co/d542H5v/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-24-at-12-46-49.png" width="276" height="600">
 </p>
 
 # Favourites FLOW
