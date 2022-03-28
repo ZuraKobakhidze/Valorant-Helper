@@ -62,6 +62,14 @@
 		F1AFC8D527E1EED90039153D /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */; };
 		F1BE960427F1972C00B0525B /* AgentCoverImageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE960227F1972C00B0525B /* AgentCoverImageCellVM.swift */; };
 		F1BE960527F1972C00B0525B /* AgentCoverImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE960327F1972C00B0525B /* AgentCoverImageCell.swift */; };
+		F1BE960D27F1F1FE00B0525B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BE960C27F1F1FE00B0525B /* WidgetKit.framework */; };
+		F1BE960F27F1F1FE00B0525B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BE960E27F1F1FE00B0525B /* SwiftUI.framework */; };
+		F1BE961227F1F1FE00B0525B /* ValorantHelperWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE961127F1F1FE00B0525B /* ValorantHelperWidget.swift */; };
+		F1BE961527F1F20000B0525B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BE961427F1F20000B0525B /* Assets.xcassets */; };
+		F1BE961727F1F20000B0525B /* ValorantHelperWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F1BE961327F1F1FE00B0525B /* ValorantHelperWidget.intentdefinition */; };
+		F1BE961827F1F20000B0525B /* ValorantHelperWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F1BE961327F1F1FE00B0525B /* ValorantHelperWidget.intentdefinition */; };
+		F1BE961B27F1F20000B0525B /* ValorantHelperWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F1BE960A27F1F1FE00B0525B /* ValorantHelperWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F1BE962027F1F46600B0525B /* Valorant-Font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1C6B6D727C4F51E00848580 /* Valorant-Font.ttf */; };
 		F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68C27C4EBA700848580 /* AppDelegate.swift */; };
 		F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */; };
 		F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */; };
@@ -107,6 +115,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F1BE961927F1F20000B0525B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1C6B68127C4EBA700848580 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1BE960927F1F1FE00B0525B;
+			remoteInfo = ValorantHelperWidgetExtension;
+		};
 		F1C6B6A327C4EBA900848580 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F1C6B68127C4EBA700848580 /* Project object */;
@@ -122,6 +137,20 @@
 			remoteInfo = "Valorant Helper";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F1BE961F27F1F20000B0525B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F1BE961B27F1F20000B0525B /* ValorantHelperWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F1070C4727CF5E1C0054F131 /* LineUpsMapsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsMapsModel.swift; sourceTree = "<group>"; };
@@ -179,6 +208,13 @@
 		F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
 		F1BE960227F1972C00B0525B /* AgentCoverImageCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoverImageCellVM.swift; sourceTree = "<group>"; };
 		F1BE960327F1972C00B0525B /* AgentCoverImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoverImageCell.swift; sourceTree = "<group>"; };
+		F1BE960A27F1F1FE00B0525B /* ValorantHelperWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ValorantHelperWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BE960C27F1F1FE00B0525B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F1BE960E27F1F1FE00B0525B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F1BE961127F1F1FE00B0525B /* ValorantHelperWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValorantHelperWidget.swift; sourceTree = "<group>"; };
+		F1BE961327F1F1FE00B0525B /* ValorantHelperWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = ValorantHelperWidget.intentdefinition; sourceTree = "<group>"; };
+		F1BE961427F1F20000B0525B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1BE961627F1F20000B0525B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1C6B68927C4EBA700848580 /* Valorant Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B68C27C4EBA700848580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +264,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F1BE960727F1F1FE00B0525B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BE960F27F1F1FE00B0525B /* SwiftUI.framework in Frameworks */,
+				F1BE960D27F1F1FE00B0525B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1C6B68627C4EBA700848580 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -569,12 +614,34 @@
 			path = AgentCoverImageCell;
 			sourceTree = "<group>";
 		};
+		F1BE960B27F1F1FE00B0525B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F1BE960C27F1F1FE00B0525B /* WidgetKit.framework */,
+				F1BE960E27F1F1FE00B0525B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F1BE961027F1F1FE00B0525B /* ValorantHelperWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F1BE961127F1F1FE00B0525B /* ValorantHelperWidget.swift */,
+				F1BE961327F1F1FE00B0525B /* ValorantHelperWidget.intentdefinition */,
+				F1BE961427F1F20000B0525B /* Assets.xcassets */,
+				F1BE961627F1F20000B0525B /* Info.plist */,
+			);
+			path = ValorantHelperWidget;
+			sourceTree = "<group>";
+		};
 		F1C6B68027C4EBA700848580 = {
 			isa = PBXGroup;
 			children = (
 				F1C6B68B27C4EBA700848580 /* Valorant Helper */,
 				F1C6B6A527C4EBA900848580 /* Valorant HelperTests */,
 				F1C6B6AF27C4EBA900848580 /* Valorant HelperUITests */,
+				F1BE961027F1F1FE00B0525B /* ValorantHelperWidget */,
+				F1BE960B27F1F1FE00B0525B /* Frameworks */,
 				F1C6B68A27C4EBA700848580 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -585,6 +652,7 @@
 				F1C6B68927C4EBA700848580 /* Valorant Helper.app */,
 				F1C6B6A227C4EBA900848580 /* Valorant HelperTests.xctest */,
 				F1C6B6AC27C4EBA900848580 /* Valorant HelperUITests.xctest */,
+				F1BE960A27F1F1FE00B0525B /* ValorantHelperWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -834,6 +902,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F1BE960927F1F1FE00B0525B /* ValorantHelperWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1BE961C27F1F20000B0525B /* Build configuration list for PBXNativeTarget "ValorantHelperWidgetExtension" */;
+			buildPhases = (
+				F1BE960627F1F1FE00B0525B /* Sources */,
+				F1BE960727F1F1FE00B0525B /* Frameworks */,
+				F1BE960827F1F1FE00B0525B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ValorantHelperWidgetExtension;
+			productName = ValorantHelperWidgetExtension;
+			productReference = F1BE960A27F1F1FE00B0525B /* ValorantHelperWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F1C6B68827C4EBA700848580 /* Valorant Helper */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1C6B6B627C4EBA900848580 /* Build configuration list for PBXNativeTarget "Valorant Helper" */;
@@ -841,10 +926,12 @@
 				F1C6B68527C4EBA700848580 /* Sources */,
 				F1C6B68627C4EBA700848580 /* Frameworks */,
 				F1C6B68727C4EBA700848580 /* Resources */,
+				F1BE961F27F1F20000B0525B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F1BE961A27F1F20000B0525B /* PBXTargetDependency */,
 			);
 			name = "Valorant Helper";
 			packageProductDependencies = (
@@ -897,9 +984,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					F1BE960927F1F1FE00B0525B = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					F1C6B68827C4EBA700848580 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -933,11 +1023,21 @@
 				F1C6B68827C4EBA700848580 /* Valorant Helper */,
 				F1C6B6A127C4EBA900848580 /* Valorant HelperTests */,
 				F1C6B6AB27C4EBA900848580 /* Valorant HelperUITests */,
+				F1BE960927F1F1FE00B0525B /* ValorantHelperWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F1BE960827F1F1FE00B0525B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BE962027F1F46600B0525B /* Valorant-Font.ttf in Resources */,
+				F1BE961527F1F20000B0525B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1C6B68727C4EBA700848580 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -972,6 +1072,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F1BE960627F1F1FE00B0525B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BE961227F1F1FE00B0525B /* ValorantHelperWidget.swift in Sources */,
+				F1BE961727F1F20000B0525B /* ValorantHelperWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F1C6B68527C4EBA700848580 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1013,6 +1122,7 @@
 				F11A1CC327DA470600758A3A /* PublicConstants.swift in Sources */,
 				F11A1CAC27DA07AE00758A3A /* CrosshairsCell.swift in Sources */,
 				F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */,
+				F1BE961827F1F20000B0525B /* ValorantHelperWidget.intentdefinition in Sources */,
 				F131EE4127D8944300DED4AD /* LineUpDetailVM.swift in Sources */,
 				F167DC6727C6674200B4DB44 /* NetworkEngine.swift in Sources */,
 				F131EE4427D8A21400DED4AD /* LineUpModel.swift in Sources */,
@@ -1082,6 +1192,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F1BE961A27F1F20000B0525B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1BE960927F1F1FE00B0525B /* ValorantHelperWidgetExtension */;
+			targetProxy = F1BE961927F1F20000B0525B /* PBXContainerItemProxy */;
+		};
 		F1C6B6A427C4EBA900848580 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F1C6B68827C4EBA700848580 /* Valorant Helper */;
@@ -1115,6 +1230,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F1BE961D27F1F20000B0525B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F6YDGXZ9YY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ValorantHelperWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ValorantHelperWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zdeveloped.Valorant-Helper.ValorantHelperWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1BE961E27F1F20000B0525B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F6YDGXZ9YY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ValorantHelperWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ValorantHelperWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zdeveloped.Valorant-Helper.ValorantHelperWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F1C6B6B427C4EBA900848580 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1236,8 +1407,10 @@
 		F1C6B6B727C4EBA900848580 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F6YDGXZ9YY;
@@ -1255,6 +1428,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zdeveloped.Valorant-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1264,8 +1438,10 @@
 		F1C6B6B827C4EBA900848580 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F6YDGXZ9YY;
@@ -1283,6 +1459,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zdeveloped.Valorant-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1368,6 +1545,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F1BE961C27F1F20000B0525B /* Build configuration list for PBXNativeTarget "ValorantHelperWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BE961D27F1F20000B0525B /* Debug */,
+				F1BE961E27F1F20000B0525B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F1C6B68427C4EBA700848580 /* Build configuration list for PBXProject "Valorant Helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
