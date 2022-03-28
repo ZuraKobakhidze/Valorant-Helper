@@ -66,6 +66,24 @@ class AgentCoverImageVC: UIViewController {
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
+    
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(AgentCoverImageCell.self, forCellWithReuseIdentifier: AgentCoverImageCell.reusableIdentifer)
+        return collectionView
+    }()
+    
+    //MARK: - Variables
+    
+    var viewModel: AgentCoverImageVM?
 
     //MARK: - LifeCycle
     
@@ -92,6 +110,7 @@ class AgentCoverImageVC: UIViewController {
         view.addSubview(containerView)
         containerView.addSubview(backgroundImage)
         backgroundImage.addSubview(agentImage)
+        view.addSubview(collectionView)
     }
 
     private func buildConstraints() {
@@ -131,7 +150,12 @@ class AgentCoverImageVC: UIViewController {
             agentImage.topAnchor.constraint(equalTo: backgroundImage.topAnchor),
             agentImage.leftAnchor.constraint(equalTo: backgroundImage.leftAnchor),
             agentImage.rightAnchor.constraint(equalTo: backgroundImage.rightAnchor),
-            agentImage.bottomAnchor.constraint(equalTo: backgroundImage.bottomAnchor)
+            agentImage.bottomAnchor.constraint(equalTo: backgroundImage.bottomAnchor),
+            
+            collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 25),
+            collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -25),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -PublicConstants.bottomPadding),
+            collectionView.heightAnchor.constraint(equalToConstant: 45)
         
         ])
 
@@ -142,6 +166,7 @@ class AgentCoverImageVC: UIViewController {
     func configure(with vm: AgentCoverImageVM?) {
         backgroundImage.loadImageFromURL(urlString: vm?.backgroundImage ?? "")
         agentImage.loadImageFromURL(urlString: vm?.coverImage ?? "")
+        viewModel = vm
     }
     
     private func saveCompleted() {
@@ -173,6 +198,47 @@ class AgentCoverImageVC: UIViewController {
                 self?.saveCompleted()
             }
         }
+    }
+    
+}
+
+extension AgentCoverImageVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel?.itemList.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AgentCoverImageCell.reusableIdentifer, for: indexPath) as! AgentCoverImageCell
+        cell.configure(with: viewModel?.itemList[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 45, height: 45)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel?.changeItemList(on: indexPath, completion: { bool in
+            if bool {
+                DispatchQueue.main.async { [weak self] in
+                    self?.containerView.backgroundColor = self?.viewModel?.itemList[indexPath.row].color.color
+                    self?.collectionView.reloadData()
+                }
+            }
+        })
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        15
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        15
     }
     
 }

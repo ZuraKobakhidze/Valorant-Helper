@@ -60,6 +60,8 @@
 		F1A8FCE227E8B36A0034221B /* AgentCoverImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8FCE027E8B36A0034221B /* AgentCoverImageVM.swift */; };
 		F1A8FCE327E8B36A0034221B /* AgentCoverImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8FCE127E8B36A0034221B /* AgentCoverImageVC.swift */; };
 		F1AFC8D527E1EED90039153D /* EmptyBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */; };
+		F1BE960427F1972C00B0525B /* AgentCoverImageCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE960227F1972C00B0525B /* AgentCoverImageCellVM.swift */; };
+		F1BE960527F1972C00B0525B /* AgentCoverImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BE960327F1972C00B0525B /* AgentCoverImageCell.swift */; };
 		F1C6B68D27C4EBA700848580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68C27C4EBA700848580 /* AppDelegate.swift */; };
 		F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */; };
 		F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1C6B69527C4EBA700848580 /* Valorant_Helper.xcdatamodeld */; };
@@ -175,6 +177,8 @@
 		F1A8FCE027E8B36A0034221B /* AgentCoverImageVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoverImageVM.swift; sourceTree = "<group>"; };
 		F1A8FCE127E8B36A0034221B /* AgentCoverImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoverImageVC.swift; sourceTree = "<group>"; };
 		F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyBackgroundView.swift; sourceTree = "<group>"; };
+		F1BE960227F1972C00B0525B /* AgentCoverImageCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoverImageCellVM.swift; sourceTree = "<group>"; };
+		F1BE960327F1972C00B0525B /* AgentCoverImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentCoverImageCell.swift; sourceTree = "<group>"; };
 		F1C6B68927C4EBA700848580 /* Valorant Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Valorant Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C6B68C27C4EBA700848580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C6B68E27C4EBA700848580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -541,6 +545,7 @@
 		F1A8FCDF27E8B3170034221B /* AgentCoverImage */ = {
 			isa = PBXGroup;
 			children = (
+				F1BE960127F1968900B0525B /* AgentCoverImageCell */,
 				F1A8FCE027E8B36A0034221B /* AgentCoverImageVM.swift */,
 				F1A8FCE127E8B36A0034221B /* AgentCoverImageVC.swift */,
 			);
@@ -553,6 +558,15 @@
 				F1AFC8D327E1EED90039153D /* EmptyBackgroundView.swift */,
 			);
 			path = EmptyBackgroundView;
+			sourceTree = "<group>";
+		};
+		F1BE960127F1968900B0525B /* AgentCoverImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				F1BE960227F1972C00B0525B /* AgentCoverImageCellVM.swift */,
+				F1BE960327F1972C00B0525B /* AgentCoverImageCell.swift */,
+			);
+			path = AgentCoverImageCell;
 			sourceTree = "<group>";
 		};
 		F1C6B68027C4EBA700848580 = {
@@ -1038,10 +1052,12 @@
 				F167DC6F27C66E0A00B4DB44 /* AgentsCell.swift in Sources */,
 				F19E610B27CCE72800F13D92 /* LineUpsCell.swift in Sources */,
 				F1C6B6E627C4F54F00848580 /* AppColor.swift in Sources */,
+				F1BE960527F1972C00B0525B /* AgentCoverImageCell.swift in Sources */,
 				F1070C4827CF5E1C0054F131 /* LineUpsMapsModel.swift in Sources */,
 				F12E3DF827C8B53600A8F511 /* VHNavBarVM.swift in Sources */,
 				F1CF789227DF744800A5E74C /* FavouritesDataSelectorView.swift in Sources */,
 				F18B52F727CE356000E7CBD4 /* LineUpsMapsVM.swift in Sources */,
+				F1BE960427F1972C00B0525B /* AgentCoverImageCellVM.swift in Sources */,
 				F1C6B70C27C5114500848580 /* AgentsHeaderViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1224,7 +1240,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 24V5M6ZW7B;
+				DEVELOPMENT_TEAM = F6YDGXZ9YY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Valorant Helper/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1252,7 +1268,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 24V5M6ZW7B;
+				DEVELOPMENT_TEAM = F6YDGXZ9YY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Valorant Helper/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
