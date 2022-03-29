@@ -33,8 +33,8 @@
 		F131EE4127D8944300DED4AD /* LineUpDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE3F27D8944300DED4AD /* LineUpDetailVM.swift */; };
 		F131EE4227D8944300DED4AD /* LineUpDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4027D8944300DED4AD /* LineUpDetailVC.swift */; };
 		F131EE4427D8A21400DED4AD /* LineUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4327D8A21400DED4AD /* LineUpModel.swift */; };
-		F131EE4627D8A6B100DED4AD /* LineUpDetailVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4527D8A6B100DED4AD /* LineUpDetailVMFactory.swift */; };
-		F131EE4827D8A93C00DED4AD /* SiteLineUpsVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4727D8A93C00DED4AD /* SiteLineUpsVMFactory.swift */; };
+		F131EE4627D8A6B100DED4AD /* LineUpDetailVMAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4527D8A6B100DED4AD /* LineUpDetailVMAdapter.swift */; };
+		F131EE4827D8A93C00DED4AD /* SiteLineUpsVMAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4727D8A93C00DED4AD /* SiteLineUpsVMAdapter.swift */; };
 		F131EE5127D8BFEB00DED4AD /* SingleStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EE4F27D8BFEB00DED4AD /* SingleStepView.swift */; };
 		F144869327CCFBB000EDF72C /* LineUpsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144869227CCFBB000EDF72C /* LineUpsEndpoint.swift */; };
 		F144869527CCFC1300EDF72C /* LineUpsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144869427CCFC1300EDF72C /* LineUpsModel.swift */; };
@@ -44,7 +44,7 @@
 		F167DC6A27C66AD700B4DB44 /* AgentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6927C66AD700B4DB44 /* AgentsModel.swift */; };
 		F167DC6E27C66E0A00B4DB44 /* AgentsCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6C27C66E0A00B4DB44 /* AgentsCellVM.swift */; };
 		F167DC6F27C66E0A00B4DB44 /* AgentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC6D27C66E0A00B4DB44 /* AgentsCell.swift */; };
-		F167DC7227C6701000B4DB44 /* AgentsCellVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7127C6701000B4DB44 /* AgentsCellVMFactory.swift */; };
+		F167DC7227C6701000B4DB44 /* AgentsCellVMAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7127C6701000B4DB44 /* AgentsCellVMAdapter.swift */; };
 		F167DC7527C7968A00B4DB44 /* AgentsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7427C7968A00B4DB44 /* AgentsFooterView.swift */; };
 		F167DC7927C7A4DA00B4DB44 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F167DC7B27C7A4DA00B4DB44 /* Localizable.strings */; };
 		F167DC8027C7BE3600B4DB44 /* AgentDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F167DC7E27C7BE3600B4DB44 /* AgentDetailVM.swift */; };
@@ -179,8 +179,8 @@
 		F131EE3F27D8944300DED4AD /* LineUpDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpDetailVM.swift; sourceTree = "<group>"; };
 		F131EE4027D8944300DED4AD /* LineUpDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpDetailVC.swift; sourceTree = "<group>"; };
 		F131EE4327D8A21400DED4AD /* LineUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpModel.swift; sourceTree = "<group>"; };
-		F131EE4527D8A6B100DED4AD /* LineUpDetailVMFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpDetailVMFactory.swift; sourceTree = "<group>"; };
-		F131EE4727D8A93C00DED4AD /* SiteLineUpsVMFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLineUpsVMFactory.swift; sourceTree = "<group>"; };
+		F131EE4527D8A6B100DED4AD /* LineUpDetailVMAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpDetailVMAdapter.swift; sourceTree = "<group>"; };
+		F131EE4727D8A93C00DED4AD /* SiteLineUpsVMAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteLineUpsVMAdapter.swift; sourceTree = "<group>"; };
 		F131EE4F27D8BFEB00DED4AD /* SingleStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleStepView.swift; sourceTree = "<group>"; };
 		F144869227CCFBB000EDF72C /* LineUpsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsEndpoint.swift; sourceTree = "<group>"; };
 		F144869427CCFC1300EDF72C /* LineUpsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineUpsModel.swift; sourceTree = "<group>"; };
@@ -190,7 +190,7 @@
 		F167DC6927C66AD700B4DB44 /* AgentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsModel.swift; sourceTree = "<group>"; };
 		F167DC6C27C66E0A00B4DB44 /* AgentsCellVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsCellVM.swift; sourceTree = "<group>"; };
 		F167DC6D27C66E0A00B4DB44 /* AgentsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsCell.swift; sourceTree = "<group>"; };
-		F167DC7127C6701000B4DB44 /* AgentsCellVMFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsCellVMFactory.swift; sourceTree = "<group>"; };
+		F167DC7127C6701000B4DB44 /* AgentsCellVMAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsCellVMAdapter.swift; sourceTree = "<group>"; };
 		F167DC7427C7968A00B4DB44 /* AgentsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentsFooterView.swift; sourceTree = "<group>"; };
 		F167DC7A27C7A4DA00B4DB44 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F167DC7C27C7A53B00B4DB44 /* ka-GE */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ka-GE"; path = "ka-GE.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -485,14 +485,14 @@
 			path = AgentsCell;
 			sourceTree = "<group>";
 		};
-		F167DC7027C66FF800B4DB44 /* Factory */ = {
+		F167DC7027C66FF800B4DB44 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
-				F167DC7127C6701000B4DB44 /* AgentsCellVMFactory.swift */,
-				F131EE4727D8A93C00DED4AD /* SiteLineUpsVMFactory.swift */,
-				F131EE4527D8A6B100DED4AD /* LineUpDetailVMFactory.swift */,
+				F167DC7127C6701000B4DB44 /* AgentsCellVMAdapter.swift */,
+				F131EE4727D8A93C00DED4AD /* SiteLineUpsVMAdapter.swift */,
+				F131EE4527D8A6B100DED4AD /* LineUpDetailVMAdapter.swift */,
 			);
-			path = Factory;
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 		F167DC7327C7965000B4DB44 /* AgentsFooterView */ = {
@@ -733,7 +733,7 @@
 				F1A1AB4A27DB6D3900B1326C /* PublicProtocols */,
 				F11A1CC127DA46F500758A3A /* PublicConstants */,
 				F1A1AB4727DB6BCD00B1326C /* CoreData */,
-				F167DC7027C66FF800B4DB44 /* Factory */,
+				F167DC7027C66FF800B4DB44 /* Adapter */,
 				F167DC6827C66ABC00B4DB44 /* Model */,
 				F167DC6127C666DA00B4DB44 /* Network */,
 				F1C6B6CD27C4F05200848580 /* AppColor */,
@@ -1105,7 +1105,7 @@
 				F11A1CB427DA168E00758A3A /* CrosshairDetailVM.swift in Sources */,
 				F1CF788A27DF579B00A5E74C /* LineUpCoreDataManager.swift in Sources */,
 				F1C6B6F627C4F57E00848580 /* NSMutableAttributedString+Extension.swift in Sources */,
-				F131EE4827D8A93C00DED4AD /* SiteLineUpsVMFactory.swift in Sources */,
+				F131EE4827D8A93C00DED4AD /* SiteLineUpsVMAdapter.swift in Sources */,
 				F167DC7527C7968A00B4DB44 /* AgentsFooterView.swift in Sources */,
 				F11A1CA627DA076800758A3A /* CrosshairsVM.swift in Sources */,
 				F167DC6A27C66AD700B4DB44 /* AgentsModel.swift in Sources */,
@@ -1140,7 +1140,7 @@
 				F1C6B6F727C4F57E00848580 /* String+Extension.swift in Sources */,
 				F1C6B6D627C4F12000848580 /* AgentsVC.swift in Sources */,
 				F1A8FCE227E8B36A0034221B /* AgentCoverImageVM.swift in Sources */,
-				F167DC7227C6701000B4DB44 /* AgentsCellVMFactory.swift in Sources */,
+				F167DC7227C6701000B4DB44 /* AgentsCellVMAdapter.swift in Sources */,
 				F19E610527CCD9C100F13D92 /* LineUpsVM.swift in Sources */,
 				F1C6B6FD27C4F57E00848580 /* Double+Extension.swift in Sources */,
 				F1070C5927CFA8BB0054F131 /* LineUpsMapsSectionCell.swift in Sources */,
@@ -1151,7 +1151,7 @@
 				F131EE4227D8944300DED4AD /* LineUpDetailVC.swift in Sources */,
 				F1FBAD4C27E0AFE40040F5F2 /* CrosshairCoreDataManager.swift in Sources */,
 				F1C6B69727C4EBA700848580 /* Valorant_Helper.xcdatamodeld in Sources */,
-				F131EE4627D8A6B100DED4AD /* LineUpDetailVMFactory.swift in Sources */,
+				F131EE4627D8A6B100DED4AD /* LineUpDetailVMAdapter.swift in Sources */,
 				F1C6B6CA27C4EFAA00848580 /* MainTabBar.swift in Sources */,
 				F1CF789627DF7B1100A5E74C /* FavouritesLineUpCellVM.swift in Sources */,
 				F1C6B68F27C4EBA700848580 /* SceneDelegate.swift in Sources */,

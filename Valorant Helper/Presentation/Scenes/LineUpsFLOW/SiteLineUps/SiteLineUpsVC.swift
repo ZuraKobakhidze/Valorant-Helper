@@ -173,7 +173,7 @@ extension SiteLineUpsVC: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = LineUpDetailVC()
-        vc.viewModel = LineUpDetailVMFactory.getLineUpDetailVM(from: viewModel, index: indexPath)
+        vc.viewModel = LineUpDetailVMAdapter.getLineUpDetailVM(from: viewModel, index: indexPath)
         navigationController?.pushViewController(vc, animated: true)
     }
     

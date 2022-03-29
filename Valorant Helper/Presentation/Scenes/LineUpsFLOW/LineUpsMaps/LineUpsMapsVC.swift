@@ -216,7 +216,7 @@ extension LineUpsMapVC: UITableViewDataSource, UITableViewDelegate {
             viewModel?.collapseItems(on: indexPath.section)
         } else {
             let vc = SiteLineUpsVC()
-            vc.viewModel = SiteLineUpsVMFactory.getSiteLineUpsVM(from: viewModel, index: indexPath)
+            vc.viewModel = SiteLineUpsVMAdapter.getSiteLineUpsVM(from: viewModel, index: indexPath)
             navigationController?.pushViewController(vc, animated: true)
         }
         

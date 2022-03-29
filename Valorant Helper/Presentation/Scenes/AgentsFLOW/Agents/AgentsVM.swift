@@ -21,7 +21,7 @@ class AgentsVM: AgentsVMProtocol {
         NetworkEngine.shared.request(endPoint: AgentsEndpoint.getAllAgent) { [weak self] (result: Result<[AgentsModel], Error>) in
             switch result {
                 case .success(let success):
-                    self?.fullItemList = success.map { AgentsCellVMFactory.getAgentsCellVM(from: $0) }
+                    self?.fullItemList = success.map { AgentsCellVMAdapter.getAgentsCellVM(from: $0) }
                     self?.itemList = self?.fullItemList
                     self?.itemSubject.send(true)
                 case .failure(let error):
@@ -62,7 +62,7 @@ class AgentsVM: AgentsVMProtocol {
         NetworkEngine.shared.request(endPoint: AgentsEndpoint.getAllAgent) { [weak self] (result: Result<[AgentsModel], Error>) in
             switch result {
                 case .success(let success):
-                    self?.fullItemList = success.map { AgentsCellVMFactory.getAgentsCellVM(from: $0) }
+                    self?.fullItemList = success.map { AgentsCellVMAdapter.getAgentsCellVM(from: $0) }
                     self?.itemList = self?.fullItemList
                     self?.filterItemList(by: agentType)
                 case .failure(let error):

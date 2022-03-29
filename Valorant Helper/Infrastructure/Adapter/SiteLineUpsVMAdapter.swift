@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SiteLineUpsVMFactory {
+class SiteLineUpsVMAdapter{
     
     static func getSiteLineUpsVM(from vm: LineUpsMapVMProtocol?, index: IndexPath) -> SiteLineUpsProtocol? {
         

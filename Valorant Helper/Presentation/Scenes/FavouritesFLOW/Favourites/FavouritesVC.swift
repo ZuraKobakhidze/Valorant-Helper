@@ -166,7 +166,7 @@ extension FavouritesVC: UITableViewDataSource, UITableViewDelegate {
         
         if let item = viewModel.itemList[indexPath.row] as? LineUpCD {
             let vc = LineUpDetailVC()
-            vc.viewModel = LineUpDetailVMFactory.getLineUpDetailVM(from: item)
+            vc.viewModel = LineUpDetailVMAdapter.getLineUpDetailVM(from: item)
             navigationController?.pushViewController(vc, animated: true)
         }
         

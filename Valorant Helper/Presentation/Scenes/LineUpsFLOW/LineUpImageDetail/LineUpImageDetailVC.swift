@@ -14,6 +14,9 @@ class LineUpImageDetailVC: UIViewController {
         scrollView.delegate = self
         scrollView.minimumZoomScale = 1.0
         scrollView.maximumZoomScale = 4.0
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(onCover))
+        doubleTap.numberOfTapsRequired = 2
+        scrollView.addGestureRecognizer(doubleTap)
         return scrollView
     }()
 
@@ -99,11 +102,31 @@ class LineUpImageDetailVC: UIViewController {
     func configure(with image: UIImage?) {
         coverImage.image = image
     }
+    
+    func zoomRectForScale(scale : CGFloat, center : CGPoint) -> CGRect {
+        var zoomRect = CGRect.zero
+        zoomRect.size.height = coverImage.frame.size.height / scale;
+        zoomRect.size.width  = coverImage.frame.size.width  / scale;
+        let newCenter = coverImage.convert(center, from: scrollView)
+        zoomRect.origin.x = newCenter.x - ((zoomRect.size.width / 2.0));
+        zoomRect.origin.y = newCenter.y - ((zoomRect.size.height / 2.0));
+        return zoomRect;
+    }
 
     //MARK: - Actions
 
     @objc func onClose() {
         dismiss(animated: true)
+    }
+    
+    @objc func onCover(_ recognizer:  UITapGestureRecognizer) {
+        if (scrollView.zoomScale > scrollView.minimumZoomScale) {
+            scrollView.setZoomScale(scrollView.minimumZoomScale, animated: true)
+        }
+        else {
+            let zoomRect = zoomRectForScale(scale: scrollView.maximumZoomScale / 2.0, center: recognizer.location(in: recognizer.view))
+            scrollView.zoom(to: zoomRect, animated: true)
+        }
     }
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AgentsCellVMFactory {
+class AgentsCellVMAdapter {
     
     static func getAgentsCellVM(from vm: AgentsModel?) -> AgentsCellVM {
      
