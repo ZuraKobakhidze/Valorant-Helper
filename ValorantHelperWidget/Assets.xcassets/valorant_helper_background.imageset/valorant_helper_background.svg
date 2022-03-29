@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <g id="Group_50" data-name="Group 50" transform="translate(-1943 -53)">
+    <rect id="Rectangle_121" data-name="Rectangle 121" width="512" height="512" transform="translate(1943 53)" fill="#0f1923"/>
+    <rect id="Rectangle_122" data-name="Rectangle 122" width="163.667" height="10" transform="translate(1943 435)" fill="#ece8e1"/>
+    <rect id="Rectangle_124" data-name="Rectangle 124" width="56.89" height="10" transform="translate(1943 455)" fill="#ff274d"/>
+    <rect id="Rectangle_126" data-name="Rectangle 126" width="248.667" height="10" transform="translate(2206.333 153)" fill="#ece8e1"/>
+    <rect id="Rectangle_127" data-name="Rectangle 127" width="160.78" height="10" transform="translate(2294.22 173)" fill="#ff274d"/>
+    <rect id="Rectangle_125" data-name="Rectangle 125" width="81.78" height="10" transform="translate(2373.22 334)" fill="#ff274d"/>
+    <rect id="Rectangle_123" data-name="Rectangle 123" width="147.667" height="10" transform="translate(2307.333 364)" fill="#ece8e1"/>
+    <rect id="Rectangle_129" data-name="Rectangle 129" width="130.78" height="10" transform="translate(1943 245)" fill="#ff274d"/>
+    <rect id="Rectangle_128" data-name="Rectangle 128" width="199.667" height="10" transform="translate(1943 275)" fill="#ece8e1"/>
+    <g id="logo_valorant_helper" transform="translate(2125 244)" fill="none">
+      <path d="M74,0l74,130H0Z" stroke="none"/>
+      <path d="M 74 30.32148742675781 L 25.79838562011719 115 L 122.2016143798828 115 L 74 30.32148742675781 M 74 0 L 148 130 L 0 130 L 74 0 Z" stroke="none" fill="#ff274d"/>
+    </g>
+  </g>
+</svg>

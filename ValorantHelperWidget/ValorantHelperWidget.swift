@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 import Intents
+import UIKit
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
@@ -41,14 +42,41 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct ValorantHelperWidgetEntryView : View {
-    var entry: Provider.Entry
 
     var body: some View {
-        VStack {
-            Image("logo_valorant_helper")
-            Text("Valorant Helper")
-                .font(Font.custom("VALORANT-Regular", size: 14))
+        
+        ZStack {
+            
+            Rectangle()
+                .fill(Color("valorantBlack"))
+                .edgesIgnoringSafeArea(.all)
+            
+            Image("valorant_helper_background")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+                .scaledToFit()
+            
+            VStack {
+                
+                Spacer()
+                Spacer()
+                
+                ZStack(alignment: .bottom) {
+                    
+                    Text("Valorant Helper")
+                        .font(Font.custom("VALORANT-Regular", size: 14))
+                        .foregroundColor(Color("valorantWhite"))
+                        .multilineTextAlignment(.center)
+                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+                        .shadow(color: Color("valorantWhite"), radius: 4)
+                        .offset(x: 0, y: -5)
+                    
+                }
+                
+            }
+            
         }
+        
     }
 }
 
@@ -58,7 +86,7 @@ struct ValorantHelperWidget: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
-            ValorantHelperWidgetEntryView(entry: entry)
+            ValorantHelperWidgetEntryView()
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
@@ -67,7 +95,7 @@ struct ValorantHelperWidget: Widget {
 
 struct ValorantHelperWidget_Previews: PreviewProvider {
     static var previews: some View {
-        ValorantHelperWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+        ValorantHelperWidgetEntryView()
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
