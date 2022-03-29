@@ -41,3 +41,11 @@ On the fourth page you can see your favourite crosshairs and line-ups that you c
   <img src="https://i.ibb.co/D8GSVvV/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-47-10.png" width="276" height="600">
   <img src="https://i.ibb.co/sK73QVv/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-47-13.png" width="276" height="600">
 </p>
+
+# Widget
+
+Also, you can add Valorant Helper widget to your home screen.
+
+<p float="left">
+  <img src="https://i.ibb.co/jRGXPpg/Simulator-Screen-Shot-i-Phone-13-Pro-Max-2022-03-29-at-18-36-09.png" width="276" height="600">
+</p>
