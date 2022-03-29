@@ -68,7 +68,7 @@ struct ValorantHelperWidgetEntryView : View {
                         .foregroundColor(Color("valorantWhite"))
                         .multilineTextAlignment(.center)
                         .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                        .shadow(color: Color("valorantWhite"), radius: 4)
+                        .shadow(color: Color("valorantBlack"), radius: 2)
                         .offset(x: 0, y: -5)
                     
                 }
