@@ -9,7 +9,7 @@ On the first page there are agents and you can sort them by their role, also you
 <p float="left">
   <img src="https://i.ibb.co/t2MsPkP/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-45-40.png" width="276" height="600">
   <img src="https://i.ibb.co/Yb1vB8F/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-23-at-15-45-48.png" width="276" height="600">
-  <img src="https://i.ibb.co/dt9ZnFn/Simulator-Screen-Shot-i-Phone-11-Pro-Max-2022-03-24-at-12-46-31.png" width="276" height="600">
+  <img src="https://i.ibb.co/B2r1BH4/Simulator-Screen-Shot-i-Phone-13-Pro-Max-2022-03-31-at-10-35-12.png" width="276" height="600">
 </p>
 
 # Crosshairs FLOW
