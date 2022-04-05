@@ -41,6 +41,7 @@ extension UIImageView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.color = AppColor.mediumRed.color
         activityIndicator.hidesWhenStopped = true
+        activityIndicator.style = .medium
         
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         
